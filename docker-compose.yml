@@ -1,6 +1,17 @@
 services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "file:./prisma/dev.db"
+    volumes:
+      - hookah_data:/app/prisma
+    restart: unless-stopped
+
   db:
     image: postgres:16-alpine
+    profiles: ["postgres"]
     restart: unless-stopped
     environment:
       POSTGRES_USER: postgres
@@ -12,4 +23,5 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
 volumes:
+  hookah_data:
   postgres_data:

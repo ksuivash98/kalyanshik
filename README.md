@@ -9,7 +9,7 @@
 - Prisma + SQLite (локально) / PostgreSQL (через Docker)
 - Zod, Lucide Icons
 
-## Быстрый старт
+## Быстрый старт (веб-приложение)
 
 ```bash
 npm install
@@ -17,7 +17,25 @@ npm run db:reset
 npm run dev
 ```
 
-Откройте [http://localhost:3000](http://localhost:3000).
+Откройте в браузере: [http://localhost:3000](http://localhost:3000)
+
+Это полноценное веб-приложение (PWA):
+- работает в Chrome / Edge / Safari / Firefox
+- адаптивно под телефон и планшет
+- можно установить на домашний экран («Установить приложение» в браузере)
+
+### Production
+
+```bash
+npm run build
+npm run start
+```
+
+Или через Docker:
+
+```bash
+docker compose up --build -d
+```
 
 ## PostgreSQL (опционально)
 
