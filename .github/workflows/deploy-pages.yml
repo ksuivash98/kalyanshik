@@ -36,6 +36,14 @@ jobs:
           GITHUB_PAGES: "true"
         run: npm run build:pages
 
+      - name: Verify catalog export
+        run: |
+          test -f out/index.html
+          test -f out/catalog/index.html
+          test -f out/.nojekyll
+          echo "Static export OK:"
+          ls -la out/catalog/index.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
