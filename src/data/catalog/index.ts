@@ -1,9 +1,28 @@
 import { BRANDS } from "./brands"
 import { FLAVOR_TAGS } from "./flavor-tags"
+import { ADALYA_TOBACCOS } from "./tobaccos/adalya"
+import { AL_FAKHER_TOBACCOS } from "./tobaccos/al-fakher"
+import { AZURE_TOBACCOS } from "./tobaccos/azure"
 import { BLACKBURN_TOBACCOS } from "./tobaccos/blackburn"
+import { BONCHE_TOBACCOS } from "./tobaccos/bonche"
+import { CHABACCO_TOBACCOS } from "./tobaccos/chabacco"
+import { DAILY_HOOKAH_TOBACCOS } from "./tobaccos/daily-hookah"
 import { DARKSIDE_TOBACCOS } from "./tobaccos/darkside"
+import { DUFT_TOBACCOS } from "./tobaccos/duft"
 import { ELEMENT_TOBACCOS } from "./tobaccos/element"
+import { FUMARI_TOBACCOS } from "./tobaccos/fumari"
+import { JAM_TOBACCOS } from "./tobaccos/jam"
+import { JIBIAR_TOBACCOS } from "./tobaccos/jibiar"
 import { MUSTHAVE_TOBACCOS } from "./tobaccos/musthave"
+import { OVERDOZZ_TOBACCOS } from "./tobaccos/overdozz"
+import { SATYR_TOBACCOS } from "./tobaccos/satyr"
+import { SEBERO_TOBACCOS } from "./tobaccos/sebero"
+import { SERBETLI_TOBACCOS } from "./tobaccos/serbetli"
+import { SOCIAL_SMOKE_TOBACCOS } from "./tobaccos/social-smoke"
+import { SPECTRUM_TOBACCOS } from "./tobaccos/spectrum"
+import { STARLINE_TOBACCOS } from "./tobaccos/starline"
+import { TANGIERS_TOBACCOS } from "./tobaccos/tangiers"
+import { ZOMO_TOBACCOS } from "./tobaccos/zomo"
 import { CatalogDatabase, TobaccoFlavorProfile, TobaccoSeed } from "@/types/catalog"
 import { dedupeByBrandName } from "@/lib/catalog/deduplicator"
 import { validateCatalog } from "@/lib/catalog/validator"
@@ -13,6 +32,25 @@ const ALL_TOBACCOS: TobaccoSeed[] = dedupeByBrandName([
   ...MUSTHAVE_TOBACCOS,
   ...BLACKBURN_TOBACCOS,
   ...ELEMENT_TOBACCOS,
+  ...DUFT_TOBACCOS,
+  ...SEBERO_TOBACCOS,
+  ...CHABACCO_TOBACCOS,
+  ...SPECTRUM_TOBACCOS,
+  ...SATYR_TOBACCOS,
+  ...DAILY_HOOKAH_TOBACCOS,
+  ...BONCHE_TOBACCOS,
+  ...STARLINE_TOBACCOS,
+  ...OVERDOZZ_TOBACCOS,
+  ...JAM_TOBACCOS,
+  ...AL_FAKHER_TOBACCOS,
+  ...ADALYA_TOBACCOS,
+  ...SERBETLI_TOBACCOS,
+  ...TANGIERS_TOBACCOS,
+  ...FUMARI_TOBACCOS,
+  ...AZURE_TOBACCOS,
+  ...SOCIAL_SMOKE_TOBACCOS,
+  ...ZOMO_TOBACCOS,
+  ...JIBIAR_TOBACCOS,
 ])
 
 export const CATALOG_DB: CatalogDatabase = {
@@ -24,12 +62,23 @@ export const CATALOG_DB: CatalogDatabase = {
     sources: [
       "https://hookahstuff.com/collections/darkside-core-line-hookah-shisha-tobacco",
       "https://musthave.ru/category/tabak-dlya-kalyana/",
-      "https://lashishaclub.com/products/must-have-shisha-tobacco-125g",
       "https://en.blckburn.com/",
-      "https://vape-optom.ru/collection/tabak-blackburn/product/blackburn-25gr",
       "https://en.element-tobacco.ru/tobacco",
-      "https://worldhookahmarket.com/top-10-best-flavors-of-element-tobacco-which-lines-to-try/",
-      "https://musthavetobacco.com/",
+      "https://kalyan-expert.ru/",
+      "https://smokedex.info/en/shisha/brand/spectrum",
+      "https://worldhookahmarket.com/",
+      "http://4kalyans.ru/tabak/daily-hookah-2.html",
+      "https://hookahland.ae/Shop?Filters.BrandSlug=starline-tobacco-blonde-leaf-shisha",
+      "https://www.alfakher.com/products-usa",
+      "https://www.fumari.com/official-hookah-flavors/",
+      "https://b2hookah.com/products/serbetli-shisha-tobacco",
+      "https://hookahministry.com/categories/tangiers-hookah-tobacco-noir-line-medium-nicotine-content-250-gr",
+      "https://hookahjunkie.com/products/azure-black-line-250-gram",
+      "https://socialsmoke.com/pages/hookah-tobacco",
+      "https://utopiaclouds.com/products/zomo",
+      "https://www.jibiartobacco.us/catalog/",
+      "https://jammtobacco.com/jam",
+      "https://www.texashookah.com/overdozz-shisha-200g.html",
     ],
   },
 }

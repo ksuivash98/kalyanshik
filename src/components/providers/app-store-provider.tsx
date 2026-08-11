@@ -26,7 +26,11 @@ import {
 type StoreContextValue = {
   ready: boolean
   state: AppState
-  addTobacco: (tobaccoId: string, grams?: number) => void
+  addTobacco: (
+    tobaccoId: string,
+    grams?: number,
+    extras?: { rating?: number | null; note?: string | null }
+  ) => void
   updateTobacco: (
     id: string,
     patch: { grams?: number; rating?: number | null; note?: string | null }
@@ -54,9 +58,16 @@ export function AppStoreProvider({ children }: { children: React.ReactNode }) {
     saveState(state)
   }, [state, ready])
 
-  const addTobacco = useCallback((tobaccoId: string, grams = 50) => {
-    setState((prev) => addToCollection(prev, tobaccoId, grams))
-  }, [])
+  const addTobacco = useCallback(
+    (
+      tobaccoId: string,
+      grams = 50,
+      extras?: { rating?: number | null; note?: string | null }
+    ) => {
+      setState((prev) => addToCollection(prev, tobaccoId, grams, extras))
+    },
+    []
+  )
 
   const updateTobacco = useCallback(
     (

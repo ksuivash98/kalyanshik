@@ -116,25 +116,30 @@ export function validateCatalog(db: CatalogDatabase): ValidationReport {
 
 export function formatValidationReport(report: ValidationReport): string {
   return [
-    "Catalog validation",
+    "HOOKAH MIX CATALOG",
     "",
-    `Brands: ${report.brands}`,
-    `Tobacco products: ${report.tobaccoProducts}`,
+    `Brands:  ${report.brands}`,
+    "",
+    `Total tobacco flavors: ${report.tobaccoProducts}`,
+    "",
     `Active: ${report.active}`,
-    `Discontinued: ${report.discontinued}`,
     `Limited: ${report.limited}`,
-    `Unknown status: ${report.unknownStatus}`,
+    `Discontinued: ${report.discontinued}`,
+    `Unknown: ${report.unknownStatus}`,
     "",
-    `Missing source: ${report.missingSource}`,
     `Duplicates: ${report.duplicates}`,
+    `Missing source: ${report.missingSource}`,
+    `Missing brand: ${report.orphanTobaccos}`,
     `Invalid profiles: ${report.invalidProfiles}`,
-    `Empty names: ${report.emptyNames}`,
-    `Orphan tobaccos: ${report.orphanTobaccos}`,
-    `Invalid/duplicate slugs: ${report.invalidSlugs}`,
+    report.emptyNames || report.invalidSlugs
+      ? `\nExtra: empty names ${report.emptyNames}, slug issues ${report.invalidSlugs}`
+      : "",
     report.issues.length
       ? `\nIssues (first 20):\n${report.issues.slice(0, 20).map((i) => `- ${i}`).join("\n")}`
       : "\nNo critical issues.",
-  ].join("\n")
+  ]
+    .filter((line) => line !== "")
+    .join("\n")
 }
 
 export function assertBrandRegistry(brands: BrandSeed[]) {

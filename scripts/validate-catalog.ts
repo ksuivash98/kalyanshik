@@ -12,6 +12,11 @@ for (const b of unchecked) {
   console.log(`- ${b.name}${b.verificationNotes ? ` (${b.verificationNotes})` : ""}`)
 }
 
+const lines = new Set(
+  CATALOG_DB.tobaccos.map((t) => t.line).filter((l): l is string => Boolean(l))
+)
+console.log(`\nLines in catalog: ${lines.size}`)
+
 console.log("\nEstimated data:")
 console.log(
   `- All flavor scales are estimated: true (${CATALOG_DB.tobaccos.length} products)`

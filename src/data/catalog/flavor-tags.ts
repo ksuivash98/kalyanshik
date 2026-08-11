@@ -81,6 +81,13 @@ export const FLAVOR_TAGS: FlavorTagDef[] = [
   { id: "cardamom", category: "SPICE", labelRu: "Кардамон", labelEn: "Cardamom" },
   { id: "sour", category: "OTHER", labelRu: "Кислый", labelEn: "Sour" },
   { id: "sweet", category: "OTHER", labelRu: "Сладкий", labelEn: "Sweet" },
+  { id: "fruity", category: "FRUIT", labelRu: "Фруктовый", labelEn: "Fruity" },
+  { id: "citrus", category: "CITRUS", labelRu: "Цитрусовый", labelEn: "Citrus" },
+  { id: "berry", category: "BERRY", labelRu: "Ягодный", labelEn: "Berry" },
+  { id: "dessert", category: "DESSERT", labelRu: "Десертный", labelEn: "Dessert" },
+  { id: "spice", category: "SPICE", labelRu: "Пряный", labelEn: "Spicy" },
+  { id: "herbal", category: "HERBAL", labelRu: "Травяной", labelEn: "Herbal" },
+  { id: "cocktail", category: "DRINK", labelRu: "Коктейль", labelEn: "Cocktail" },
 ]
 
 export const FLAVOR_TAG_BY_ID = Object.fromEntries(

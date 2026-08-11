@@ -83,7 +83,8 @@ export function saveState(state: AppState) {
 export function addToCollection(
   state: AppState,
   tobaccoId: string,
-  grams = 50
+  grams = 50,
+  extras?: { rating?: number | null; note?: string | null }
 ): AppState {
   const existing = state.collection.find((c) => c.tobaccoId === tobaccoId)
   if (existing) {
@@ -91,7 +92,13 @@ export function addToCollection(
       ...state,
       collection: state.collection.map((c) =>
         c.tobaccoId === tobaccoId
-          ? { ...c, grams, updatedAt: new Date().toISOString() }
+          ? {
+              ...c,
+              grams,
+              rating: extras?.rating ?? c.rating,
+              note: extras?.note !== undefined ? extras.note : c.note,
+              updatedAt: new Date().toISOString(),
+            }
           : c
       ),
     }
@@ -103,8 +110,8 @@ export function addToCollection(
         id: uid("col"),
         tobaccoId,
         grams,
-        rating: 4,
-        note: null,
+        rating: extras?.rating ?? 4,
+        note: extras?.note ?? null,
         updatedAt: new Date().toISOString(),
       },
       ...state.collection,

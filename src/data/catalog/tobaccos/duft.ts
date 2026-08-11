@@ -1,0 +1,95 @@
+import { makeTobacco } from "../make-tobacco"
+import { TobaccoSeed } from "@/types/catalog"
+
+const SOURCE = "https://kalyan-expert.ru/duft-tobacco.html"
+const SOURCE_SHOP = "https://gustogo.ru/tabak/duft"
+
+type Item = { name: string; tags: string[]; line?: string; status?: "ACTIVE" | "DISCONTINUED" | "LIMITED" }
+
+const SOLO: Item[] = [
+  { name: "Heavy Melon", tags: ["melon", "sweet"] },
+  { name: "Kashmir", tags: ["spice", "herbal"] },
+  { name: "Cane Mint", tags: ["mint", "sweet", "cold"] },
+  { name: "Fir Efir", tags: ["herbal"] },
+  { name: "Dragon Fruit", tags: ["fruity", "tropical"] },
+  { name: "Masha and Bear", tags: ["strawberry", "berry"] },
+  { name: "Wildberry", tags: ["raspberry", "cranberry", "strawberry"] },
+  { name: "Tarhun", tags: ["tarragon", "herbal", "lemonade"] },
+  { name: "Rafiki", tags: ["sweet", "fruity"] },
+  { name: "Lychee", tags: ["lychee", "sweet"] },
+  { name: "Honey Halls", tags: ["honey", "cold", "eucalyptus"] },
+  { name: "Coconut", tags: ["coconut", "cream"] },
+  { name: "Kiwi Tini", tags: ["kiwi", "cocktail", "sour"] },
+  { name: "Orange Zest", tags: ["orange", "tangerine", "citrus"] },
+  { name: "Guava Mama", tags: ["guava", "fruity"] },
+  { name: "Hooligan", tags: ["fruity"], status: "DISCONTINUED" },
+  { name: "Pistachio Cream", tags: ["pistachio", "cream", "dessert"] },
+  { name: "Cheesecake", tags: ["cheesecake", "dessert", "cream"] },
+  { name: "Apple Candy", tags: ["apple", "sweet"] },
+  { name: "Ginger Bread", tags: ["ginger", "cookie", "dessert"] },
+  { name: "Fried Cashew", tags: ["dessert", "spicy"] },
+  { name: "Scotch Whisky", tags: ["cocktail", "spice"] },
+  { name: "Grape Fizz", tags: ["grape", "soda", "sour"] },
+  { name: "Pomegranate", tags: ["pomegranate", "fruity"] },
+  { name: "Chocomint", tags: ["chocolate", "mint", "cold"] },
+  { name: "Blueberry", tags: ["blueberry", "berry"] },
+  { name: "Lime Lemon", tags: ["lime", "lemon", "citrus", "sour"] },
+  { name: "Cherry Juice", tags: ["cherry", "berry", "sweet"] },
+  { name: "Banana Gum", tags: ["banana", "sweet"] },
+  { name: "Black Currant", tags: ["currant", "berry", "sour"] },
+  { name: "Pink Grapefruit", tags: ["grapefruit", "citrus"] },
+  { name: "Goa Mango", tags: ["mango", "tropical"] },
+  { name: "Cranberry", tags: ["cranberry", "berry"] },
+  { name: "Maracuja", tags: ["passion_fruit", "fruity"] },
+  { name: "Pineapple", tags: ["pineapple", "fruity", "sweet"] },
+  { name: "Sour Peach", tags: ["peach", "sour"] },
+  { name: "Tiramisu", tags: ["dessert", "coffee", "cream"] },
+  { name: "Brownie", tags: ["chocolate", "cake", "dessert"] },
+  { name: "Cucumberita", tags: ["herbal", "lemonade"] },
+  { name: "Cactus Jack", tags: ["fruity", "sour"] },
+  { name: "Elderberry", tags: ["berry", "floral"] },
+  { name: "Watermelon", tags: ["watermelon", "sweet"] },
+  { name: "Chai Latte", tags: ["tea", "spice", "cream"] },
+  { name: "Aiwa", tags: ["apple", "fruity"] },
+  { name: "Barberry", tags: ["barberry", "sour"] },
+  { name: "Berry Blast", tags: ["strawberry", "cranberry", "berry"] },
+  { name: "Feijoa", tags: ["feijoa", "fruity"] },
+  { name: "Freeze", tags: ["cold"] },
+  { name: "Goozeberry", tags: ["gooseberry", "sour"] },
+]
+
+const ALL_IN: Item[] = [
+  { name: "Mickey's Mouth", tags: ["carrot", "tropical", "fruity"], line: "All-in" },
+  { name: "Sashagrey", tags: ["tea", "pomegranate", "grapefruit"], line: "All-in" },
+  { name: "R-Gazm", tags: ["coconut", "raspberry", "dessert"], line: "All-in" },
+  { name: "Bumblebeast", tags: ["blueberry", "cherry", "cola", "grape"], line: "All-in" },
+  { name: "Pinacollider", tags: ["coconut", "pineapple", "dessert"], line: "All-in" },
+  { name: "Feechee", tags: ["tropical", "caramel", "fruity"], line: "All-in" },
+  { name: "Chilz Thrilz", tags: ["cocktail", "orange", "grapefruit"], line: "All-in" },
+  { name: "Atomic Bob", tags: ["cola", "soda", "dessert"], line: "All-in" },
+  { name: "Breaking Red", tags: ["berry", "cocktail"], line: "All-in" },
+  { name: "Whynot", tags: ["mint", "coffee", "cream"], line: "All-in" },
+  { name: "Syrupia", tags: ["cake", "dessert", "banana"], line: "All-in" },
+  { name: "Candyllac", tags: ["apple", "feijoa", "lychee"], line: "All-in" },
+  { name: "Juice Lee", tags: ["lemon", "sour", "candy"], line: "All-in" },
+  { name: "Wonka's", tags: ["chocolate", "dessert"], line: "All-in" },
+  { name: "Nacarat", tags: ["cola", "currant", "spice"], line: "All-in" },
+  { name: "Frushi", tags: ["apple", "cocktail"], line: "All-in" },
+  { name: "Berrieta", tags: ["raspberry", "cake", "dessert"], line: "All-in" },
+  { name: "D-Zert", tags: ["berry", "cream", "dessert"], line: "All-in" },
+  { name: "Sodie Pop", tags: ["currant", "mojito", "mint"], line: "All-in" },
+  { name: "Lolygag", tags: ["feijoa", "pineapple", "dessert"], line: "All-in" },
+]
+
+export const DUFT_TOBACCOS: TobaccoSeed[] = [...SOLO, ...ALL_IN].map((item) =>
+  makeTobacco({
+    brandId: "duft",
+    name: item.name,
+    line: item.line ?? "Solo",
+    tags: item.tags.filter((t) => t !== "carrot" && t !== "floral"),
+    sourceUrl: item.line === "All-in" ? SOURCE : SOURCE_SHOP,
+    strengthHint: 3,
+    status: item.status,
+    discontinued: item.status === "DISCONTINUED",
+  })
+)

@@ -1,0 +1,70 @@
+import { makeTobacco } from "../make-tobacco"
+import { TobaccoSeed } from "@/types/catalog"
+
+/** Spectrum Classic — SmokeDex brand catalog (49 named flavors). */
+const SOURCE = "https://smokedex.info/en/shisha/brand/spectrum"
+
+const ITEMS: Array<{ name: string; tags: string[]; line?: string; status?: "ACTIVE" | "DISCONTINUED" }> = [
+  { name: "Cookies and Milk", tags: ["cookie", "cream", "dessert"] },
+  { name: "Caribbean Rum", tags: ["cocktail", "spice"] },
+  { name: "Brazilian Tea", tags: ["tea", "lime", "herbal"] },
+  { name: "Green Pop", tags: ["soda", "sweet"] },
+  { name: "Chinese Grass", tags: ["herbal"] },
+  { name: "Halva", tags: ["dessert", "sweet"] },
+  { name: "Orange Mango", tags: ["orange", "mango", "tropical"] },
+  { name: "Barby", tags: ["berry", "sweet"] },
+  { name: "Spicy Cheese", tags: ["spice"], line: "Kitchen", status: "DISCONTINUED" },
+  { name: "Gazpacho", tags: ["herbal", "spice"], line: "Kitchen", status: "DISCONTINUED" },
+  { name: "Honeycomb", tags: ["honey", "sweet"] },
+  { name: "Russian Raspberry", tags: ["raspberry", "berry"] },
+  { name: "Citrus Mix", tags: ["citrus", "sour"] },
+  { name: "Bergatea", tags: ["tea", "bergamot"] },
+  { name: "Berberry", tags: ["barberry", "berry"] },
+  { name: "Grape Soda", tags: ["grape", "soda"] },
+  { name: "Adjika", tags: ["spice"], line: "Kitchen", status: "DISCONTINUED" },
+  { name: "Agava Cactus", tags: ["cocktail", "fruity"] },
+  { name: "American Peach", tags: ["peach", "fruity"] },
+  { name: "Bang Banana", tags: ["banana", "sweet"] },
+  { name: "Becky", tags: ["fruity"] },
+  { name: "Berry Drink", tags: ["berry", "lemonade"] },
+  { name: "Blue Berry", tags: ["blueberry", "berry"] },
+  { name: "Blue Gum", tags: ["blueberry", "sweet"] },
+  { name: "Brad", tags: ["dessert"], line: "Kitchen", status: "DISCONTINUED" },
+  { name: "Current Crush", tags: ["currant", "berry"] },
+  { name: "Dezzert Sheriff", tags: ["dessert", "sweet"] },
+  { name: "Energy Storm", tags: ["energy_drink"] },
+  { name: "Epic Mint", tags: ["mint", "cold"] },
+  { name: "Fire Wine", tags: ["cocktail", "spice"] },
+  { name: "Ice Fruit Gum", tags: ["fruity", "cold", "sweet"] },
+  { name: "Jungle Mix", tags: ["pineapple", "banana", "citrus", "tropical"] },
+  { name: "Pineapple Boom", tags: ["pineapple", "fruity"] },
+  { name: "Sorbet", tags: ["dessert", "cold", "fruity"] },
+  { name: "Bacon", tags: ["spice"], line: "Kitchen", status: "DISCONTINUED" },
+  { name: "Rye Bread", tags: ["dessert"], line: "Kitchen", status: "DISCONTINUED" },
+  { name: "Chicken Ramen", tags: ["spice", "herbal"], line: "Kitchen", status: "DISCONTINUED" },
+  { name: "Lime", tags: ["lime", "citrus"] },
+  { name: "Peach", tags: ["peach", "fruity"] },
+  { name: "Currant", tags: ["currant", "berry"] },
+  { name: "Mulled Wine", tags: ["cocktail", "cinnamon", "spice"] },
+  { name: "Eucalyptus", tags: ["eucalyptus", "cold"] },
+  { name: "Honey", tags: ["honey", "sweet"] },
+  { name: "Melon", tags: ["melon", "fruity"] },
+  { name: "Pineapple", tags: ["pineapple", "fruity"] },
+  { name: "Banana", tags: ["banana", "sweet"] },
+  { name: "Lemon", tags: ["lemon", "citrus"] },
+  { name: "Grape", tags: ["grape", "fruity"] },
+  { name: "Mint", tags: ["mint", "cold"] },
+]
+
+export const SPECTRUM_TOBACCOS: TobaccoSeed[] = ITEMS.map((item) =>
+  makeTobacco({
+    brandId: "spectrum",
+    name: item.name,
+    line: item.line ?? "Classic",
+    tags: item.tags,
+    sourceUrl: SOURCE,
+    strengthHint: item.line === "Kitchen" ? 2 : 2,
+    status: item.status ?? "ACTIVE",
+    discontinued: item.status === "DISCONTINUED",
+  })
+)
