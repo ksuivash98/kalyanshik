@@ -1,0 +1,1002 @@
+{
+  "brands": {
+    "burn": {
+      "key": "burn",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/burn/",
+        "https://justfreid.ru/catalog/tabak/burn/?PAGEN_1=2"
+      ]
+    },
+    "dogma": {
+      "key": "dogma",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/dogma/",
+        "https://justfreid.ru/catalog/tabak/dogma/?PAGEN_1=2"
+      ]
+    },
+    "wto": {
+      "key": "wto",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/wto/",
+        "https://justfreid.ru/catalog/tabak/wto/?PAGEN_1=2"
+      ]
+    },
+    "kraken": {
+      "key": "kraken",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/kraken/",
+        "https://justfreid.ru/catalog/tabak/kraken/?PAGEN_1=2"
+      ]
+    },
+    "helix": {
+      "key": "helix",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/helix/",
+        "https://justfreid.ru/catalog/tabak/helix/?PAGEN_1=2"
+      ]
+    },
+    "bliss": {
+      "key": "bliss",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/Bliss/",
+        "https://justfreid.ru/catalog/tabak/Bliss/?PAGEN_1=2"
+      ]
+    },
+    "cobra": {
+      "key": "cobra",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/cobra/",
+        "https://justfreid.ru/catalog/tabak/cobra/?PAGEN_1=2"
+      ]
+    },
+    "fake": {
+      "key": "fake",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/fake-feyk/",
+        "https://justfreid.ru/catalog/tabak/fake-feyk/?PAGEN_1=2"
+      ]
+    },
+    "hlgn": {
+      "key": "hlgn",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/hlgn/",
+        "https://justfreid.ru/catalog/tabak/hlgn/?PAGEN_1=2"
+      ]
+    },
+    "joy": {
+      "key": "joy",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/joy-dzhoy/",
+        "https://justfreid.ru/catalog/tabak/joy-dzhoy/?PAGEN_1=2"
+      ]
+    },
+    "molodost": {
+      "key": "molodost",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/molodost/",
+        "https://justfreid.ru/catalog/tabak/molodost/?PAGEN_1=2"
+      ]
+    },
+    "nur": {
+      "key": "nur",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/nur-nur/",
+        "https://justfreid.ru/catalog/tabak/nur-nur/?PAGEN_1=2"
+      ]
+    },
+    "tangiers": {
+      "key": "tangiers",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/tangiers/",
+        "https://justfreid.ru/catalog/tabak/tangiers/?PAGEN_1=2"
+      ]
+    },
+    "smoke-angels": {
+      "key": "smoke-angels",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/smoke-angels/",
+        "https://justfreid.ru/catalog/tabak/smoke-angels/?PAGEN_1=2"
+      ]
+    },
+    "sebero": {
+      "key": "sebero",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/sebero/",
+        "https://justfreid.ru/catalog/tabak/sebero/?PAGEN_1=2"
+      ]
+    },
+    "al-fakher": {
+      "key": "al-fakher",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/al-fakher/",
+        "https://justfreid.ru/catalog/tabak/al-fakher/?PAGEN_1=2"
+      ]
+    },
+    "adalya": {
+      "key": "adalya",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/adalya/",
+        "https://justfreid.ru/catalog/tabak/adalya/?PAGEN_1=2"
+      ]
+    },
+    "take": {
+      "key": "take",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/take/",
+        "https://justfreid.ru/catalog/tabak/take/?PAGEN_1=2"
+      ]
+    },
+    "morpheus-morfeus": {
+      "key": "morpheus-morfeus",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/morpheus-morfeus/",
+        "https://justfreid.ru/catalog/tabak/morpheus-morfeus/?PAGEN_1=2"
+      ]
+    },
+    "codex-nubium": {
+      "key": "codex-nubium",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/codex-nubium/",
+        "https://justfreid.ru/catalog/tabak/codex-nubium/?PAGEN_1=2"
+      ]
+    },
+    "wave": {
+      "key": "wave",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/WAVE/",
+        "https://justfreid.ru/catalog/tabak/WAVE/?PAGEN_1=2"
+      ]
+    },
+    "antagonist": {
+      "key": "antagonist",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/Antagonist/",
+        "https://justfreid.ru/catalog/tabak/Antagonist/?PAGEN_1=2"
+      ]
+    },
+    "dusha": {
+      "key": "dusha",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/dusha/",
+        "https://justfreid.ru/catalog/tabak/dusha/?PAGEN_1=2"
+      ]
+    },
+    "original-virginia": {
+      "key": "original-virginia",
+      "flavors": [],
+      "sources": [
+        "https://justfreid.ru/catalog/tabak/original-virginia/",
+        "https://justfreid.ru/catalog/tabak/original-virginia/?PAGEN_1=2"
+      ]
+    }
+  },
+  "notes": [],
+  "jfSlugsFound": [
+    "Antagonist",
+    "Bliss",
+    "WAVE",
+    "al-fakher",
+    "burn",
+    "cobra",
+    "codex-nubium",
+    "dogma",
+    "dusha",
+    "fake-feyk",
+    "helix",
+    "hlgn",
+    "jam-flavored-tobacco",
+    "joy-dzhoy",
+    "kraken",
+    "mixes-mixtures-of-tobacco-for-hookah-with-jam-flavor",
+    "molodost",
+    "morpheus-morfeus",
+    "nur-nur",
+    "original-virginia",
+    "sebero",
+    "smoke-angels",
+    "take",
+    "tangiers",
+    "viburnum-flavored-tobacco",
+    "wto"
+  ],
+  "sm": {
+    "blackburn": {
+      "key": "blackburn",
+      "flavors": [],
+      "sources": [
+        "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/?products-per-page=144&orderby=title"
+      ]
+    },
+    "smoke-angels": {
+      "key": "smoke-angels",
+      "flavors": [],
+      "sources": [
+        "https://smokemaster.ru/shop/tabak-dlya-kalyana/smoke-angels/?products-per-page=144&orderby=title"
+      ]
+    },
+    "sebero": {
+      "key": "sebero",
+      "flavors": [],
+      "sources": []
+    }
+  },
+  "jamOfficial": {
+    "flavors": [],
+    "sources": [
+      "https://jammtobacco.com/jam"
+    ],
+    "note": "ok"
+  },
+  "hookahhouse": {
+    "jam": {
+      "flavors": [
+        "JAM БМ Байкал,",
+        "JAM БМ Черничное печенье,",
+        "JAM Освежающий Мохито,",
+        "JAM БМ Яблочные конфеты с лимоном,",
+        "JAM Ягодный холс,",
+        "JAM БМ Куба либре,",
+        "JAM БМ Малина,",
+        "JAM Тутти-фрутти,",
+        "JAM Малиновое вино,",
+        "JAM Манго и маракуйя,",
+        "JAM Грейпфрут с малиновым соком,",
+        "JAM БМ Ореховое мороженое,",
+        "JAM Банановый Коктейль,",
+        "JAM Клубнично-земляничный джем,",
+        "JAM Фруктовый бабл гам,",
+        "JAM Сладкий киви,",
+        "JAM Конфеты с ананасом,",
+        "JAM Вишневый сок,",
+        "JAM Куба либре,",
+        "JAM Яблочные конфеты с лимоном,",
+        "Jam",
+        "JAM БМ Вишневый сок,",
+        "JAM Черничное печенье,",
+        "JAM БМ Сладкий киви,",
+        "JAM Ореховое мороженое,",
+        "JAM Клубничный лимонад с базиликом,",
+        "JAM Малина,",
+        "JAM Манго со льдом,",
+        "JAM Ананас со льдом,",
+        "JAM Вишневая кола,",
+        "JAM Спелый манго,",
+        "JAM Арбузный рондо,",
+        "JAM Арбузный лимонад с дыней,",
+        "JAM Байкал,",
+        "JAM Маутин Дью,"
+      ],
+      "sources": [
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/jam/",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/jam/?PAGEN_1=2"
+      ]
+    },
+    "all": {
+      "flavors": [
+        "Dogma Капабланка,",
+        "Black Burn На чиле (Тропический сок),",
+        "Dogma 100% Рубен Дарио,",
+        "Darkside Shot Тосканский (30 гр) - космополитен, персик, черная смородина",
+        "Табак для кальяна \"Trofimoff\"s\" Connecticut cigarro,",
+        "Overdose Imperial Cola (Имперская кола),",
+        "Black Burn Ice Baby (Ягодный Сорбет с Грейпфрутом),",
+        "База Полегче Сливочное Масло (Butter),",
+        "Satyr Элизиум (Елисейские Поля),",
+        "Must Have Red Tea (с ароматом Красного Фруктового Чая),",
+        "Black Burn HiT #1 Голубика, апельсин, манго (Tropical Blues),",
+        "DEUS Catmint (Аромат парфюмной мяты),",
+        "Darkside Shot Лимонадный (30 гр) - малина, вишня, газировка",
+        "Sebero Black с ароматом Яблочная шипучка,",
+        "Black Burn HiT #11 Арбуз, дыня, мята (Big Berry Classic),",
+        "DEUS White Peach (Аромат белого персика),",
+        "Darkside SABOTAGE Berserk (Сладкая ирга),",
+        "Must Have Pinkman (Пинкман),",
+        "Overdose Kvazar Yuzu (Юдзу, ветивер, мята),",
+        "Табак для кальяна",
+        "Black Burn HiT #6 Ананас, киви, эвкалипт (Pine Punk),",
+        "Darkside SABOTAGE Raiden (Базилик Лимонад),",
+        "Sebero Arctic Mix Fruit yogurt (Фруктовый йогурт [Манго / Малина/ Сливки/ Арктик]),",
+        "Must Have Клубника, Лимон и Арбуз,",
+        "Sebero Black с ароматом Топ (TOP),",
+        "Black Burn Lulo (Луло),",
+        "Black Burn Сливочная кукуруза,",
+        "Black Burn HiT #3 Черника, смородина, брусника (Russian Folk),",
+        "Black Burn HiT #13 Барбарис, арбуз, дыня (Barberry Club),",
+        "База Покрепче Замша (Suede),",
+        "Darkside Shot Тропический (30 гр) - клюква, киви, лимон",
+        "Black Burn HiT #4 Улун, пряности, лайм (Spicy Jazz),",
+        "Хулиган Хард - Тропический коктейль (ТРОПИКА),",
+        "Black Burn Gooseberry Shock (Кислый крыжовник),",
+        "Sebero Arctic Mix Peanut Latte (Арахисовый латте - Кофе, ваниль, арахис, карамель, арктик),",
+        "Element Земля Чак-чак (Chak-chak) Б,",
+        "Darkside Core Top Gum (Ягоды, жвачка),",
+        "Darkside Shot Коктейльный (30 гр) - ягоды, банан, фейхоа",
+        "Darkside Shot Конфетный (30 гр) - ягоды, фрукты, карамель",
+        "DEUS Ice (Аромат холода),",
+        "Dogma 100% Ижевика,",
+        "Black Burn HiT #7 Кола, лимон, лёд (Country Cola),",
+        "Must Have Sour Tropic (Кислые Тропические Фрукты),",
+        "Black Burn HiT #10 Мускат, белый виноград, вишня (Muscat Rhapsody),",
+        "Sebero Black с ароматом Кавун (Арбуз с лесными ягодами),",
+        "Sebero Arctic Mix Juicy Shake (Виноград,мята,арбуз,малина,базилик,лимон,лайм,арктик),",
+        "Sebero Black с ароматом Лимонная шипучка,",
+        "Overdose Stellar Grape (Винтервуд, виноград, тонка),",
+        "Black Burn HiT #20 Маршмеллоу, клубника, земляника (DJ Marshmallow),",
+        "Satyr Lamba (Бычье Сердце),",
+        "Sapphire Crown с ароматом Малиновый пион (Raspberry peony),",
+        "Must Have Голубика, Лимон и Мята,",
+        "Black Burn HiT #5 Малина, голубика, лемонграсс (Berry Pop),",
+        "Dogma 100% Хабано Гарсиа,",
+        "Overdose Black Banano (Амбровый банан),",
+        "Darkside Shot Тайский (30 гр) - манго, помело, папайя",
+        "Must Have Sour Citrus (с ароматом Кислых Цитрусов),",
+        "Jent Alcohol Line с ароматом Настойка Заморская (Апельсин, Розмарин, Смородина),",
+        "NAШ White Мармеладные мишки (белые),",
+        "Spectrum Classic Line Jungle Mix (Тропический Микс),",
+        "Black Burn HiT #8 Чай, грейпфрут, лайм (Cha-cha-chai),",
+        "Sebero Black с ароматом Вишневая шипучка,",
+        "Dogma 100% Блэк Афгано,",
+        "Overdose Black Vanilla (Черная ваниль),",
+        "Darkside Shot Горный (30 гр) - фейхоа, малина, яблоко",
+        "Хулиган - Тропический коктейль (ТРОПИКА),",
+        "Хулиган - Ягоды в кокосе (АДЬЁС),",
+        "Satyr Duebeck Jagermeister (Ориентал на травах),",
+        "Darkside SABOTAGE Yagodza (Кислые ягоды),",
+        "Must Have Cream Soda (с ароматом Сливочного Напитка),",
+        "Overdose Lost Futura (Мускусная вишня),",
+        "Darkside SABOTAGE Acid (Кислый кизил),",
+        "CHOICE Haribomb (Мармелад, вишня, кола),",
+        "Black Burn HiT #2 Груша, яблоко, ананас (Golden Funk ),",
+        "Sebero Arctic Mix Adrenalin (лимон, фейхоа, энергетик, арктик),",
+        "Darkside SABOTAGE Shishki (Сосна),",
+        "Black Burn Red Energy (Энергетик),",
+        "DEUS Pink skittles (Фруктово-ягодные конфеты),",
+        "Darkside Core Red Zeppelin (Крыжовник),",
+        "Xperience by Darkside #6 Energy Drift, 30 гр - энергетик",
+        "Overdose Kashmir Peach (Пряный персик),",
+        "Satyr Qirim Cha-Cha (Крымский Ориентал),",
+        "Sebero Arctic Mix Coco like (Коко лайк [Шоколад/ Молоко/ Кокос/Арктик]),",
+        "Хулиган Хард - Экзотическая газировка (КРИПТО),",
+        "Black Burn Миндальная груша,",
+        "Darkside SABOTAGE Indigo (Ягоды Сливки),",
+        "Табак для кальяна \"Trofimoff\"s\" burley Wintergreen (Мятная Приправа),",
+        "Darkside Shot Токийский (30 гр) - черника, клюква, маршмеллоу",
+        "Satyr Queen Anne's Revenge (Индийский берли),",
+        "Black Burn HiT #9 Маракуйя, груша, манго (Mango Tango),",
+        "Must Have Frosty,",
+        "Sapphire Crown с ароматом Пако Рабан (Pako Roban),",
+        "Must Have Клубничный Сорбет,",
+        "Табак для кальяна \"Trofimoff\"s\" no aroma Italia (Крепкая база, взрывная и темпераментная),",
+        "Black Burn HiT #18 Папайя, киви, лайм (Papaya Dance),",
+        "База Покрепче Роза (Rose),",
+        "База Полегче Цветы Груши (Pear Flower),",
+        "Dogma 100% Блэк Орхид,",
+        "Sebero Black с ароматом Цитрусовый лимонад,",
+        "Sebero с ароматом Кизиловая конфета (Red flag),",
+        "Jent Classic Line с ароматом Забава (Алоэ, Клубника, Киви),",
+        "Darkside SABOTAGE Bittersweet (Лимонный тоник),",
+        "Black Burn Яблоко, гранат, персик,",
+        "Darkside Shot Карибский (30 гр) - кокос, манго, печенье, клубника",
+        "Табак для кальяна \"Trofimoff\"s\" terror Finlandia Vanila (Ванильная водка с холодком),",
+        "Chabacco Medium Persimmon (Хурма),",
+        "Darkside SABOTAGE Kashmir (Кашмир),",
+        "Sapphire Crown с ароматом Green apple landysh (Зеленое яблоко ландыш),",
+        "Sebero Black с ароматом Шоколад сникерс (Snikers),",
+        "Sebero с ароматом Ягодный сорбет (Berry sorbet),",
+        "Satyr Ice tangerine (Ледяной мандарин),",
+        "Sapphire Crown с ароматом Matcha Cocos (Милкшейк матча и кокос),",
+        "Хулиган Хард - Ягоды в кокосе (АДЬЁС),",
+        "Sebero Arctic Mix Cucumber Sprite (Спрайт/огурец/лайм/арктик),",
+        "Dogma 100% Герлинад,",
+        "Sebero Arctic Mix Bubble Fruit (Бабл-гам, виноград, голубика, манго, арктик),",
+        "Sebero с ароматом Мороженое с шоколадной крошкой (Black&white),",
+        "DEUS Perfume GANYMEDE,",
+        "Black Burn Алматинская халва,",
+        "Dogma Андре Гигант,",
+        "Darkside Core Retro Apple (Красное яблоко),",
+        "Darkside Shot Гавайский (30 гр) - клубника, банан, сливки",
+        "Overdose Frustyle (Кактус-лайм),",
+        "Хулиган - Экзотическая газировка (КРИПТО),",
+        "Joy Pink gin (Малиновый джин),",
+        "CHOICE Lovender (Лавандовый мохито),",
+        "Chaba Mix Strawberry Mojito 2.0 (Клубничный Мохито),",
+        "Sebero с ароматом Грушевый фостер,",
+        "CHOICE Lady Killer (Арбуз, персик, маракуйя),",
+        "Sebero Arctic Mix Pop star (Арбуз, дыня, лайм, мята, арктик),",
+        "NАШ CIGAR - Сухофрукты,",
+        "Sebero Black с ароматом Парэчка (Смородиновый морс),",
+        "Must Have Yolka (Хвоя),",
+        "Sebero с ароматом Мармеладные зеленые мишки,",
+        "Chabacco Medium LE Martini Fiero (Мартини Фиеро),",
+        "Black Burn Juicy Smoothie (Тропический Смузи),",
+        "Satyr Ice Grape (Ледяной виноград),",
+        "Black Burn HiT #12 Манго, маракуйя, личи (Passion Cloud),",
+        "САРМА 360 Лёгкая Киндер шоколад,",
+        "Sebero Black с ароматом Йогурт персик-дыня,",
+        "Black Burn HiT #14 Клубника, персик, личи (Peach House),",
+        "Sebero Black с ароматом Мармеладные мишки (Gummy bear),",
+        "Darkside Core Mary Jane 2.0 (Мэри Джейн 2.0),",
+        "Dogma 100% П-А Бродлиф Секо,",
+        "Black Burn Red Kiwi (Красный киви),",
+        "Overdose Brumblebee (Клубника, ежевика, голубика),",
+        "Joy Jasmino (Зеленый чай, жасмин, лесные ягоды),",
+        "Overdose Wintergreen (Винтергрин),",
+        "Sebero с ароматом Папайя (Papaya),",
+        "Jent Classic Line c ароматом Follar (Фойар [Марь Иванна с крыжовником]),",
+        "Dogma 100% Смородина черная,",
+        "Sebero Arctic Mix Мороженое с васаби,",
+        "Must Have Rocketman (Клубника, Киви, Грейпфрут),",
+        "Darkside Shot Альпийский (30 гр) - меренга, сливки, ягоды",
+        "Black Burn Siberian Soda (Лимонад Байкал),",
+        "Satyr Ferra (Лошадиная Сила),",
+        "Overdose Coffee (Кофе),",
+        "Sebero с ароматом Мармеладные белые мишки,",
+        "DEUS TSAR,",
+        "Хулиган ПОП - Гранатовый апероль (Вайс Сити),",
+        "Must Have Sour Berries (Кислые Ягоды),",
+        "Spectrum Classic Line Crystal (Кристалл),",
+        "DEUS ULTIMA (Аромат грецкого ореха и имбиря),",
+        "BLISS Pink Shot (Грейпфрут, клубника, малина),",
+        "Sebero Black с ароматом Суница (Земляничный йогурт),",
+        "Take - Жасминовый чай,",
+        "Must Have Passion Plum (с ароматом Сливы и Маракуйи),",
+        "Сарма Торт Медовик,",
+        "Sebero Arctic Mix Fruit Smoothie (Манго/маракуйя/ананас/киви/арктик),",
+        "Sebero с ароматом Клубничная жвачка (Strawberry Gum),",
+        "Sebero Arctic Mix Lychee Juice (Сок личи, груша, персик, арктик),",
+        "Black Burn HiT #33 Брусника, малина, ёлка,",
+        "Must Have Garnet Grape (с ароматом Граната и Винограда),",
+        "Darkside Shot Пляжный (30 гр) - крем-сода, лимон, помело",
+        "Chabacco Mix Tropic Love (Тропик лав),",
+        "Black Burn HiT #16 Лайм, грейпфрут, апельсин (Citrus Rock),",
+        "Overdose Фанта Окинава,",
+        "Sebero с ароматом Сладкое молочко (Moloko),",
+        "Sapphire Crown с ароматом Go Bananas! (Банан),",
+        "CHOICE Mambo (Малиново-лимонная жвачка),",
+        "Joy Сладкая мятная жвачка,",
+        "Chaba Northern Berries (Северные Ягоды),",
+        "Sebero с ароматом Арктик (Arctic),",
+        "Darkside Shot Западный (30 гр) - кола, вишня, грейпфрут",
+        "Darkside Shot Пустынный (30 гр) - содовая, груша, фейхоа",
+        "Sebero Arctic Mix Summer Vibe (Малина, ревень, вестерн, арктик),",
+        "САРМА 360 Вишня,",
+        "Overdose Pomodoro Gose (Томатный гозе с чили),",
+        "Black Burn Клюквенный морс,",
+        "Хулиган - Шоколад с перцем (911),",
+        "Must Have Киви, яблоко, лайм,",
+        "Spectrum Classic Line Epic Mint (Мощная Мята),",
+        "Chabacco Medium Mulberry (Шелковица),",
+        "Dogma 100% Орбиткидз,",
+        "Табак для кальяна \"Trofimoff\"s\" no aroma Spirit,",
+        "DEUS Black Ji (Мороженое с шафраном),",
+        "Xperience by Darkside #6 Need for Spirit, 30 гр - лайм, текила",
+        "Chaba Mix Fruit ice (Фруктовый лед),",
+        "Overdose Samarkand Melon (Самаркандская дыня),",
+        "Darkside Shot Ягодный (30 гр) - ирга, вишня, грейпфрут",
+        "Black Burn HiT #15 Киви, гуава, маракуйя (Kiwi Groove),",
+        "Element Вода Сибирские ягоды (Siberry) Б,",
+        "DEUS Второе Высшее Тубус,",
+        "Must Have Cherry Juice (Вишнёвый Сок),",
+        "Sebero Black с ароматом Малиновый рафаэлло (Malinovyy rafaello),",
+        "Jent Alcohol Line с ароматом Лесная наливка (Малина, Клюква, Можжевельник),",
+        "Must Have Tipsy (Ягодный Коктейль),",
+        "Element Воздух Экзо (Ekzo) Б,",
+        "Dogma 100% Кубита Кармен,",
+        "NAШ White Фруктовый,",
+        "NАШ CIGAR - Апельсин,",
+        "Element Вода Чак-чак (Chak-chak) Б,",
+        "Табак для кальяна \"Trofimoff\"s\" burley Passion fruit (Маракуйя),",
+        "Black Burn HiT #17 Ром, лимон, лайм (Carribean Heavy),",
+        "Хулиган - Виноград изабелла (БЕЛЛА),",
+        "Табак для кальяна \"Trofimoff\"s\" burley Peche (Персик),",
+        "Darkside Core Starlime (Лайм),",
+        "Bonche Драконий Фрукт,",
+        "Spectrum Mix Line Tropicana (Ананас с кислинкой маракуйи),",
+        "Overdose Waffles (Вафли),",
+        "Xperience by Darkside #1 Turbo Tea, 120 гр - персик, кашмир",
+        "DEUS Perfume PSYCHEDELIC LOVE,",
+        "САРМА 360 Ананасовые кусочки,",
+        "Xperience by Darkside #6 Aperol Speed, 30 гр - апероль",
+        "Bonche Singapore Sling (Сингапур слинг),",
+        "DEUS YUZU (Юдзу),",
+        "Sebero с ароматом Ревень-Черная Смородина (Herbal Currant),",
+        "Spectrum Hard Line Gooseberry (Крыжовник),",
+        "NAШ Черемуха, Черника, Ромашка,",
+        "САРМА 360 Земляника,",
+        "Satyr BRILLIANT COLLECTION AQUA VITAE,",
+        "Spectrum Hard Line Watermelon (Арбуз),",
+        "Spectrum Medium Line Крапива ревень,",
+        "Xperience by Darkside #5 Maraschini, 30 гр - вишня, мартини",
+        "Darkside Shot Фруктовый (30 гр) - ананас, кактус, земляника",
+        "NAШ White Персик, Ягоды, Манго (Lady secret),",
+        "Хулиган ПОП - Апельсиновая мамба (Либерти),",
+        "Sebero Black с ароматом Дыня, Абрикос, Ваниль (M.A.V.),",
+        "Sebero с ароматом Бузина и морошка (Gentle berry),",
+        "Sebero с ароматом Пудинг (Pudding),",
+        "Bonche Пломбир,",
+        "Сарма Черёмуха,",
+        "Overdose Lotus Berry (Лотос, Вишня, Земляника),",
+        "Spectrum Medium Line Русская малина,",
+        "Element Вода Арбузный холс (Watermelon Holls) Б,",
+        "Spectrum Medium Line Cherry Juice (Вишневый сок),",
+        "Must Have Sour Apple (Кислое Яблоко),",
+        "Must Have Pearl Pool (Тропические Фрукты и Моринга),",
+        "Satyr Squirt (Лесной орех),",
+        "Spectrum Medium Line Village Apple (Садовое яблоко),",
+        "Black Burn TIK TAK (Драже из Детства),",
+        "Dogma 100% Криолло 98 Секо,",
+        "DEUS RED (Аромат цветочно-пудрового парфюма),",
+        "Xperience by Darkside #3 Aloha Ale, 30 гр - имбирь, газировка",
+        "Must Have Green Fizz (Кактус, Киви и Абсент),",
+        "Black Burn Raspberries (Спелая Лесная Малина),",
+        "Bonche New Year 2026 (Какао, кленовый сироп, корица),",
+        "Joy Black on Black (Кола, кофе),",
+        "Satyr White (Мягкие ориенталы),",
+        "Spectrum Hard Line Kiwano (Кивано),",
+        "Must Have Смородина, апельсин, виноград,",
+        "Must Have Alova (Алоэ и Розовая Гуава),",
+        "Sebero с ароматом Лимончелло (Limoncello),",
+        "Sebero Black с ароматом Красный скитлс (Red Skittles),",
+        "Spectrum Medium Line White Tea (Белый чай),",
+        "Spectrum Medium Line Lily Grape (Ландыш, Виноград),",
+        "Sebero с ароматом Тирамису (Tiramisu),",
+        "Satyr Cubus Rubus (Лесная Малина),",
+        "Starline Зеленый фреш,",
+        "Black Burn HiT #25 Груша, персик, ягоды (Pear Action),",
+        "DEUS Skittles (Кисло-сладкие конфеты),",
+        "Jent Herbal Line с ароматом Багульник - саган дайля (Labrador tea),",
+        "Jent Cigar Таежный морс,",
+        "DEUS Perfume HARDKOR,",
+        "Joy Red hot chili citrus (Цитрус, чили),",
+        "Bonche Desvall (Финиковый пирог),",
+        "Satyr Melissa (Мелисса),",
+        "Sebero с ароматом Кедровый орех (Pine nut),",
+        "Sebero с ароматом Ваниль (Vanilla),",
+        "Spectrum Classic Line Sorbet (Ягодный Сорбет),",
+        "Sebero с ароматом Малина (Raspberries),",
+        "База Покрепче Пудра (Powder),",
+        "Dogma 100% Мата Фина,",
+        "Dogma 100% Виллануэва ХС,",
+        "Satyr Распутная девка (Настоящий Берли),",
+        "Satyr Ice Lemon (Ледяной лимон),",
+        "Satyr Bom-Byao (Виноградная Газировка),",
+        "DEUS Peonies (Пионы),",
+        "Xperience by Darkside #3 Aloha Ale, 120 гр - имбирь, газировка",
+        "Darkside SABOTAGE Evil Lime (Йогурт с кислым лаймом),",
+        "Хулиган ПОП - Цветочная малина (Скуби),",
+        "Sebero с ароматом Стопка (Stopka),",
+        "BLISS Кислый ананас,",
+        "Element Вода Мороз (Moroz) Б,",
+        "Хулиган Хард - Виноград изабелла (БЕЛЛА),",
+        "Jent Herbal Line с ароматом Хвоя (Needles),",
+        "NAШ White Калина Рябина,",
+        "Sebero Black с ароматом Булочка с корицей (Cinnabun),",
+        "Hook 40 гр, Черноплодная рябина",
+        "NAШ Black Хреновуха,",
+        "Dogma 100% Персик без косточки,",
+        "Dogma 100% Баккара Руж,",
+        "Satyr Go! Go! (Малина, Ананас),",
+        "BLISS Love Shot (Маракуйя, Арбуз, Лимон, Холодок),",
+        "Hook 40 гр, Брамблберри",
+        "CHOICE Papa Peach (Мусс из папайи и персика),",
+        "Satyr Jungle (Ориентиал и азиатский берли),",
+        "Табак для кальяна \"Trofimoff\"s\" burley Yellow Lemon (Лимон),",
+        "Must Have Strawberry (Садовая Клубника),",
+        "Jent Cigar Беллини,",
+        "Bonche Вафли,",
+        "База Полегче Тархун (Tarragon),",
+        "Chabacco Mix Berry Hals (Ягодный Холс),",
+        "NAШ Персик,",
+        "DEUS Jasmine Pear (Груша с жасмином),",
+        "Сарма Мультифруктовый сок,",
+        "NAШ White Ёлки ягоды ананас,",
+        "Black Burn Bananini (Банан),",
+        "NAШ Папайя,",
+        "Табак для кальяна \"Trofimoff\"s\" burley Cantalupo (Дыня),",
+        "САРМА 360 Горная Лаванда,",
+        "Satyr Turbo (Апельсиновая шипучка),",
+        "BLISS Дыня,",
+        "Sebero Arctic Mix Электровиноград [Энергетик/Лайм/ Виноград],",
+        "Хулиган - Дыня с манго смузи (BALI),",
+        "САРМА 360 Маргарита,",
+        "Spectrum Classic Line Timelime (Лайм),",
+        "Spectrum Medium Line Кислая кола,",
+        "DEUS Perfume BLACK AFGANO,",
+        "Satyr Neft (Берли, вирджиния и ориенталы),",
+        "Spectrum Hard Line Lavender Kashmir (Лаванда, Кашмир),",
+        "Sebero с ароматом Медовая дыня (Honey melon),",
+        "Black Burn HiT #29 Киви, клубника, грейпфрут (Strawberry Nectar),",
+        "Spectrum Medium Line Juicy Orange (Сочный апельсин),",
+        "Табак для кальяна \"Trofimoff\"s\" burley Red currant (Красная смородина),",
+        "Сарма Мандарин,",
+        "Sapphire Crown с ароматом Blueberry Granola (Овсянка с черникой),",
+        "Spectrum Kitchen Line Trdelnik (Чешский Трдельник),",
+        "Spectrum Medium Line Honey Peach (Медовый персик),",
+        "Jent Cigar Шоколадная конфета с вишневым ликером,",
+        "Take - Блэк Афгано,",
+        "Табак для кальяна \"Trofimoff\"s\" burley Ruby Grapes (Рубиновый виноград),",
+        "Spectrum Classic Line Citrus Mix (Цитрусовый Микс),",
+        "Overdose Fantola (Тропическая газировка),",
+        "Табак для кальяна \"Trofimoff\"s\" no aroma limoncello (База на итальянском ликере лимончелло),",
+        "Overdose Gin Cucumber (Огуречный джин),",
+        "Sebero Arctic Mix Vanilla Fruit (Ваниль, кола, вишня, дыня, арктик),",
+        "Satyr КОЩЕЙ (Старицкая Земляника),",
+        "Overdose Walnut (Грецкий орех),",
+        "Хулиган ПОП - Мандариновая кола (Бэтс),",
+        "Joy Ежевичный лимонад,",
+        "Element Земля Вишнёвый холлс (Cherry Holls),",
+        "Sebero с ароматом Сочный персик (Juicy peach),",
+        "DEUS Tropic Soda (Аромат тропической газировки),",
+        "Element Вода Чак-чак (Chak-chak),",
+        "Xperience by Darkside #1 Grape & Furious, 30 гр - виноград, базилик",
+        "Black Burn Chupa Graper (Виноградный Чупа-Чупс),",
+        "Хулиган Хард - Черные ягоды (Black),",
+        "Black Burn Salak (Змеиный фрукт),",
+        "Black Burn HiT #28 Банан, сливки, ваниль (Banana Shake),",
+        "Хулиган - Ромовая баба (BA),",
+        "Black Burn HiT #26 Каламанси, огурец, киви (Kalamansi Fresh),",
+        "Хулиган ПОП - Тропический персик (Нео),",
+        "DEUS Pine (Пихта),",
+        "Satyr Platinum Gin Jutsu (Японский Стиль),",
+        "Табак для кальяна \"Trofimoff\"s\" burley Hazelhut (Грецкий орех),",
+        "BLISS Лайм,",
+        "Табак для кальяна \"Trofimoff\"s\" burley Crespino (Барбарис),",
+        "Element Воздух Дынный холс (Melon Holls) Б,",
+        "Sebero Black с ароматом Дикие ягоды (Wild Beries),",
+        "Sebero с ароматом Барбарис (Barberry),",
+        "Chabacco Mix Cherry Cola (Вишневая Кола),",
+        "Element Воздух Сгущенное молоко (Milky Mouse) Б,",
+        "Dogma 100% Плов,",
+        "Sebero Arctic Mix Sour Citrus (Лимон, вишня, ревень, апельсин, арктик),",
+        "NAШ Ёлки Ягоды Ананас,",
+        "Sebero с ароматом Цитрусовый шок (Very sour),",
+        "Sebero с ароматом Виноград (Grapes),",
+        "Chaba Ice Grape (Освежающий виноград),",
+        "Joy Tokyo Dream (Клубника Грейпфрут Малина Сакура),",
+        "САРМА 360 Лёгкая Тропический милкшейк,",
+        "Spectrum Hard Line Exotic Rush (Экзотический микс),",
+        "САРМА 360 Легкая Смородина,",
+        "NAШ White Сирень,",
+        "Black Burn HiT #30 Пепси, вишня, яблоко (Pepsi Cherry),",
+        "САРМА 360 Лёгкая Гуарана,",
+        "Табак для кальяна \"Trofimoff\"s\" terror Hurtleberry (Черная смородина, черника),",
+        "Element Земля Спелая черника (Mellow Blueberry) Б,",
+        "Sebero с ароматом Банан-Клубника (Banana - Strawberry),",
+        "Dogma 100% Манго без травы,",
+        "Jent Classic Line с ароматом Ананасовый шок (Joker),",
+        "САРМА 360 Лёгкая Лимончелло,",
+        "Dogma 100% К-Т Бродлиф,",
+        "Satyr BRILLIANT COLLECTION МОРЕ,",
+        "Bonche Irga (Ирга),",
+        "САРМА 360 Огуречный Лимонад,",
+        "Chaba Mix Peach-Lime (Персик-Лайм),",
+        "Chaba Mix Cactus Freestyle (Кактусовый фристайл),",
+        "Сарма Княженика,",
+        "Joy Виноградно-тропический шейк,",
+        "Spectrum Medium Line Tropic Chill (Ананас, Маракуйя),",
+        "Xperience by Darkside #2 PVP Corner, 30 гр - попкорн, карамель",
+        "Element Воздух Берримор (Berrymore) Б,",
+        "DEUS Sour Berries (Аромат кислых ягод),",
+        "BLISS Базилик,",
+        "Хулиган ПОП - Газировка виноград с алоэ (Гомер),",
+        "Satyr Worms (Мармеладные червячки),",
+        "Take - Клубничный милкшейк,",
+        "DEUS Melon (Дыня),",
+        "САРМА 360 Лёгкая Скиттлс,",
+        "Chabacco Medium Lemongrass (Лемонграсс),",
+        "NAШ Рамбутан,",
+        "Sebero Arctic Mix Cactus Pear (Кактус, груша, лимончелло, мята, арктик),",
+        "Sapphire Crown с ароматом Feijoa jam (Варенье из фейхоа),",
+        "NAШ Black Клубника,",
+        "Табак для кальяна \"Trofimoff\"s\" burley Coke (Кола),",
+        "Sapphire Crown с ароматом Ladan&Milk (Ладан и молоко),",
+        "Sebero Arctic Mix Jelly Fruit (Грейпфрут, бабл-гам, клубника, апельсин, арктик),",
+        "Dogma 100% Кубита Коламбия,",
+        "Satyr BRILLIANT COLLECTION №2 CUBITA COLOMBIA,",
+        "Spectrum Mix Line Acid Shake (Кислый Напиток),",
+        "Хулиган - Черные ягоды (Black),",
+        "Dogma 100% Сан Андрес,",
+        "Dogma 100% Криолло 98 Лихеро,",
+        "Satyr Platinum Collection Grinder (Шотландский Стиль),",
+        "Sapphire Crown с ароматом Mors (Ягодный морс),",
+        "Hook 200 гр, Брамблберри",
+        "Табак для кальяна \"Trofimoff\"s\" burley Kriek (Бельгийская вишня-черешня),",
+        "Sebero Arctic Mix Melon Ron do (Дынно-мятная конфета [Дыня /Мятная конфета/ Мед /Арктик]),",
+        "База Полегче Молоко (Milk),",
+        "Sebero с ароматом Смородиновые леденцы (Currant candy),",
+        "Spectrum Medium Line Дыня липа,",
+        "Sebero с ароматом Клубника (Strawberry),",
+        "Joy Tropicano (Ананас, лимон, маракуйя),",
+        "Spectrum Classic Line Ice Fruit Gum (Ледяная Фруктовая Жвачка),",
+        "Take - Яблоко и тонка,",
+        "NAШ Black Укроп,",
+        "Sebero Arctic Mix Banana donut (Банановый пончик с корицей),",
+        "Spectrum Medium Line Сладкая мята,",
+        "Black Burn HiT #31 Клюква, лайм, голубика,",
+        "BLISS Киви,",
+        "Take - Монталь,",
+        "Chabacco Mix Lemon Jelly Slices (Лимонные дольки),",
+        "Overdose Peach (Персик),",
+        "Spectrum Classic Line Cookies & Milk (Молочное Печенье),",
+        "Take - Оранж Сода,",
+        "Хулиган ПОП - Банановая клубника (Паучок),",
+        "Сарма Зеленый Крыжовник,",
+        "База Покрепче Мускус (Musk),",
+        "Satyr Chunga-Changa (Банан, папайя, йогурт),",
+        "Табак для кальяна \"Trofimoff\"s\" burley Wild strawberry (Дикая земляника),",
+        "Jent Alcohol Line с ароматом Голубые Гавайи (Blue Hawaii),",
+        "Chabacco Mix Pink jam (Фруктово-ягодный джем),",
+        "BLISS Малина,",
+        "Banger Pineapple Kiwi (Ананас-Киви),",
+        "Must Have Elderberry (Бузина),",
+        "NАШ CIGAR - Перу (Мёд, тропические фрукты),",
+        "Joy Caramella (Карамель и клубника),",
+        "Jent Cigar Без аромата,",
+        "Spectrum Medium Line Спелая папайя,",
+        "Element Вода Экзо (Ekzo) Б,",
+        "Black Burn HiT #35 Киви, клубника, ананас,",
+        "Take - Фруктовый чай,",
+        "NAШ Маракуйя Авокадо,",
+        "Satyr Tyanka (Зеленое манго),",
+        "Joy Green energy (Энергетик,киви,лайм),",
+        "Satyr Жар-Птица (Ирийские Леденцы),",
+        "Sebero Arctic Mix Tropic Berry (Клубника, личи, ревень, арктик),",
+        "Must Have Violet (Экзотический Сливочный Лимонад),",
+        "Сарма Сирень,",
+        "NAШ Black Леденцы,",
+        "BLISS Ягодный смузи,",
+        "Satyr Uncle Be (Томат),",
+        "САРМА 360 Персик,",
+        "Dogma 100% П-А Бродлиф Лихеро,",
+        "Spectrum Medium Line Banana (Спелый банан),",
+        "Bonche Pear (Груша),",
+        "Black Burn Фиалковый лимонад,",
+        "Сарма Миндальный батончик,",
+        "Spectrum Kitchen Line Herb Cheese (Творожный Сыр),",
+        "Black Burn HiT #19 Виноград, земляника, арбуз (Grape Rave) ,",
+        "Spectrum Classic Line Russian Raspberry (Малина-Клубника),",
+        "Chaba Mix Lemon-Mint (Лимон-Мята),",
+        "Chaba Mix Gummy Bears (Мармеладные мишки),",
+        "DEUS Pumpkin Pie (Аромат тыквенного пирога с миндалем),",
+        "САРМА 360 Джин,",
+        "Joy Orangelato (Апельсиновое мороженое),",
+        "Overdose Kashmir Citrus (Кашмир цитрус),",
+        "Sebero с ароматом Арбузно - Дынная Кола,",
+        "Хулиган Хард - Дыня с манго смузи (BALI),",
+        "Chabacco Medium Lemon-Lime 2.0 (Лимон-Лайм),",
+        "DEUS Violet Zephyr (Фиалковый зефир),",
+        "Hook 200 гр, Черноплодная рябина",
+        "Take - Шишки еловые,",
+        "Take - Смородиновый мохито,",
+        "NАШ CIGAR - Розмарин чабрец,",
+        "BLISS Манго,",
+        "Dogma 100% Башкирский мёд,",
+        "NAШ Гуанабана,",
+        "Sebero Black с ароматом Ананас-маракуйя (Juicy mix),",
+        "Табак для кальяна \"Trofimoff\"s\" cigarro Pepe,",
+        "NAШ Black Персик,",
+        "BLISS Кислая смородина,",
+        "Darkside Shot Островной (30 гр) - вишня, клюква, виски",
+        "Sebero с ароматом Молочный коктейль с земляникой,",
+        "Chaba Cranberries in powdered sugar (Клюква в сахарной пудре),",
+        "NAШ Белая Клубника,"
+      ],
+      "sources": [
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=2",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=3",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=4",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=5",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=6",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=7",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=8",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=9",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=10",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=11",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=12",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=13",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=14",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=15",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=16",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=17",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=18",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=19",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=20",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=21",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=22",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=23",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=24",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=25",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=26",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=27",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=28",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=29",
+        "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/?PAGEN_1=30"
+      ]
+    }
+  },
+  "moredyma": {
+    "flavors": [],
+    "sources": [],
+    "note": "ok",
+    "links": [
+      "https://moredyma.su/zhidkost-salt/tobacco-pipe/",
+      "https://moredyma.su/zhidkost-schelochnaya/tobacco-pipe/",
+      "https://moredyma.su/tabak-dlya-kalyana/",
+      "https://moredyma.su/tabak-dlya-kalyana/adalya/",
+      "https://moredyma.su/tabak-dlya-kalyana/afzal/",
+      "https://moredyma.su/tabak-dlya-kalyana/aircraft/",
+      "https://moredyma.su/tabak-dlya-kalyana/al-fakher/",
+      "https://moredyma.su/tabak-dlya-kalyana/badge/",
+      "https://moredyma.su/tabak-dlya-kalyana/banger/",
+      "https://moredyma.su/tabak-dlya-kalyana/black-burn/",
+      "https://moredyma.su/tabak-dlya-kalyana/blansh/",
+      "https://moredyma.su/tabak-dlya-kalyana/bliss/",
+      "https://moredyma.su/tabak-dlya-kalyana/bonche/",
+      "https://moredyma.su/tabak-dlya-kalyana/brusko/",
+      "https://moredyma.su/tabak-dlya-kalyana/burn/",
+      "https://moredyma.su/tabak-dlya-kalyana/codex-nubium/",
+      "https://moredyma.su/tabak-dlya-kalyana/daily-hookah/",
+      "https://moredyma.su/tabak-dlya-kalyana/dark-side/",
+      "https://moredyma.su/tabak-dlya-kalyana/deus/",
+      "https://moredyma.su/tabak-dlya-kalyana/dogma/",
+      "https://moredyma.su/tabak-dlya-kalyana/duft/",
+      "https://moredyma.su/tabak-dlya-kalyana/element/",
+      "https://moredyma.su/tabak-dlya-kalyana/endorfin/",
+      "https://moredyma.su/tabak-dlya-kalyana/fake/",
+      "https://moredyma.su/tabak-dlya-kalyana/frigate/",
+      "https://moredyma.su/tabak-dlya-kalyana/helix/",
+      "https://moredyma.su/tabak-dlya-kalyana/jent/",
+      "https://moredyma.su/tabak-dlya-kalyana/joy-ru-10/",
+      "https://moredyma.su/tabak-dlya-kalyana/khan-burley/",
+      "https://moredyma.su/tabak-dlya-kalyana/kraken/",
+      "https://moredyma.su/tabak-dlya-kalyana/leteam/",
+      "https://moredyma.su/tabak-dlya-kalyana/morpheus/",
+      "https://moredyma.su/tabak-dlya-kalyana/mr-brew/",
+      "https://moredyma.su/tabak-dlya-kalyana/muassel/",
+      "https://moredyma.su/tabak-dlya-kalyana/must-have/",
+      "https://moredyma.su/tabak-dlya-kalyana/nash/",
+      "https://moredyma.su/tabak-dlya-kalyana/oven/",
+      "https://moredyma.su/tabak-dlya-kalyana/overdose-25-gr/",
+      "https://moredyma.su/tabak-dlya-kalyana/palitra/",
+      "https://moredyma.su/tabak-dlya-kalyana/sapphire-crown/"
+    ]
+  },
+  "sevasSearch": {
+    "WTO": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=WTO&post_type=product"
+      ],
+      "count": 0
+    },
+    "MattPear": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=MattPear&post_type=product"
+      ],
+      "count": 0
+    },
+    "Helix": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Helix&post_type=product"
+      ],
+      "count": 0
+    },
+    "Aircraft": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Aircraft&post_type=product"
+      ],
+      "count": 0
+    },
+    "Iskra": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Iskra&post_type=product"
+      ],
+      "count": 0
+    },
+    "Funel": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Funel&post_type=product"
+      ],
+      "count": 0
+    },
+    "Dead Horse": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Dead%20Horse&post_type=product"
+      ],
+      "count": 0
+    },
+    "Cobra": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Cobra&post_type=product"
+      ],
+      "count": 0
+    },
+    "Smoke Angels": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Smoke%20Angels&post_type=product"
+      ],
+      "count": 0
+    },
+    "Tangiers": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Tangiers&post_type=product"
+      ],
+      "count": 0
+    },
+    "Al Fakher": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Al%20Fakher&post_type=product"
+      ],
+      "count": 0
+    },
+    "Social Smoke": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Social%20Smoke&post_type=product"
+      ],
+      "count": 0
+    },
+    "Blackleaf": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Blackleaf&post_type=product"
+      ],
+      "count": 0
+    },
+    "Unity": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Unity&post_type=product"
+      ],
+      "count": 0
+    },
+    "Craftium": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Craftium&post_type=product"
+      ],
+      "count": 0
+    },
+    "Northern Forest": {
+      "flavors": [],
+      "sources": [
+        "https://sevas-market.ru/?s=Northern%20Forest&post_type=product"
+      ],
+      "count": 0
+    }
+  }
+}

@@ -78,6 +78,9 @@ export function importCatalog(
       flavorNotes: [...new Set([...existing.flavorNotes, ...item.flavorNotes])],
       lastVerifiedAt: item.lastVerifiedAt || now,
       sourceUrl: item.sourceUrl || existing.sourceUrl,
+      sources: item.sources?.length
+        ? [...item.sources]
+        : existing.sources,
     })
     updated++
   }

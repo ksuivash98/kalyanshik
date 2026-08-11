@@ -10,7 +10,7 @@ for (const t of CATALOG_DB.tobaccos) {
 const rows = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
 const maxName = Math.max(...rows.map(([n]) => n.length), 8)
 
-console.log("HOOKAH MIX CATALOG STATS\n")
+console.log("HOOKAH MIX — RUSSIAN CATALOG STATS\n")
 for (const [name, count] of rows) {
   console.log(`${name.padEnd(maxName + 2)}${count}`)
 }

@@ -9,6 +9,20 @@ export type BrandRegion =
 
 export type TobaccoStatus = "ACTIVE" | "DISCONTINUED" | "LIMITED" | "UNKNOWN"
 
+export type TobaccoSourceType =
+  | "MANUFACTURER"
+  | "DISTRIBUTOR"
+  | "RUSSIAN_STORE"
+  | "RUSSIAN_CATALOG"
+
+export type TobaccoSource = {
+  url: string
+  domain: string
+  sourceType: TobaccoSourceType
+  /** ISO date YYYY-MM-DD */
+  checkedAt: string
+}
+
 export type ProfileSource = "OFFICIAL" | "ESTIMATED" | "USER" | "UNKNOWN"
 
 export type FlavorCategory =
@@ -81,6 +95,8 @@ export type TobaccoSeed = {
   discontinued: boolean
   limitedEdition: boolean
   releaseYear: number | null
+  sources: TobaccoSource[]
+  /** @deprecated use sources — first URL for UI compatibility */
   sourceUrl: string
   lastVerifiedAt: string
   active: boolean

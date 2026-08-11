@@ -1,0 +1,78 @@
+﻿Duft Aiwa — Айва
+Duft Apple Candy — Яблочная Конфета
+Duft Baked Apples — Печеные Яблоки
+Duft Banana Gum — Банановая Жвачка
+Duft Barberry — Барбарис
+Duft Berry Blast — Ягодный Коктейль
+Duft Black Currant — Чёрная Смородина
+Duft Blueberry — Черника
+Duft Boomer — Арбузно-Дынная Жвачка
+Duft Brownie — Брауни
+Duft Cactus Jack — Кактус
+Duft Canada Dry — Имбирный Эль
+Duft Cane Mint — Перечная Мята
+Duft Caramel Pudding — Карамельный Пудинг
+Duft Chai Latte — Чай Латте
+Duft Cheesecake — Чизкейк
+Duft Cherry Juice — Вишнёвый Сок
+Duft Cinnamon Cake — Пирог с Корицей
+Duft Coconut — Кокос
+Duft Cola Nova — Классическая Кола
+Duft Cranberry — Клюква
+Duft Cucumberita — Огуречный Лимонад
+Duft Dragon Fruit — Драконий Фрукт
+Duft Elderberry — Бузина
+Duft Feijoa — Фейхоа
+Duft Fir Efir — Фир Эфир
+Duft Freeze — Заморозка
+Duft Goa Mango — Манго
+Duft Goozeberry — Крыжовник
+Duft Grape Fizz — Виноград
+Duft Green Shake — Киви, Яблоко, Базилик
+Duft Guanabana — Гуанабана
+Duft Guava Mama — Гуава
+Duft Hawaii Sour — Кислые Гавайи
+Duft Hazel Nut — Орех
+Duft Heavy Melon — Дыня
+Duft Honey Holls — Медовый Холс
+Duft Ice Lemon Mint — Ледяной Лимон с Мятой
+Duft Inzhir — Инжир
+Duft Iron Bro — Айрон Брю
+Duft Kiwi Smoothie — Киви Смузи
+Duft Kumquat — Кумкват
+Duft Lazer Cola — Кола
+Duft Lemon Waffle — Лимонные Вафли
+Duft Lime Lemon — Лайм с Лимоном
+Duft Limoncello — Лимончелло
+Duft Lychee — Личи
+Duft Mango Lassi — Манго
+Duft Maple Syrup — Кленовый Сироп
+Duft Maracuja — Маракуйя
+Duft Maraschino Cherry — Мараскиновая Вишня
+Duft Oblepiha — Облепиха
+Duft Orange Zest — Апельсин
+Duft Papaya — Папайя
+Duft Peach Iced Tea — Персиковый Чай со Льдом
+Duft Pear Jam — Грушевый Джем
+Duft Pineapple — Ананас
+Duft Pink Grapefruit — Грейпфрут
+Duft Pomegranate — Гранат
+Duft Pomelo — Помело
+Duft Punkman — Панкмен
+Duft Rafiki — Рафики
+Duft Raspberry — Малина
+Duft Rasta Cola — Раста Кола
+Duft Red Currant — Красная Смородина
+Duft Red Energy — Красная Энергия
+Duft Root Beer — Рутбир
+Duft Sour Cherry — Кислая Вишня
+Duft Sour Peach — Персик
+Duft Strong Black Currant — Чёрная Смородина
+Duft Strong Papaya — Папайя
+Duft Strong Pineapple — Ананас
+Duft Strong Pomegranate — Гранат
+Duft Strong Raspberry — Малина
+Duft Strong Watermelon — Арбуз
+Duft Tarhun — Тархун
+Duft Thai Power — Тайская Сила
+Duft The Hatters Aperol Spritz — Апероль Шприц

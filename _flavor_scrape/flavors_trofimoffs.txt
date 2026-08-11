@@ -1,0 +1,74 @@
+﻿Trofimoffs Burley Abricot — Абрикос
+Trofimoffs Burley Base — База
+Trofimoffs Burley Beileys — Бейлис
+Trofimoffs Burley Cashmere Guava — Гуава Кашмир
+Trofimoffs Burley Cashmere Nectarine — Нектарин Кашмир
+Trofimoffs Burley Cocos — Кокос
+Trofimoffs Burley Coke — Кола
+Trofimoffs Burley Cookies — Печенье
+Trofimoffs Burley Crespino — Барбарис
+Trofimoffs Burley Dark Plum — Чернослив
+Trofimoffs Burley Double Apple — Двойное Яблоко
+Trofimoffs Burley Elder Flowers — Бузина Цветы
+Trofimoffs Burley Ginger Ale — Имбирный Эль
+Trofimoffs Burley Gingerbread — Пряник
+Trofimoffs Burley Grapefruit — Грейпфрут
+Trofimoffs Burley Green Apple — Зеленое Яблоко
+Trofimoffs Burley Green Tea — Зеленый Чай
+Trofimoffs Burley Hurtleberry — Черная Смородина
+Trofimoffs Burley Jasminum — Жасмин
+Trofimoffs Burley Kiwi — Киви
+Trofimoffs Burley Kriek — Вишневое Пиво
+Trofimoffs Burley Lavander — Лаванда
+Trofimoffs Burley Limonata — Итальянский Аперитив
+Trofimoffs Burley Mangifera — Манго
+Trofimoffs Burley Mint — Мята
+Trofimoffs Burley Nobilis — Cосна
+Trofimoffs Burley Nurr — Гранат
+Trofimoffs Burley Old School Orange — Апельсин
+Trofimoffs Burley Opuntia Pear — Кактусовая Груша
+Trofimoffs Burley Pan Banan — Пан Банан
+Trofimoffs Burley Peach — Персик
+Trofimoffs Burley Pineapple — Ананас
+Trofimoffs Burley Pop Corn — Попкорн
+Trofimoffs Burley Red Currant — Красная Смородина
+Trofimoffs Burley Regan — Красный Базилик
+Trofimoffs Burley Rhubarb — Ревень
+Trofimoffs Burley Ron — Ром
+Trofimoffs Burley Ruby Grapes — Виноград
+Trofimoffs Burley Sri Lanka — Шри Ланка
+Trofimoffs Burley Sujuk — Колбаса со Специями
+Trofimoffs Burley Tangerine — Мандарин
+Trofimoffs Burley The Rose — Роза
+Trofimoffs Burley Watermelon — Арбуз
+Trofimoffs Burley Wild Strawberry — Земляника
+Trofimoffs Burley Wintergreen — Мятная Приправа
+Trofimoffs Burley Yellow Lemon — Желтый Лимон
+Trofimoffs Cigarro Connecticut — Конектикут
+Trofimoffs Cigarro Crio — Крио
+Trofimoffs Cigarro Drama — Драма
+Trofimoffs Cigarro Pepe — Пепе
+Trofimoffs No Aroma Anejo — Аньехо
+Trofimoffs No Aroma Cognac — Коньяк
+Trofimoffs No Aroma Italia — Италия
+Trofimoffs No Aroma Jenever — Женевер
+Trofimoffs No Aroma Like Zaghoul — Крепкий Букет с Нотками Чернослива
+Trofimoffs No Aroma Limoncello — Лимончелло
+Trofimoffs No Aroma Ortica — Пиво с ванилью
+Trofimoffs No Aroma Shurale — Бальзам
+Trofimoffs No Aroma Spirit — Спирит
+Trofimoffs No Aroma Virgin — Вирджиния
+Trofimoffs Terror Abricot — Абрикос
+Trofimoffs Terror Beileys — Бейлис
+Trofimoffs Terror Cavendish — Кавендиш
+Trofimoffs Terror Coke — Кола
+Trofimoffs Terror Crespino — Барбарис
+Trofimoffs Terror Dark Plum — Чернослив
+Trofimoffs Terror Finlandia Vanilla — Водка с Ванилью
+Trofimoffs Terror Hurtleberry — Черная Смородина
+Trofimoffs Terror Kriek — Крик
+Trofimoffs Terror Mangifera — Сливочный Манго
+Trofimoffs Terror Old School Orange — Апельсин
+Trofimoffs Terror Pineapple — Ананас
+Trofimoffs Terror Red Currant — Красная Смородина
+Trofimoffs Terror Wild Strawberry — Земляника

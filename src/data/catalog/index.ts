@@ -1,56 +1,103 @@
 import { BRANDS } from "./brands"
 import { FLAVOR_TAGS } from "./flavor-tags"
 import { ADALYA_TOBACCOS } from "./tobaccos/adalya"
+import { AIRCRAFT_TOBACCOS } from "./tobaccos/aircraft"
 import { AL_FAKHER_TOBACCOS } from "./tobaccos/al-fakher"
-import { AZURE_TOBACCOS } from "./tobaccos/azure"
+import { BANGER_TOBACCOS } from "./tobaccos/banger"
 import { BLACKBURN_TOBACCOS } from "./tobaccos/blackburn"
+import { BLISS_TOBACCOS } from "./tobaccos/bliss"
 import { BONCHE_TOBACCOS } from "./tobaccos/bonche"
+import { BRUSKO_TOBACCOS } from "./tobaccos/brusko"
 import { CHABACCO_TOBACCOS } from "./tobaccos/chabacco"
+import { COBRA_TOBACCOS } from "./tobaccos/cobra"
 import { DAILY_HOOKAH_TOBACCOS } from "./tobaccos/daily-hookah"
 import { DARKSIDE_TOBACCOS } from "./tobaccos/darkside"
+import { DEUS_TOBACCOS } from "./tobaccos/deus"
+import { DOGMA_TOBACCOS } from "./tobaccos/dogma"
 import { DUFT_TOBACCOS } from "./tobaccos/duft"
 import { ELEMENT_TOBACCOS } from "./tobaccos/element"
-import { FUMARI_TOBACCOS } from "./tobaccos/fumari"
+import { FAKE_TOBACCOS } from "./tobaccos/fake"
+import { HELIX_TOBACCOS } from "./tobaccos/helix"
+import { HLGN_TOBACCOS } from "./tobaccos/hlgn"
+import { HULIGAN_TOBACCOS } from "./tobaccos/huligan"
 import { JAM_TOBACCOS } from "./tobaccos/jam"
-import { JIBIAR_TOBACCOS } from "./tobaccos/jibiar"
+import { ISKRA_TOBACCOS } from "./tobaccos/iskra"
+import { JENT_TOBACCOS } from "./tobaccos/jent"
+import { JOY_TOBACCOS } from "./tobaccos/joy"
+import { KRAKEN_TOBACCOS } from "./tobaccos/kraken"
+import { MOLODOST_TOBACCOS } from "./tobaccos/molodost"
+import { MORPHEUS_TOBACCOS } from "./tobaccos/morpheus"
+import { MATTPEAR_TOBACCOS } from "./tobaccos/mattpear"
 import { MUSTHAVE_TOBACCOS } from "./tobaccos/musthave"
-import { OVERDOZZ_TOBACCOS } from "./tobaccos/overdozz"
+import { NASH_TOBACCOS } from "./tobaccos/nash"
+import { OVERDOSE_TOBACCOS } from "./tobaccos/overdose"
+import { PALITRA_TOBACCOS } from "./tobaccos/palitra"
+import { SAPPHIRE_CROWN_TOBACCOS } from "./tobaccos/sapphire-crown"
+import { SARMA_TOBACCOS } from "./tobaccos/sarma"
 import { SATYR_TOBACCOS } from "./tobaccos/satyr"
 import { SEBERO_TOBACCOS } from "./tobaccos/sebero"
 import { SERBETLI_TOBACCOS } from "./tobaccos/serbetli"
-import { SOCIAL_SMOKE_TOBACCOS } from "./tobaccos/social-smoke"
+import { SEVERNYY_TOBACCOS } from "./tobaccos/severnyy"
+import { SMOKE_ANGELS_TOBACCOS } from "./tobaccos/smoke-angels"
+import { SNOBLESS_TOBACCOS } from "./tobaccos/snobless"
 import { SPECTRUM_TOBACCOS } from "./tobaccos/spectrum"
 import { STARLINE_TOBACCOS } from "./tobaccos/starline"
+import { TAKE_TOBACCOS } from "./tobaccos/take"
 import { TANGIERS_TOBACCOS } from "./tobaccos/tangiers"
-import { ZOMO_TOBACCOS } from "./tobaccos/zomo"
+import { TROFIMOFF_TOBACCOS } from "./tobaccos/trofimoff"
+import { WTO_TOBACCOS } from "./tobaccos/wto"
+import { BRAND_COMPLETENESS } from "./brand-completeness"
 import { CatalogDatabase, TobaccoFlavorProfile, TobaccoSeed } from "@/types/catalog"
 import { dedupeByBrandName } from "@/lib/catalog/deduplicator"
 import { validateCatalog } from "@/lib/catalog/validator"
 
 const ALL_TOBACCOS: TobaccoSeed[] = dedupeByBrandName([
-  ...DARKSIDE_TOBACCOS,
-  ...MUSTHAVE_TOBACCOS,
-  ...BLACKBURN_TOBACCOS,
-  ...ELEMENT_TOBACCOS,
-  ...DUFT_TOBACCOS,
-  ...SEBERO_TOBACCOS,
-  ...CHABACCO_TOBACCOS,
-  ...SPECTRUM_TOBACCOS,
-  ...SATYR_TOBACCOS,
-  ...DAILY_HOOKAH_TOBACCOS,
-  ...BONCHE_TOBACCOS,
-  ...STARLINE_TOBACCOS,
-  ...OVERDOZZ_TOBACCOS,
-  ...JAM_TOBACCOS,
-  ...AL_FAKHER_TOBACCOS,
   ...ADALYA_TOBACCOS,
+  ...AIRCRAFT_TOBACCOS,
+  ...AL_FAKHER_TOBACCOS,
+  ...BANGER_TOBACCOS,
+  ...BLACKBURN_TOBACCOS,
+  ...BLISS_TOBACCOS,
+  ...BONCHE_TOBACCOS,
+  ...BRUSKO_TOBACCOS,
+  ...CHABACCO_TOBACCOS,
+  ...COBRA_TOBACCOS,
+  ...DAILY_HOOKAH_TOBACCOS,
+  ...DARKSIDE_TOBACCOS,
+  ...DEUS_TOBACCOS,
+  ...DOGMA_TOBACCOS,
+  ...DUFT_TOBACCOS,
+  ...ELEMENT_TOBACCOS,
+  ...FAKE_TOBACCOS,
+  ...HELIX_TOBACCOS,
+  ...HLGN_TOBACCOS,
+  ...HULIGAN_TOBACCOS,
+  ...JAM_TOBACCOS,
+  ...ISKRA_TOBACCOS,
+  ...JENT_TOBACCOS,
+  ...JOY_TOBACCOS,
+  ...KRAKEN_TOBACCOS,
+  ...MOLODOST_TOBACCOS,
+  ...MORPHEUS_TOBACCOS,
+  ...MATTPEAR_TOBACCOS,
+  ...MUSTHAVE_TOBACCOS,
+  ...NASH_TOBACCOS,
+  ...OVERDOSE_TOBACCOS,
+  ...PALITRA_TOBACCOS,
+  ...SAPPHIRE_CROWN_TOBACCOS,
+  ...SARMA_TOBACCOS,
+  ...SATYR_TOBACCOS,
+  ...SEBERO_TOBACCOS,
   ...SERBETLI_TOBACCOS,
+  ...SEVERNYY_TOBACCOS,
+  ...SMOKE_ANGELS_TOBACCOS,
+  ...SNOBLESS_TOBACCOS,
+  ...SPECTRUM_TOBACCOS,
+  ...STARLINE_TOBACCOS,
+  ...TAKE_TOBACCOS,
   ...TANGIERS_TOBACCOS,
-  ...FUMARI_TOBACCOS,
-  ...AZURE_TOBACCOS,
-  ...SOCIAL_SMOKE_TOBACCOS,
-  ...ZOMO_TOBACCOS,
-  ...JIBIAR_TOBACCOS,
+  ...TROFIMOFF_TOBACCOS,
+  ...WTO_TOBACCOS,
 ])
 
 export const CATALOG_DB: CatalogDatabase = {
@@ -60,30 +107,19 @@ export const CATALOG_DB: CatalogDatabase = {
   meta: {
     generatedAt: "2026-08-11",
     sources: [
-      "https://hookahstuff.com/collections/darkside-core-line-hookah-shisha-tobacco",
+      "https://sevas-market.ru/product-category/tabak-dlya-kalyana/",
+      "https://smokemaster.ru/shop/tabak-dlya-kalyana/",
+      "https://justfreid.ru/catalog/tabak/",
       "https://musthave.ru/category/tabak-dlya-kalyana/",
-      "https://en.blckburn.com/",
-      "https://en.element-tobacco.ru/tobacco",
-      "https://kalyan-expert.ru/",
-      "https://smokedex.info/en/shisha/brand/spectrum",
-      "https://worldhookahmarket.com/",
-      "http://4kalyans.ru/tabak/daily-hookah-2.html",
-      "https://hookahland.ae/Shop?Filters.BrandSlug=starline-tobacco-blonde-leaf-shisha",
-      "https://www.alfakher.com/products-usa",
-      "https://www.fumari.com/official-hookah-flavors/",
-      "https://b2hookah.com/products/serbetli-shisha-tobacco",
-      "https://hookahministry.com/categories/tangiers-hookah-tobacco-noir-line-medium-nicotine-content-250-gr",
-      "https://hookahjunkie.com/products/azure-black-line-250-gram",
-      "https://socialsmoke.com/pages/hookah-tobacco",
-      "https://utopiaclouds.com/products/zomo",
-      "https://www.jibiartobacco.us/catalog/",
-      "https://jammtobacco.com/jam",
-      "https://www.texashookah.com/overdozz-shisha-200g.html",
+      "https://element-tobacco.ru/tobacco",
+      "https://moredyma.su/tabak-dlya-kalyana/",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/",
     ],
   },
 }
 
 export const CATALOG_VALIDATION = validateCatalog(CATALOG_DB)
+export { BRAND_COMPLETENESS }
 
 export function getBrandById(id: string) {
   return CATALOG_DB.brands.find((b) => b.id === id)
@@ -117,7 +153,7 @@ export function toRecommendationProfile(
   }
 }
 
-/** @deprecated use CATALOG_DB — compatibility shim for older imports */
+/** @deprecated use CATALOG_DB */
 export const CATALOG = CATALOG_DB.tobaccos.map((t) => {
   const brand = getBrandById(t.brandId)
   const profile = toRecommendationProfile(t)
@@ -141,14 +177,14 @@ export const CATALOG = CATALOG_DB.tobaccos.map((t) => {
 })
 
 export const STARTER_COLLECTION_IDS = [
-  "darkside-mango-lassi",
-  "darkside-cola",
-  "darkside-bananapapa",
-  "musthave-banana-mama",
-  "musthave-pineapple-rings",
-  "musthave-nord-star",
-  "blackburn-rising-star",
-  "blackburn-cane-mint",
+  "darkside-core-mango-lassi",
+  "darkside-core-cola",
+  "darkside-core-bananapapa",
+  "musthave-classic-banana-mama",
+  "musthave-classic-pineapple-rings",
+  "musthave-classic-nord-star",
+  "blackburn-classic-rising-star",
+  "blackburn-classic-cane-mint",
 ].filter((id) => CATALOG_DB.tobaccos.some((t) => t.id === id))
 
 export function getBrands() {

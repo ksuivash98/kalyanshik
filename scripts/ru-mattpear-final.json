@@ -1,0 +1,591 @@
+[
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Apple Twins",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Apricot",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Banana Ice Dream",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Bitter Lemon",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Black Yagoda",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Bottle rise",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Cherry Gum",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Chocco Morocco",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Cinna Boom",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Cinnaboom",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Citrus Cooler",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Dr Cool",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Easy Breezee",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Feya Ho",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Ginger Feel",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Ginger meeting",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Granat",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Grape Cong",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Green Lemon",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "GRETSKY",
+    "sources": [
+      "https://www.mykalyan.ru/shop/tabak/tabak-mattpear/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Ice GrannySmit",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Kari Mango",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=3"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Kretek",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "La La Laim",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Lemon Waff",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Love Rushka",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Man Go",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Mara Quya",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=3"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Monkey Nuts",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Root Beer",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Sinika",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=3",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Sweet Kee Wee",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Tangerine",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Tropic Honey",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Classic",
+    "name": "Yagoda",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/?PAGEN_1=2"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Crazy",
+    "name": "Bottle Rise",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Crazy",
+    "name": "Bottle Rise'",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Crazy",
+    "name": "Ginger Meeting",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Crazy",
+    "name": "Ginger Meeting'",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Crazy",
+    "name": "Guava Apes",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Crazy",
+    "name": "Guava Apes'",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Crazy",
+    "name": "Pumpie Tea",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Crazy",
+    "name": "Pumpkin Blood",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Crazy",
+    "name": "Pumpkin Blood'",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Hallz",
+    "name": "Hallzzz",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Old School",
+    "name": "Banana Ice Dream",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Old School",
+    "name": "Banana Ice Dream'",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Old School",
+    "name": "Chocco Morocco",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Old School",
+    "name": "Chocco Morocco'",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Old School",
+    "name": "Grape Cong",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Old School",
+    "name": "Grape Cong'",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Old School",
+    "name": "Melony Beach",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Old School",
+    "name": "Melony Beach'",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Old School",
+    "name": "WaterLemon",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Old School",
+    "name": "WaterLemon'",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Pop",
+    "name": "Pink Ring",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Pop",
+    "name": "Pink Ring'",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Pop",
+    "name": "POP Suncake",
+    "sources": [
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/mattpear_1/"
+    ],
+    "status": "UNKNOWN"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Pop",
+    "name": "Red Pops",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Pop",
+    "name": "Red Pops'",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Pop",
+    "name": "Rum Babe",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Pop",
+    "name": "Rum Babe'",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Pop",
+    "name": "Sun Cake",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  },
+  {
+    "brandId": "mattpear",
+    "line": "Pop",
+    "name": "Sun Cake'",
+    "sources": [
+      "https://hookahset.ru/catalog/tabak-matt-pear"
+    ],
+    "status": "ACTIVE"
+  }
+]

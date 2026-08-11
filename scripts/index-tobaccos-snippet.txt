@@ -1,0 +1,93 @@
+import { ADALYA_TOBACCOS } from "./tobaccos/adalya"
+import { AIRCRAFT_TOBACCOS } from "./tobaccos/aircraft"
+import { AL_FAKHER_TOBACCOS } from "./tobaccos/al-fakher"
+import { BANGER_TOBACCOS } from "./tobaccos/banger"
+import { BLACKBURN_TOBACCOS } from "./tobaccos/blackburn"
+import { BLISS_TOBACCOS } from "./tobaccos/bliss"
+import { BONCHE_TOBACCOS } from "./tobaccos/bonche"
+import { BRUSKO_TOBACCOS } from "./tobaccos/brusko"
+import { CHABACCO_TOBACCOS } from "./tobaccos/chabacco"
+import { COBRA_TOBACCOS } from "./tobaccos/cobra"
+import { DAILY_HOOKAH_TOBACCOS } from "./tobaccos/daily-hookah"
+import { DARKSIDE_TOBACCOS } from "./tobaccos/darkside"
+import { DEUS_TOBACCOS } from "./tobaccos/deus"
+import { DOGMA_TOBACCOS } from "./tobaccos/dogma"
+import { DUFT_TOBACCOS } from "./tobaccos/duft"
+import { ELEMENT_TOBACCOS } from "./tobaccos/element"
+import { FAKE_TOBACCOS } from "./tobaccos/fake"
+import { HELIX_TOBACCOS } from "./tobaccos/helix"
+import { HLGN_TOBACCOS } from "./tobaccos/hlgn"
+import { HULIGAN_TOBACCOS } from "./tobaccos/huligan"
+import { JAM_TOBACCOS } from "./tobaccos/jam"
+import { JENT_TOBACCOS } from "./tobaccos/jent"
+import { JOY_TOBACCOS } from "./tobaccos/joy"
+import { KRAKEN_TOBACCOS } from "./tobaccos/kraken"
+import { MOLODOST_TOBACCOS } from "./tobaccos/molodost"
+import { MORPHEUS_TOBACCOS } from "./tobaccos/morpheus"
+import { MUSTHAVE_TOBACCOS } from "./tobaccos/musthave"
+import { NASH_TOBACCOS } from "./tobaccos/nash"
+import { NUR_TOBACCOS } from "./tobaccos/nur"
+import { OVERDOSE_TOBACCOS } from "./tobaccos/overdose"
+import { PALITRA_TOBACCOS } from "./tobaccos/palitra"
+import { SAPPHIRE_CROWN_TOBACCOS } from "./tobaccos/sapphire-crown"
+import { SARMA_TOBACCOS } from "./tobaccos/sarma"
+import { SATYR_TOBACCOS } from "./tobaccos/satyr"
+import { SEBERO_TOBACCOS } from "./tobaccos/sebero"
+import { SERBETLI_TOBACCOS } from "./tobaccos/serbetli"
+import { SEVERNYY_TOBACCOS } from "./tobaccos/severnyy"
+import { SMOKE_ANGELS_TOBACCOS } from "./tobaccos/smoke-angels"
+import { SNOBLESS_TOBACCOS } from "./tobaccos/snobless"
+import { SPECTRUM_TOBACCOS } from "./tobaccos/spectrum"
+import { STARLINE_TOBACCOS } from "./tobaccos/starline"
+import { TAKE_TOBACCOS } from "./tobaccos/take"
+import { TANGIERS_TOBACCOS } from "./tobaccos/tangiers"
+import { TROFIMOFF_TOBACCOS } from "./tobaccos/trofimoff"
+import { WTO_TOBACCOS } from "./tobaccos/wto"
+
+const ALL_TOBACCOS = dedupeByBrandName([
+  ...ADALYA_TOBACCOS,
+  ...AIRCRAFT_TOBACCOS,
+  ...AL_FAKHER_TOBACCOS,
+  ...BANGER_TOBACCOS,
+  ...BLACKBURN_TOBACCOS,
+  ...BLISS_TOBACCOS,
+  ...BONCHE_TOBACCOS,
+  ...BRUSKO_TOBACCOS,
+  ...CHABACCO_TOBACCOS,
+  ...COBRA_TOBACCOS,
+  ...DAILY_HOOKAH_TOBACCOS,
+  ...DARKSIDE_TOBACCOS,
+  ...DEUS_TOBACCOS,
+  ...DOGMA_TOBACCOS,
+  ...DUFT_TOBACCOS,
+  ...ELEMENT_TOBACCOS,
+  ...FAKE_TOBACCOS,
+  ...HELIX_TOBACCOS,
+  ...HLGN_TOBACCOS,
+  ...HULIGAN_TOBACCOS,
+  ...JAM_TOBACCOS,
+  ...JENT_TOBACCOS,
+  ...JOY_TOBACCOS,
+  ...KRAKEN_TOBACCOS,
+  ...MOLODOST_TOBACCOS,
+  ...MORPHEUS_TOBACCOS,
+  ...MUSTHAVE_TOBACCOS,
+  ...NASH_TOBACCOS,
+  ...NUR_TOBACCOS,
+  ...OVERDOSE_TOBACCOS,
+  ...PALITRA_TOBACCOS,
+  ...SAPPHIRE_CROWN_TOBACCOS,
+  ...SARMA_TOBACCOS,
+  ...SATYR_TOBACCOS,
+  ...SEBERO_TOBACCOS,
+  ...SERBETLI_TOBACCOS,
+  ...SEVERNYY_TOBACCOS,
+  ...SMOKE_ANGELS_TOBACCOS,
+  ...SNOBLESS_TOBACCOS,
+  ...SPECTRUM_TOBACCOS,
+  ...STARLINE_TOBACCOS,
+  ...TAKE_TOBACCOS,
+  ...TANGIERS_TOBACCOS,
+  ...TROFIMOFF_TOBACCOS,
+  ...WTO_TOBACCOS,
+])

@@ -1,5 +1,6 @@
 import { BrandSeed, CatalogDatabase, TobaccoSeed } from "@/types/catalog"
 import { findDuplicates } from "./deduplicator"
+import { isRussianSourceUrl } from "./ru-sources"
 import { normalizeName, slugify } from "./normalizer"
 
 export type ValidationReport = {
@@ -10,11 +11,14 @@ export type ValidationReport = {
   limited: number
   unknownStatus: number
   missingSource: number
+  nonRussianSources: number
+  russianSourceUrls: number
   duplicates: number
   invalidProfiles: number
   emptyNames: number
   orphanTobaccos: number
   invalidSlugs: number
+  lines: number
   issues: string[]
 }
 
@@ -53,7 +57,9 @@ export function validateCatalog(db: CatalogDatabase): ValidationReport {
   const issues: string[] = []
   const brandIds = new Set(db.brands.map((b) => b.id))
   const brandSlugs = new Set<string>()
-  const tobaccoSlugs = new Set<string>()
+  const tobaccoIds = new Set<string>()
+  const sourceUrls = new Set<string>()
+  const lines = new Set<string>()
 
   for (const brand of db.brands) {
     if (!brand.name.trim()) issues.push(`Brand empty name: ${brand.id}`)
@@ -62,12 +68,14 @@ export function validateCatalog(db: CatalogDatabase): ValidationReport {
   }
 
   let missingSource = 0
+  let nonRussianSources = 0
   let emptyNames = 0
   let orphanTobaccos = 0
   let invalidProfiles = 0
   let invalidSlugs = 0
 
   for (const t of db.tobaccos) {
+    if (t.line) lines.add(t.line)
     if (!normalizeName(t.name)) {
       emptyNames++
       issues.push(`Empty tobacco name: ${t.id}`)
@@ -76,23 +84,36 @@ export function validateCatalog(db: CatalogDatabase): ValidationReport {
       orphanTobaccos++
       issues.push(`Tobacco without brand: ${t.id}`)
     }
+
+    const sources = t.sources?.length ? t.sources : []
+    if (sources.length === 0) {
+      missingSource++
+      issues.push(`Missing sources: ${t.id}`)
+    } else {
+      for (const s of sources) {
+        sourceUrls.add(s.url)
+        if (!isValidUrl(s.url) || !isRussianSourceUrl(s.url)) {
+          nonRussianSources++
+          issues.push(`Non-Russian/invalid source: ${t.id} → ${s.url}`)
+        }
+      }
+    }
+
     if (!t.sourceUrl || !isValidUrl(t.sourceUrl)) {
       missingSource++
       issues.push(`Missing/invalid sourceUrl: ${t.id}`)
     }
+
     if (!profileOk(t)) {
       invalidProfiles++
       issues.push(`Invalid profile: ${t.id}`)
     }
-    if (!t.slug || t.slug !== slugify(t.slug)) {
-      // allow existing slug format brand-name
-    }
-    const fullSlug = `${t.brandId}-${t.slug}`
-    if (tobaccoSlugs.has(fullSlug)) {
+
+    if (tobaccoIds.has(t.id)) {
       invalidSlugs++
-      issues.push(`Duplicate tobacco slug: ${fullSlug}`)
+      issues.push(`Duplicate tobacco id: ${t.id}`)
     }
-    tobaccoSlugs.add(fullSlug)
+    tobaccoIds.add(t.id)
   }
 
   const duplicates = findDuplicates(db.tobaccos)
@@ -105,41 +126,42 @@ export function validateCatalog(db: CatalogDatabase): ValidationReport {
     limited: db.tobaccos.filter((t) => t.status === "LIMITED").length,
     unknownStatus: db.tobaccos.filter((t) => t.status === "UNKNOWN").length,
     missingSource,
+    nonRussianSources,
+    russianSourceUrls: sourceUrls.size,
     duplicates: duplicates.length,
     invalidProfiles,
     emptyNames,
     orphanTobaccos,
     invalidSlugs,
+    lines: lines.size,
     issues,
   }
 }
 
 export function formatValidationReport(report: ValidationReport): string {
   return [
-    "HOOKAH MIX CATALOG",
+    "HOOKAH MIX — RUSSIAN CATALOG",
     "",
-    `Brands:  ${report.brands}`,
+    `Брендов: ${report.brands}`,
+    `Линеек: ${report.lines}`,
+    `Уникальных вкусов: ${report.tobaccoProducts}`,
     "",
-    `Total tobacco flavors: ${report.tobaccoProducts}`,
+    `ACTIVE: ${report.active}`,
+    `LIMITED: ${report.limited}`,
+    `DISCONTINUED: ${report.discontinued}`,
+    `UNKNOWN: ${report.unknownStatus}`,
     "",
-    `Active: ${report.active}`,
-    `Limited: ${report.limited}`,
-    `Discontinued: ${report.discontinued}`,
-    `Unknown: ${report.unknownStatus}`,
+    `Российских источников: ${report.russianSourceUrls}`,
     "",
-    `Duplicates: ${report.duplicates}`,
-    `Missing source: ${report.missingSource}`,
+    `Дубликатов: ${report.duplicates}`,
+    `Товаров без источника: ${report.missingSource}`,
+    `Нероссийских источников: ${report.nonRussianSources}`,
     `Missing brand: ${report.orphanTobaccos}`,
     `Invalid profiles: ${report.invalidProfiles}`,
-    report.emptyNames || report.invalidSlugs
-      ? `\nExtra: empty names ${report.emptyNames}, slug issues ${report.invalidSlugs}`
-      : "",
     report.issues.length
       ? `\nIssues (first 20):\n${report.issues.slice(0, 20).map((i) => `- ${i}`).join("\n")}`
       : "\nNo critical issues.",
-  ]
-    .filter((line) => line !== "")
-    .join("\n")
+  ].join("\n")
 }
 
 export function assertBrandRegistry(brands: BrandSeed[]) {

@@ -1,0 +1,13 @@
+﻿Serbetli Big Bob — Большой Боб
+Serbetli Bubble Fruit — Фруктовые Пузырьки
+Serbetli Caribbean Mix — Карибский Микс
+Serbetli Dark Sweet — Темная Сладость
+Serbetli Ice Berry Tangerine — Ледяной Мандарин И Ягоды
+Serbetli Ice Raspberry Acai — Асаи Малина Со Льдом
+Serbetli Ice Strawberry Melon — Дыня Клубника Со Льдом
+Serbetli Lemon Berry — Лимон С Ягодами
+Serbetli Lemon Cake — Лимонный Пирог
+Serbetli Lemon Fresh — Лимонный Фреш
+Serbetli Lemon Marmelade — Лимонный Мармелад
+Serbetli Lime Spice Peach — Запеченный Персик С Лаймом
+Serbetli Rotana — Ротана

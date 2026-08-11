@@ -1,0 +1,80 @@
+﻿Element Вода Chak Chak — Чак Чак
+Element Вода Cherry Holls — Вишневый Холс
+Element Вода Cola — Кола
+Element Вода Cookie Monster — Земляничное Печенье
+Element Вода Ekzo — Экзо
+Element Вода Feijoa Lemonade — Лимонад из Фейхоа
+Element Вода Fir — Пихта
+Element Вода Fruit Pulp — Фруктовое Пюре
+Element Вода Grape Drink — Виноградная Газировка
+Element Вода Grape Mint — Мятный Виноград
+Element Вода Grapefruit Pomelo — Помело и Грейпфрут
+Element Вода Green Skittlez — Зеленый Скитлз
+Element Вода Gummy Berry — Мармеладные Мишки
+Element Вода Kiwi — Киви
+Element Вода Maui — Ананас и Папайя
+Element Вода Mellow Blueberry — Спелая Черника
+Element Вода Melony — Дыня
+Element Вода Moroz — Мороз
+Element Вода Pear — Груша
+Element Вода Pineapple — Ананас
+Element Вода Raspberry — Малина
+Element Вода Rich Peach — Сочный Персик
+Element Вода Rush — Раш
+Element Вода Siberry — Сибирские Ягоды
+Element Вода Tropicana — Тропикана
+Element Вода Watermelon Holls — Арбузный Холс
+Element Вода Wild Jam — Землянично Персиковый Джем
+Element Вода Wildberry Mors — Ягодный Морс
+Element Вода Yangmei — Китайская Земляника
+Element Воздух Amazing Green — Зеленые Ягоды
+Element Воздух Barrytale — Лесные Ягоды
+Element Воздух Berry Chups — Ягодный Чупа Чупс
+Element Воздух Berrymore — Земляника и Черника
+Element Воздух Berrytale — Лесные Ягоды
+Element Воздух Blueberry Yogurt — Черничный Йогурт
+Element Воздух Buzina — Бузина
+Element Воздух Cheese Tea — Сырный Чай
+Element Воздух Cherry Juice — Вишневый Сок
+Element Воздух Chinese Rose — Китайская Роза
+Element Воздух Ekzo — Экзо
+Element Воздух Fruit Ice — Фруктовый Лед
+Element Воздух Fruitberry — Фрутберри
+Element Воздух Grape Mint — Мятный Виноград
+Element Воздух Lollipop — Лаймовый Леденец
+Element Воздух Mangello — Манговое Желе
+Element Воздух Marula — Марула
+Element Воздух Maui — Ананас и Папайя
+Element Воздух Melon Holls — Дынный Холс
+Element Воздух Milky Mouse — Сгущеное Молоко
+Element Воздух Pearfect Melon — Дыня и Груша
+Element Воздух Pina Colada — Пина Колада
+Element Воздух Pineapple Holls — Ананасовый Холс
+Element Воздух Raspberry Jam — Малиновый Джем
+Element Воздух Red Sorbet — Ягодный Сорбет
+Element Воздух Skittlez Ice — Ледяной Скитлс
+Element Воздух Strawberry Soda — Клубничная Газировка
+Element Воздух Tropicana — Тропикана
+Element Воздух Winter Dream — Ягоды, Мандарин, Розмарин
+Element Земля Chak Chak — Чак Чак
+Element Земля Cherry Holls — Вишневый Холс
+Element Земля Cola — Кола
+Element Земля Cookie Monster — Земляничное Печенье
+Element Земля Ekzo — Экзо
+Element Земля Elemint — Мята
+Element Земля Feijoa Lemonade — Лимонад из Фейхоа
+Element Земля Fir — Пихта
+Element Земля Fruit Pulp — Фруктовое Пюре
+Element Земля Gaba — Габа
+Element Земля Grape Drink — Виноградная Газировка
+Element Земля Grape Mint — Мятный Виноград
+Element Земля Grapefruit Pomelo — Помело и Грейпфрут
+Element Земля Green Skittlez — Зеленый Скитлз
+Element Земля Gummy Berry — Мармеладные Мишки
+Element Земля Kiwi — Киви
+Element Земля Maui — Ананас и Папайя
+Element Земля Mellow Blueberry — Спелая Черника
+Element Земля Melony — Дыня
+Element Земля Pear — Груша
+Element Земля Pineapple — Ананас
+Element Земля Raspberry — Малина

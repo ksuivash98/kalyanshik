@@ -1,0 +1,173 @@
+﻿DarkSide Core Admiral Acbar Cereal — Овсянка
+DarkSide Core Bananapapa — Банан
+DarkSide Core Barvy Citrus — Цитрусовый Микс
+DarkSide Core Barvy Orange — Апельсин
+DarkSide Core Basil Blast — Базилик
+DarkSide Core Bassberry — Бузина
+DarkSide Core Bergamonstr — Бергамонстр
+DarkSide Core Blackberry — Ежевика
+DarkSide Core Blackcurrant — Черная Смородина
+DarkSide Core Bloody Orange — Сицилийский Апельсин
+DarkSide Core Blueberry Blast — Черника
+DarkSide Core Bounty Hunter — Ледяной Кокос
+DarkSide Core Breaking Red — Гранат
+DarkSide Core Cherry Rocks — Вишневые Леденцы
+DarkSide Core Cinnamoon — Корица
+DarkSide Core Code Cherry — Вишневый Код
+DarkSide Core Cosmo Flower — Цветочный Вкус
+DarkSide Core Cosmos — Космос
+DarkSide Core Cream Soda — Крем Сода
+DarkSide Core Crystal Grape — Белый Виноград
+DarkSide Core Cyber Kiwi — Киви
+DarkSide Core Dark Icecream — Шоколадное Мороженое
+DarkSide Core Dark Mint — Темная Мята
+DarkSide Core Dark Passion — Маракуйя
+DarkSide Core Darkside Cola — Кола
+DarkSide Core DarkSupra — Дарк Супра
+DarkSide Core Deep Blue Sea — Байкал
+DarkSide Core Falling Star — Фаллинг Стар
+DarkSide Core Fruittallity — Фруталити
+DarkSide Core Fruity Dust — Экзотические Фрукты
+DarkSide Core Generis Raspberry — Малина
+DarkSide Core Glitch Ice Tea — Персиковый Чай
+DarkSide Core Goal — Гол
+DarkSide Core Gonzo Cake — Чизкейк
+DarkSide Core Grape Core — Виноград
+DarkSide Core Green Beam — Фейхоа
+DarkSide Core Guava Rebel — Бунтарская Гуава
+DarkSide Core Honey Dust — Мед
+DarkSide Core Ice Granny — Айс Гренни
+DarkSide Core Kalee Grapefruit — Грейпфрут
+DarkSide Core Kashmir Goa Java — Кашмир Гуава
+DarkSide Core Killer Milk — Сгущенка
+DarkSide Core Lemonblast — Лимон
+DarkSide Core Mango Lassi — Манго Ласси
+DarkSide Core Mary Jane 2.0 — Мери Джейн 2.0
+DarkSide Core Needls — Елки
+DarkSide Core Nordberry — Северная Ягода
+DarkSide Core Pear — Груша
+DarkSide Core Pineapple Pulse — Ананас
+DarkSide Core Pomelow — Помело
+DarkSide Core Raf In The Jungle — Раф с Апельсином
+DarkSide Core Red Alert — Арбуз и Дыня
+DarkSide Core Red Rush — Барбариски
+DarkSide Core Red Tea — Красный Чай
+DarkSide Core Red Zeppelin — Красный Крыжовник
+DarkSide Core Redberry — Красная Смородина
+DarkSide Core Retro Apple — Красное Яблоко
+DarkSide Core Salbei — Шалфей
+DarkSide Core Space Jam — Клубничный Джем
+DarkSide Core Space Lychee — Космический Личи
+DarkSide Core Starlime — Лайм
+DarkSide Core Strawberry Light — Клубника
+DarkSide Core Supermint — Суперминт
+DarkSide Core Supernova — Супернова
+DarkSide Core Sweet Comet — Свит Комет
+DarkSide Core Top Gum — Ягоды Жвачка 2.0
+DarkSide Core Torpedo — Дыня
+DarkSide Core Tropic Ray — Пина Колада
+DarkSide Core Virgin Melon — Дыня
+DarkSide Core Virgin Peach — Персик
+DarkSide Core Virgin Peach 2.0 — Чистый Персик 2.0
+DarkSide Core Waffle Shuffle — Лимонные Вафли
+DarkSide Core Wild Forest — Дикий Лес
+DarkSide Core Wildberry — Дикие Ягоды
+DarkSide Core Yagoda Malina — Малина
+DarkSide Sabotage Acid — Кизил
+DarkSide Sabotage Berserk — Ирга
+DarkSide Sabotage Bitter Sweet — Тоник Лимон
+DarkSide Sabotage Bittersweet — Тоник Лимон
+DarkSide Sabotage Blondie — Брауни
+DarkSide Sabotage Bloodrain — Земляника Джем
+DarkSide Sabotage Clubnikakiwi — Клубника Киви
+DarkSide Sabotage Evil Lime — Лайм Йогурт
+DarkSide Sabotage Indigo — Ягоды Сливки
+DarkSide Sabotage Kashmir — Кашмир
+DarkSide Sabotage Kvassica — Квас
+DarkSide Sabotage Liquidator — Виски
+DarkSide Sabotage Piki — Ананас Кокос Арбуз
+DarkSide Sabotage Pinekiller — Ананас Шоколадная Конфета
+DarkSide Sabotage Raiden — Базилик Лимонад
+DarkSide Sabotage Root Bear — Рутбир
+DarkSide Sabotage Shaolime — Черный Лайм
+DarkSide Sabotage Shishki — Сосна
+DarkSide Sabotage Voltage — Малина Цитрус Газировка
+DarkSide Sabotage Yagodza — Кислые Ягоды
+DarkSide Shot — Азовский Шейк
+DarkSide Shot — Алтайский Трип
+DarkSide Shot — Альпийский
+DarkSide Shot — Амурский Панч
+DarkSide Shot — Балтийский Чилл
+DarkSide Shot — Бурятский Трип
+DarkSide Shot — Волжский Чилл
+DarkSide Shot — Восточный
+DarkSide Shot — Вятский Вайб
+DarkSide Shot — Гавайский
+DarkSide Shot — Горный
+DarkSide Shot — Донской Чилл
+DarkSide Shot — Западный
+DarkSide Shot — Камчатский Панч
+DarkSide Shot — Карельский Панч
+DarkSide Shot — Карибский
+DarkSide Shot — Каспийский Вайб
+DarkSide Shot — Коктейльный
+DarkSide Shot — Кольский Краш
+DarkSide Shot — Конфетный
+DarkSide Shot — Крымский Вайб
+DarkSide Shot — Кубанский Чилл
+DarkSide Shot — Курильский Вайб
+DarkSide Shot — Куршский Вайб
+DarkSide Shot — Ладожский Вайб
+DarkSide Shot — Ленский Трип
+DarkSide Shot — Лимонадный
+DarkSide Shot — Невский Бит
+DarkSide Shot — Окский Чилл
+DarkSide Shot — Онежский Панч
+DarkSide Shot — Островной
+DarkSide Shot — Охотский Шейк
+DarkSide Shot — Пляжный
+DarkSide Shot — Полярный
+DarkSide Shot — Приморский Шейк
+DarkSide Shot — Пустынный
+DarkSide Shot — Саянский Бит
+DarkSide Shot — Свободный
+DarkSide Shot — Сибирский Шейк
+DarkSide Shot — Столичный Бит
+DarkSide Shot — Тайский
+DarkSide Shot — Таманский Шейк
+DarkSide Shot — Токийский
+DarkSide Shot — Тосканский
+DarkSide Shot — Тропический
+DarkSide Shot — Уральский Чилл
+DarkSide Shot — Фруктовый
+DarkSide Shot — Центральный Бит
+DarkSide Shot — Чукотский Вайб
+DarkSide Shot — Южный Вайб
+DarkSide Shot — Ягодный
+DarkSide Shot — Якутский Бит
+DarkSide Xperience Aloha Ale — Имбирь Газировка
+DarkSide Xperience Bana Nascar — Банан Клубника
+DarkSide Xperience Battle Apple — Яблоко Леденцы
+DarkSide Xperience Berry VS — Белый Виноград Малина Черная Смородина
+DarkSide Xperience Cake Flip — Пралине Ягоды
+DarkSide Xperience Candy Crew — Клубника Леденцы
+DarkSide Xperience Citrus Pro — Грейпфрут Малина
+DarkSide Xperience Citrus Wave — Лимон Лайм Клубника
+DarkSide Xperience Easy Freezy — Карамель Мята Мороженое
+DarkSide Xperience Granade Arcade — Йогурт Гранат
+DarkSide Xperience Grape Furious — Виноград Базилик
+DarkSide Xperience Lime Up — Лайм Биттер
+DarkSide Xperience Maraschini — Вишня Мартини
+DarkSide Xperience Mint Slide — Мята Жвачка
+DarkSide Xperience Mohito Yota — Мохито Клубника
+DarkSide Xperience Multy Fruity — Манго Папайя Гуава
+DarkSide Xperience Petrol Headz — Маракуйя Манго Ананас
+DarkSide Xperience Pine Crime — Ананас
+DarkSide Xperience Pinkmania — Клубника Малина Грейпфрут
+DarkSide Xperience PVP Corner — Попкорн Карамель
+DarkSide Xperience Resident Kiwi — Киви Алоэ
+DarkSide Xperience Skittle Street — Ягоды Драже
+DarkSide Xperience Turbo Tea — Персик Кашмир
+DarkSide Xperience Ultimate Peach — Персик Йогурт
+DarkSide Xperience Urban Gin — Джин Малина
+DarkSide Xperience Vandal Cola — Кола Ваниль

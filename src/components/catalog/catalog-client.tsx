@@ -123,7 +123,7 @@ export function CatalogClient() {
         <h1 className="text-3xl font-semibold text-stone-50">Каталог табаков</h1>
         <p className="mt-2 text-stone-400">
           {CATALOG_VALIDATION.tobaccoProducts} вкусов · {CATALOG_VALIDATION.brands} брендов ·
-          только подтверждённые позиции с sourceUrl
+          только подтверждённые позиции с российскими источниками
         </p>
       </div>
 

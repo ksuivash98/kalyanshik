@@ -1,0 +1,53 @@
+﻿StarLine — Ананас
+StarLine — Банан
+StarLine — Банановый Маршмеллоу
+StarLine — Бельгийские Вафли
+StarLine — Ваниль
+StarLine — Ванильная Кола
+StarLine — Виноградная Содовая
+StarLine — Виноградное Желе
+StarLine — Вишня
+StarLine — Гранатовый Сок
+StarLine — Груша
+StarLine — Дыня
+StarLine — Зеленый Фреш
+StarLine — Земляника
+StarLine — Земляника со Сливками
+StarLine — Какао
+StarLine — Киви Смузи
+StarLine — Кислые Мармеладки
+StarLine — Клубничная Конфета
+StarLine — Клубничная Содовая
+StarLine — Клубничный Милфей
+StarLine — Клубничный Мохито
+StarLine — Клюква
+StarLine — Кокосовое Молочко
+StarLine — Лаймовый Сорбет
+StarLine — Лемонграсс
+StarLine — Лимон 2.0
+StarLine — Лимонная Шипучка
+StarLine — Малина
+StarLine — Малиновые Вафли
+StarLine — Манго
+StarLine — Манго Карамбола
+StarLine — Маракуйя
+StarLine — Меренговый Рулет
+StarLine — Мокко
+StarLine — Мятная Пастилка
+StarLine — Нектарин
+StarLine — Оранжина
+StarLine — Папайя
+StarLine — Персик
+StarLine — Пина Колада
+StarLine — Свободная Куба
+StarLine — Сливочный Крем
+StarLine — Смородиновый Сорбет
+StarLine — Тропический Смузи
+StarLine — Фейхоа
+StarLine — Черничный Крамбл
+StarLine — Черничный Чизкейк
+StarLine — Экзотические Фрукты
+StarLine — Энергетик
+StarLine — Яблочный Сок
+StarLine — Ягодный Попкорн
+StarLine — Ягодный Сорбет

@@ -17,6 +17,19 @@ export function normalizeTobaccoName(value: string): string {
     .trim()
 }
 
+/** Normalize brand display names for matching (not for merging distinct brands). */
+export function normalizeBrandName(value: string): string {
+  return normalizeTobaccoName(value)
+    .replace(/\btobacco\b/g, "")
+    .replace(/\btabak\b/g, "")
+    .replace(/\s+/g, " ")
+    .replace(/\bdark\s*side\b/g, "darkside")
+    .replace(/\bmust\s*have\b/g, "musthave")
+    .replace(/\bblack\s*burn\b/g, "blackburn")
+    .replace(/\bnаш\b/g, "nash")
+    .trim()
+}
+
 export function slugify(value: string): string {
   return normalizeTobaccoName(value)
     .replace(/[^a-z0-9а-яё]+/gi, "-")

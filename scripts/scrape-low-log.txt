@@ -1,0 +1,15 @@
+﻿mykalyan page 1 titles 120 newish 80 total 80
+hh page 1 titles 23
+hh page 2 titles 21
+hh page 3 titles 5
+hookahset mattpear 176
+aircraft url https://justfreid.ru/catalog/tabak/aircraft/ titles 1
+aircraft url https://justfreid.ru/catalog/tabak/aircraft/?filter=1398 titles 1
+aircraft url https://justfreid.ru/catalog/tabak/aircraft/?SHOWALL_1=1 titles 1
+aircraft url https://justfreid.ru/catalog/tabak/aircraft/tobacco-aircraft-40-grams-for-hookah/ titles 9
+moredyma aircraft 11
+sevas miss mattpear 404
+sevas miss aircraft 404
+FINAL mattpear 176
+FINAL aircraft 11
+wrote scripts/ru-low-clean.json
