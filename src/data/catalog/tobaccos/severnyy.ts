@@ -130,6 +130,16 @@ const ITEMS = [
     strengthHint: 3,
   },
   {
+    name: "Wild Witch",
+    line: "Classic",
+    tags: ["berry", "mint", "cold", "herbal"],
+    sources: [
+      "https://gustogo.ru/tabak/tabak-dlya-kalyana-severnyj-wild-witch-40-gr.html",
+      "https://ohookah.ru/tobacco/severniy/wild-witch",
+    ],
+    strengthHint: 3,
+  },
+  {
     name: "Восточные Пряности",
     line: "Classic",
     tags: ["spice"],

@@ -58,6 +58,7 @@ export const BRAND_COMPLETENESS: Record<string, BrandCompletenessLevel> = {
   cobra: "MEDIUM",
   morpheus: "MEDIUM",
   aircraft: "MEDIUM",
+  muassel: "HIGH",
   mattpear: "HIGH",
   iskra: "HIGH",
   funel: "LOW",

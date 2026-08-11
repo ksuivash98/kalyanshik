@@ -29,6 +29,7 @@ import { MOLODOST_TOBACCOS } from "./tobaccos/molodost"
 import { MORPHEUS_TOBACCOS } from "./tobaccos/morpheus"
 import { MATTPEAR_TOBACCOS } from "./tobaccos/mattpear"
 import { MUSTHAVE_TOBACCOS } from "./tobaccos/musthave"
+import { MUASSEL_TOBACCOS } from "./tobaccos/muassel"
 import { NASH_TOBACCOS } from "./tobaccos/nash"
 import { OVERDOSE_TOBACCOS } from "./tobaccos/overdose"
 import { PALITRA_TOBACCOS } from "./tobaccos/palitra"
@@ -81,6 +82,7 @@ const ALL_TOBACCOS: TobaccoSeed[] = dedupeByBrandName([
   ...MORPHEUS_TOBACCOS,
   ...MATTPEAR_TOBACCOS,
   ...MUSTHAVE_TOBACCOS,
+  ...MUASSEL_TOBACCOS,
   ...NASH_TOBACCOS,
   ...OVERDOSE_TOBACCOS,
   ...PALITRA_TOBACCOS,

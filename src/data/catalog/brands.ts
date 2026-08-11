@@ -778,4 +778,16 @@ export const BRANDS: BrandSeed[] = [
     lines: ["Classic"],
     active: true,
   }),
+  brand({
+    id: "muassel",
+    name: "Muassel",
+    country: "Russia",
+    region: "RU",
+    leafType: "MIXED",
+    description:
+      "Российский бренд из Перми (медовый сироп). Линейки Medium / Strong / Extra Strong.",
+    officialWebsite: "http://muassel.ru/",
+    lines: ["Medium", "Strong", "Extra Strong"],
+    active: true,
+  }),
 ]

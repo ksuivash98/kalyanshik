@@ -410,6 +410,17 @@ const ITEMS = [
     strengthHint: 2,
   },
   {
+    name: "Cherry Juice",
+    line: "Medium",
+    tags: ["cherry", "berry"],
+    aliases: ["Вишнёвый сок", "Вишневый сок"],
+    sources: [
+      "https://www.bigsmokestore.ru/catalog/tabak-spectrum-medium-200-gr/tabak_spectrum_medium_cherry_juice_200_gr/",
+      "https://www.mykalyan.ru/shop/spectrum113/tabak-spectrum-medium-line/spectrum-medium-line-200-gr/",
+    ],
+    strengthHint: 3,
+  },
+  {
     name: "Acid Shake",
     line: "Mix",
     tags: ["fruity"],
@@ -522,6 +533,7 @@ export const SPECTRUM_TOBACCOS: TobaccoSeed[] = ITEMS.map((item) =>
     name: item.name,
     line: item.line,
     tags: [...item.tags],
+    aliases: "aliases" in item ? [...(item as { aliases?: readonly string[] }).aliases ?? []] : [],
     sources: [...item.sources],
     strengthHint: item.strengthHint,
     status: ("status" in item ? (item as { status?: TobaccoStatus }).status : "ACTIVE") as TobaccoStatus | undefined,
