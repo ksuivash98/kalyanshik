@@ -34,23 +34,29 @@ NEXT_PUBLIC_BASE_PATH=/kalyanshik npm run build:pages
 
 При пуше в `main` / `master` GitHub Action собирает сайт и публикует на Pages.
 
-### Важно (иначе будет 404 на `/catalog/`)
+### Важно (иначе будет 404 File not found на `/catalog/`)
 
-Сейчас workflow уже собирает Next.js в `out/`, но GitHub Pages должен брать сайт **из Actions**, а не из ветки.
+Сейчас на сайте часто публикуется **README через Jekyll** с ветки `main`, а не приложение.
 
-Если Source = «Deploy from a branch», на сайте показывается README через Jekyll, а страниц `/catalog/`, `/collection/` **нет** → «File not found».
+Сделай **один** из вариантов:
 
-В настройках репозитория:
+#### Вариант A (проще — ветка gh-pages)
 
 1. **Settings → Pages**
-2. **Build and deployment → Source: GitHub Actions**  
-   (не «Deploy from a branch»)
-3. Actions → workflow **Deploy Hookah Mix to GitHub Pages** → **Re-run jobs**
+2. Source: **Deploy from a branch**
+3. Branch: **`gh-pages`** / folder **`/ (root)`** → Save
+4. Дождись зеленого workflow **Deploy Hookah Mix to GitHub Pages** после пуша
 
-После этого должны открываться:
+#### Вариант B (GitHub Actions)
 
-- https://ksuivash98.github.io/kalyanshik/
-- https://ksuivash98.github.io/kalyanshik/catalog/
+1. **Settings → Pages**
+2. Source: **GitHub Actions**
+3. Actions → **Deploy Hookah Mix to GitHub Pages** → Re-run
+
+Проверка:
+
+- https://ksuivash98.github.io/kalyanshik/ — приложение (не текст README)
+- https://ksuivash98.github.io/kalyanshik/catalog/ — каталог
 
 ## Разделы
 
