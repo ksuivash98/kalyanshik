@@ -8,6 +8,7 @@
     "build:pages": "next build",
     "start": "npx serve out",
     "lint": "eslint",
+    "catalog:validate": "tsx scripts/validate-catalog.ts",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
     "db:reset": "prisma db push --force-reset && tsx prisma/seed.ts"

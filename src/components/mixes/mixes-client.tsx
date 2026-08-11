@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
 import { ProfileBars } from "@/components/shared/profile-bars"
-import { getTobaccoById } from "@/data/catalog"
+import { getBrandById, getTobaccoById } from "@/data/catalog"
 import { findReplacement } from "@/lib/recommendations"
 import { TobaccoCandidate } from "@/types"
 
@@ -38,6 +38,7 @@ export function MixesClient() {
 
     for (const ingredient of mix.ingredients) {
       const tobacco = getTobaccoById(ingredient.tobaccoId)
+      const brand = tobacco ? getBrandById(tobacco.brandId) : null
       const stock = candidates.find((c) => c.id === ingredient.tobaccoId)
       const needed = ingredient.grams
 
@@ -52,19 +53,31 @@ export function MixesClient() {
       const missing: TobaccoCandidate = {
         id: ingredient.tobaccoId,
         name: tobacco?.name ?? "Табак",
-        brandName: tobacco?.brand ?? "",
+        brandName: brand?.name ?? "",
         tags: tobacco?.tags ?? [],
-        profile: tobacco?.profile ?? {
-          strength: 3,
-          cold: 0,
-          sweetness: 3,
-          sourness: 0,
-          fruity: 3,
-          dessert: 0,
-          spicy: 0,
-          herbal: 0,
-          intensity: 3,
-        },
+        profile: tobacco
+          ? {
+              strength: tobacco.estimatedProfile.strength ?? 3,
+              cold: tobacco.estimatedProfile.cold ?? 0,
+              sweetness: tobacco.estimatedProfile.sweetness ?? 3,
+              sourness: tobacco.estimatedProfile.sourness ?? 0,
+              fruity: tobacco.estimatedProfile.fruity ?? 3,
+              dessert: tobacco.estimatedProfile.dessert ?? 0,
+              spicy: tobacco.estimatedProfile.spicy ?? 0,
+              herbal: tobacco.estimatedProfile.herbal ?? 0,
+              intensity: tobacco.estimatedProfile.intensity ?? 3,
+            }
+          : {
+              strength: 3,
+              cold: 0,
+              sweetness: 3,
+              sourness: 0,
+              fruity: 3,
+              dessert: 0,
+              spicy: 0,
+              herbal: 0,
+              intensity: 3,
+            },
         gramsAvailable: stock?.gramsAvailable ?? 0,
       }
 
@@ -177,13 +190,14 @@ export function MixesClient() {
                 <div className="space-y-2">
                   {selected.ingredients.map((ing) => {
                     const tobacco = getTobaccoById(ing.tobaccoId)
+                    const brand = tobacco ? getBrandById(tobacco.brandId) : null
                     return (
                       <div
                         key={`${selected.id}-${ing.tobaccoId}`}
                         className="flex items-center justify-between rounded-xl border border-white/5 bg-black/20 px-3 py-2 text-sm"
                       >
                         <span>
-                          {tobacco?.brand} {tobacco?.name}
+                          {brand?.name} {tobacco?.name}
                           <Badge className="ml-2">{ing.role}</Badge>
                         </span>
                         <span className="text-stone-400">

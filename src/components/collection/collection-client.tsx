@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Switch } from "@/components/ui/switch"
 import { Textarea } from "@/components/ui/textarea"
 import { ProfileBars } from "@/components/shared/profile-bars"
-import { getTobaccoById } from "@/data/catalog"
+import { getBrandById, getTobaccoById, toRecommendationProfile } from "@/data/catalog"
 
 export function CollectionClient() {
   const { ready, state, updateTobacco, removeTobacco } = useAppStore()
@@ -29,13 +29,30 @@ export function CollectionClient() {
       .map((item) => {
         const tobacco = getTobaccoById(item.tobaccoId)
         if (!tobacco) return null
-        return { ...item, tobacco }
+        const brandEntity = getBrandById(tobacco.brandId)
+        const profile = toRecommendationProfile(tobacco)
+        return {
+          ...item,
+          tobacco,
+          brandName: brandEntity?.name ?? tobacco.brandId,
+          profile: {
+            strength: profile.strength,
+            cold: profile.cold,
+            sweetness: profile.sweetness,
+            sourness: profile.sourness,
+            fruity: profile.fruity,
+            dessert: profile.dessert,
+            spicy: profile.spicy,
+            herbal: profile.herbal,
+            intensity: profile.intensity,
+          },
+        }
       })
       .filter((i): i is NonNullable<typeof i> => Boolean(i))
   }, [state.collection])
 
   const brands = useMemo(
-    () => [...new Set(items.map((i) => i.tobacco.brand))].sort(),
+    () => [...new Set(items.map((i) => i.brandName))].sort(),
     [items]
   )
 
@@ -45,12 +62,12 @@ export function CollectionClient() {
       const matchQuery =
         !q ||
         item.tobacco.name.toLowerCase().includes(q) ||
-        item.tobacco.brand.toLowerCase().includes(q) ||
+        item.brandName.toLowerCase().includes(q) ||
         item.tobacco.tags.some((t) => t.toLowerCase().includes(q))
-      const matchBrand = brand === "all" || item.tobacco.brand === brand
+      const matchBrand = brand === "all" || item.brandName === brand
       const matchStrength =
-        strength === "all" || item.tobacco.profile.strength === Number(strength)
-      const matchCold = cold === "all" || item.tobacco.profile.cold === Number(cold)
+        strength === "all" || item.profile.strength === Number(strength)
+      const matchCold = cold === "all" || item.profile.cold === Number(cold)
       const matchRating =
         rating === "all" || (item.rating !== null && item.rating === Number(rating))
       const matchStock = !onlyInStock || item.grams > 0
@@ -67,7 +84,7 @@ export function CollectionClient() {
       <div>
         <h1 className="text-3xl font-semibold text-stone-50">Моя коллекция</h1>
         <p className="mt-2 text-stone-400">
-          Управляйте наличием, оценками и заметками. Данные сохраняются в браузере.
+          Граммы, оценка и заметки — ваши. Официальный каталог при этом не меняется.
         </p>
       </div>
 
@@ -105,30 +122,6 @@ export function CollectionClient() {
             </option>
           ))}
         </select>
-        <select
-          className="h-11 rounded-xl border border-white/10 bg-black/30 px-3 text-sm"
-          value={cold}
-          onChange={(e) => setCold(e.target.value)}
-        >
-          <option value="all">Холод</option>
-          {[0, 1, 2, 3, 4, 5].map((n) => (
-            <option key={n} value={n}>
-              {n}
-            </option>
-          ))}
-        </select>
-        <select
-          className="h-11 rounded-xl border border-white/10 bg-black/30 px-3 text-sm"
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-        >
-          <option value="all">Оценка</option>
-          {[1, 2, 3, 4, 5].map((n) => (
-            <option key={n} value={n}>
-              {n}
-            </option>
-          ))}
-        </select>
       </div>
 
       <Switch
@@ -142,7 +135,7 @@ export function CollectionClient() {
       {filtered.length === 0 ? (
         <Card>
           <CardContent className="py-12 text-center text-stone-400">
-            Коллекция пуста или ничего не найдено. Добавьте табаки из каталога.
+            Коллекция пуста. Добавьте табаки из каталога.
           </CardContent>
         </Card>
       ) : (
@@ -155,7 +148,7 @@ export function CollectionClient() {
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <CardTitle>
-                        {item.tobacco.brand} · {item.tobacco.name}
+                        {item.brandName} · {item.tobacco.name}
                       </CardTitle>
                       <CardDescription>
                         {item.grams} г · оценка {item.rating ?? "—"}/5
@@ -190,7 +183,10 @@ export function CollectionClient() {
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <ProfileBars profile={item.tobacco.profile} compact />
+                  <ProfileBars profile={item.profile} compact />
+                  <p className="text-[11px] text-stone-500">
+                    Шкалы — оценка приложения, не официальные данные производителя
+                  </p>
                   <div className="flex flex-wrap gap-1.5">
                     {item.tobacco.tags.map((tag) => (
                       <Badge key={tag}>{tag}</Badge>

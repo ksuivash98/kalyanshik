@@ -6,7 +6,7 @@ import { useAppStore } from "@/components/providers/app-store-provider"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { getTobaccoById } from "@/data/catalog"
+import { getBrandById, getTobaccoById } from "@/data/catalog"
 
 export function HomeDashboard() {
   const { ready, state } = useAppStore()
@@ -106,10 +106,11 @@ export function HomeDashboard() {
                 <CardContent className="space-y-2 text-sm text-stone-400">
                   {mix.ingredients.slice(0, 3).map((ing) => {
                     const tobacco = getTobaccoById(ing.tobaccoId)
+                    const brand = tobacco ? getBrandById(tobacco.brandId) : null
                     return (
                       <div key={`${mix.id}-${ing.tobaccoId}`} className="flex justify-between">
                         <span>
-                          {tobacco?.brand} {tobacco?.name}
+                          {brand?.name} {tobacco?.name}
                         </span>
                         <span>{ing.percent}%</span>
                       </div>

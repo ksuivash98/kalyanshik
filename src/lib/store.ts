@@ -1,7 +1,12 @@
-import { CATALOG, STARTER_COLLECTION_IDS, getTobaccoById } from "@/data/catalog"
+import {
+  CATALOG_DB,
+  STARTER_COLLECTION_IDS,
+  getTobaccoById,
+  toRecommendationProfile,
+} from "@/data/catalog"
 import { FlavorProfile, MixRole, MixSuggestion, MixVariantType } from "@/types"
 
-const STORAGE_KEY = "hookah-mix-v1"
+const STORAGE_KEY = "hookah-mix-v2"
 
 export type StoredCollectionItem = {
   id: string
@@ -46,12 +51,7 @@ export function createDefaultState(): AppState {
     collection: STARTER_COLLECTION_IDS.map((tobaccoId) => ({
       id: uid("col"),
       tobaccoId,
-      grams:
-        tobaccoId.includes("passion")
-          ? 2
-          : tobaccoId.includes("mango-lassi")
-            ? 8
-            : 25,
+      grams: tobaccoId.includes("nord-star") || tobaccoId.includes("cane-mint") ? 20 : 25,
       rating: 4,
       note: "Добавлено из стартовой коллекции",
       updatedAt: new Date().toISOString(),
@@ -120,18 +120,13 @@ export function updateCollectionItem(
   return {
     ...state,
     collection: state.collection.map((c) =>
-      c.id === id
-        ? { ...c, ...patch, updatedAt: new Date().toISOString() }
-        : c
+      c.id === id ? { ...c, ...patch, updatedAt: new Date().toISOString() } : c
     ),
   }
 }
 
 export function removeCollectionItem(state: AppState, id: string): AppState {
-  return {
-    ...state,
-    collection: state.collection.filter((c) => c.id !== id),
-  }
+  return { ...state, collection: state.collection.filter((c) => c.id !== id) }
 }
 
 export function saveMixFromSuggestion(
@@ -176,21 +171,30 @@ export function rateMix(
   }
 }
 
-export function buildCandidates(
-  state: AppState,
-  useCollectionOnly: boolean
-) {
+export function buildCandidates(state: AppState, useCollectionOnly: boolean) {
   if (useCollectionOnly) {
     return state.collection
       .map((item) => {
         const tobacco = getTobaccoById(item.tobaccoId)
         if (!tobacco) return null
+        const brand = CATALOG_DB.brands.find((b) => b.id === tobacco.brandId)
+        const profile = toRecommendationProfile(tobacco)
         return {
           id: tobacco.id,
           name: tobacco.name,
-          brandName: tobacco.brand,
+          brandName: brand?.name ?? tobacco.brandId,
           tags: tobacco.tags,
-          profile: tobacco.profile,
+          profile: {
+            strength: profile.strength,
+            cold: profile.cold,
+            sweetness: profile.sweetness,
+            sourness: profile.sourness,
+            fruity: profile.fruity,
+            dessert: profile.dessert,
+            spicy: profile.spicy,
+            herbal: profile.herbal,
+            intensity: profile.intensity,
+          },
           gramsAvailable: item.grams,
         }
       })
@@ -198,12 +202,28 @@ export function buildCandidates(
   }
 
   const stock = new Map(state.collection.map((c) => [c.tobaccoId, c.grams]))
-  return CATALOG.map((tobacco) => ({
-    id: tobacco.id,
-    name: tobacco.name,
-    brandName: tobacco.brand,
-    tags: tobacco.tags,
-    profile: tobacco.profile,
-    gramsAvailable: stock.has(tobacco.id) ? stock.get(tobacco.id)! : null,
-  }))
+  return CATALOG_DB.tobaccos
+    .filter((t) => t.active && t.status !== "DISCONTINUED")
+    .map((tobacco) => {
+      const brand = CATALOG_DB.brands.find((b) => b.id === tobacco.brandId)
+      const profile = toRecommendationProfile(tobacco)
+      return {
+        id: tobacco.id,
+        name: tobacco.name,
+        brandName: brand?.name ?? tobacco.brandId,
+        tags: tobacco.tags,
+        profile: {
+          strength: profile.strength,
+          cold: profile.cold,
+          sweetness: profile.sweetness,
+          sourness: profile.sourness,
+          fruity: profile.fruity,
+          dessert: profile.dessert,
+          spicy: profile.spicy,
+          herbal: profile.herbal,
+          intensity: profile.intensity,
+        },
+        gramsAvailable: stock.has(tobacco.id) ? stock.get(tobacco.id)! : null,
+      }
+    })
 }
