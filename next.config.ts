@@ -1,23 +1,16 @@
 import type { NextConfig } from "next"
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ""
+
 const nextConfig: NextConfig = {
+  output: "export",
+  trailingSlash: true,
+  images: { unoptimized: true },
+  basePath: basePath || undefined,
+  assetPrefix: basePath || undefined,
   poweredByHeader: false,
-  async headers() {
-    return [
-      {
-        source: "/sw.js",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
-          { key: "Service-Worker-Allowed", value: "/" },
-        ],
-      },
-      {
-        source: "/manifest.webmanifest",
-        headers: [
-          { key: "Content-Type", value: "application/manifest+json" },
-        ],
-      },
-    ]
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 }
 

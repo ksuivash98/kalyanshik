@@ -1,12 +1,12 @@
-# Service Worker for Hookah Mix PWA
-const CACHE = "hookah-mix-v1"
+const BASE = self.location.pathname.includes("/kalyanshik/")
+  ? "/kalyanshik"
+  : ""
+
+const CACHE = "hookah-mix-gh-v1"
+const PRECACHE = [`${BASE}/`, `${BASE}/manifest.webmanifest`, `${BASE}/icons/icon.svg`]
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE).then((cache) =>
-      cache.addAll(["/", "/manifest.webmanifest", "/icons/icon.svg"])
-    )
-  )
+  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(PRECACHE)))
   self.skipWaiting()
 })
 
@@ -22,9 +22,6 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const { request } = event
   if (request.method !== "GET") return
-
-  const url = new URL(request.url)
-  if (url.pathname.startsWith("/api/")) return
 
   event.respondWith(
     caches.match(request).then((cached) => {

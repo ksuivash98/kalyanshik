@@ -1,103 +1,93 @@
 "use client"
 
-import { useState, useTransition } from "react"
+import { useMemo, useState } from "react"
 import { format } from "date-fns"
 import { ru } from "date-fns/locale"
 import { RefreshCw, Star, Trash2 } from "lucide-react"
+import { useAppStore } from "@/components/providers/app-store-provider"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
 import { ProfileBars } from "@/components/shared/profile-bars"
-import { FlavorProfile } from "@/types"
+import { getTobaccoById } from "@/data/catalog"
+import { findReplacement } from "@/lib/recommendations"
+import { TobaccoCandidate } from "@/types"
 
-export type MixListItem = {
-  id: string
-  name: string
-  totalGrams: number
-  tobaccoCount: number
-  explanation: string | null
-  variantType: string | null
-  createdAt: string
-  profile: FlavorProfile
-  ingredients: Array<{
-    id: string
-    role: string
-    percent: number
-    grams: number
-    tobacco: { name: string; brand: { name: string } }
-  }>
-  rating: { score: number; comment: string | null } | null
-}
-
-export function MixesClient({ initialMixes }: { initialMixes: MixListItem[] }) {
-  const [mixes, setMixes] = useState(initialMixes)
-  const [selectedId, setSelectedId] = useState<string | null>(initialMixes[0]?.id ?? null)
+export function MixesClient() {
+  const { ready, state, removeMix, setMixRating, getCandidates } = useAppStore()
+  const [selectedId, setSelectedId] = useState<string | null>(null)
   const [score, setScore] = useState(5)
   const [comment, setComment] = useState("")
   const [message, setMessage] = useState<string | null>(null)
-  const [pending, startTransition] = useTransition()
 
-  const selected = mixes.find((m) => m.id === selectedId) ?? null
+  const mixes = state.mixes
+  const selected = useMemo(
+    () => mixes.find((m) => m.id === (selectedId ?? mixes[0]?.id)) ?? null,
+    [mixes, selectedId]
+  )
 
-  function removeMix(id: string) {
-    startTransition(async () => {
-      const res = await fetch(`/api/mixes?id=${id}`, { method: "DELETE" })
-      if (!res.ok) {
-        setMessage("Не удалось удалить микс")
-        return
-      }
-      setMixes((prev) => prev.filter((m) => m.id !== id))
-      setSelectedId((prev) => (prev === id ? null : prev))
-      setMessage("Микс удалён")
-    })
-  }
+  function remake(mixId: string) {
+    const mix = mixes.find((m) => m.id === mixId)
+    if (!mix) return
 
-  function rateMix(id: string) {
-    startTransition(async () => {
-      const res = await fetch("/api/mixes", {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id, score, comment }),
-      })
-      if (!res.ok) {
-        setMessage("Не удалось сохранить оценку")
-        return
-      }
-      const data = await res.json()
-      setMixes((prev) =>
-        prev.map((m) =>
-          m.id === id
-            ? { ...m, rating: { score: data.rating.score, comment: data.rating.comment } }
-            : m
+    const candidates = getCandidates(true)
+    const used = new Set<string>()
+    const lines: string[] = [`Готово к приготовлению: ${mix.name}`]
+    const notes: string[] = []
+
+    for (const ingredient of mix.ingredients) {
+      const tobacco = getTobaccoById(ingredient.tobaccoId)
+      const stock = candidates.find((c) => c.id === ingredient.tobaccoId)
+      const needed = ingredient.grams
+
+      if (stock && (stock.gramsAvailable ?? 0) >= needed) {
+        used.add(stock.id)
+        lines.push(
+          `• ${stock.brandName} ${stock.name} — ${needed} г (${ingredient.percent}%)`
         )
-      )
-      setMessage("Оценка сохранена")
-    })
-  }
+        continue
+      }
 
-  function remake(id: string) {
-    startTransition(async () => {
-      const res = await fetch("/api/mixes/remake", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ mixId: id }),
-      })
-      const data = await res.json()
-      if (!res.ok) {
-        setMessage(data.error ?? "Не удалось повторить микс")
+      const missing: TobaccoCandidate = {
+        id: ingredient.tobaccoId,
+        name: tobacco?.name ?? "Табак",
+        brandName: tobacco?.brand ?? "",
+        tags: tobacco?.tags ?? [],
+        profile: tobacco?.profile ?? {
+          strength: 3,
+          cold: 0,
+          sweetness: 3,
+          sourness: 0,
+          fruity: 3,
+          dessert: 0,
+          spicy: 0,
+          herbal: 0,
+          intensity: 3,
+        },
+        gramsAvailable: stock?.gramsAvailable ?? 0,
+      }
+
+      const replacement = findReplacement(missing, candidates, used)
+      if (!replacement) {
+        setMessage(`${missing.name} недостаточно, замена не найдена`)
         return
       }
-      const lines = [
-        `Готово к приготовлению: ${data.mix.name}`,
-        ...data.mix.ingredients.map(
-          (i: { brandName: string; name: string; grams: number; percent: number }) =>
-            `• ${i.brandName} ${i.name} — ${i.grams} г (${i.percent}%)`
-        ),
-        ...(data.messages ?? []),
-      ]
-      setMessage(lines.join("\n"))
-    })
+
+      used.add(replacement.id)
+      notes.push(
+        `${missing.name} недостаточно для этого микса. Найдена замена: ${replacement.name}.`
+      )
+      lines.push(
+        `• ${replacement.brandName} ${replacement.name} — ${needed} г (${ingredient.percent}%)`
+      )
+    }
+
+    setMessage([...lines, ...notes].join("\n"))
+  }
+
+  if (!ready) {
+    return <div className="py-20 text-center text-stone-500">Загрузка...</div>
   }
 
   return (
@@ -134,7 +124,7 @@ export function MixesClient({ initialMixes }: { initialMixes: MixListItem[] }) {
                   setComment(mix.rating?.comment ?? "")
                 }}
                 className={`w-full rounded-2xl border p-4 text-left transition ${
-                  selectedId === mix.id
+                  (selectedId ?? mixes[0]?.id) === mix.id
                     ? "border-amber-500/40 bg-amber-500/10"
                     : "border-white/10 bg-white/[0.02] hover:bg-white/5"
                 }`}
@@ -162,24 +152,21 @@ export function MixesClient({ initialMixes }: { initialMixes: MixListItem[] }) {
                     <CardTitle>{selected.name}</CardTitle>
                     <CardDescription>
                       {selected.tobaccoCount} табака · {selected.totalGrams} г
-                      {selected.variantType ? ` · ${selected.variantType}` : ""}
                     </CardDescription>
                   </div>
                   <div className="flex gap-2">
-                    <Button
-                      variant="secondary"
-                      size="sm"
-                      onClick={() => remake(selected.id)}
-                      disabled={pending}
-                    >
+                    <Button variant="secondary" size="sm" onClick={() => remake(selected.id)}>
                       <RefreshCw className="h-4 w-4" />
                       Приготовить снова
                     </Button>
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => removeMix(selected.id)}
-                      disabled={pending}
+                      onClick={() => {
+                        removeMix(selected.id)
+                        setSelectedId(null)
+                        setMessage("Микс удалён")
+                      }}
                     >
                       <Trash2 className="h-4 w-4 text-red-400" />
                     </Button>
@@ -188,20 +175,23 @@ export function MixesClient({ initialMixes }: { initialMixes: MixListItem[] }) {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-2">
-                  {selected.ingredients.map((ing) => (
-                    <div
-                      key={ing.id}
-                      className="flex items-center justify-between rounded-xl border border-white/5 bg-black/20 px-3 py-2 text-sm"
-                    >
-                      <span>
-                        {ing.tobacco.brand.name} {ing.tobacco.name}
-                        <Badge className="ml-2">{ing.role}</Badge>
-                      </span>
-                      <span className="text-stone-400">
-                        {ing.percent}% · {ing.grams} г
-                      </span>
-                    </div>
-                  ))}
+                  {selected.ingredients.map((ing) => {
+                    const tobacco = getTobaccoById(ing.tobaccoId)
+                    return (
+                      <div
+                        key={`${selected.id}-${ing.tobaccoId}`}
+                        className="flex items-center justify-between rounded-xl border border-white/5 bg-black/20 px-3 py-2 text-sm"
+                      >
+                        <span>
+                          {tobacco?.brand} {tobacco?.name}
+                          <Badge className="ml-2">{ing.role}</Badge>
+                        </span>
+                        <span className="text-stone-400">
+                          {ing.percent}% · {ing.grams} г
+                        </span>
+                      </div>
+                    )
+                  })}
                 </div>
 
                 <ProfileBars profile={selected.profile} />
@@ -231,11 +221,16 @@ export function MixesClient({ initialMixes }: { initialMixes: MixListItem[] }) {
                     ))}
                   </div>
                   <Textarea
-                    placeholder="Комментарий, например: очень вкусно, холод можно увеличить"
+                    placeholder="Комментарий"
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
                   />
-                  <Button onClick={() => rateMix(selected.id)} disabled={pending}>
+                  <Button
+                    onClick={() => {
+                      setMixRating(selected.id, score, comment || null)
+                      setMessage("Оценка сохранена")
+                    }}
+                  >
                     Сохранить оценку
                   </Button>
                 </div>

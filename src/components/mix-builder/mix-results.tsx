@@ -1,14 +1,14 @@
 "use client"
 
-import { useState, useTransition } from "react"
+import { useState } from "react"
 import { AlertTriangle, Save, Star } from "lucide-react"
+import { useAppStore } from "@/components/providers/app-store-provider"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ProfileBars } from "@/components/shared/profile-bars"
 import { roleLabel } from "@/lib/recommendations"
 import { MixSuggestion, MixVariantType } from "@/types"
-import { cn } from "@/lib/utils"
 
 const VARIANT_META: Record<
   MixVariantType,
@@ -32,51 +32,15 @@ const VARIANT_META: Record<
 }
 
 export function MixResults({ suggestions }: { suggestions: MixSuggestion[] }) {
-  const [pendingId, setPendingId] = useState<string | null>(null)
+  const { saveMix } = useAppStore()
   const [messages, setMessages] = useState<Record<string, string>>({})
-  const [, startTransition] = useTransition()
-
-  function saveMix(suggestion: MixSuggestion) {
-    startTransition(async () => {
-      setPendingId(suggestion.id)
-      const res = await fetch("/api/mixes", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: suggestion.name,
-          totalGrams: suggestion.totalGrams,
-          tobaccoCount: suggestion.components.length,
-          profile: suggestion.profile,
-          explanation: suggestion.explanation,
-          variantType: suggestion.variantType,
-          ingredients: suggestion.components.map((c) => ({
-            tobaccoId: c.tobaccoId,
-            role: c.role,
-            percent: c.percent,
-            grams: c.grams,
-          })),
-        }),
-      })
-      const data = await res.json()
-      setMessages((prev) => ({
-        ...prev,
-        [suggestion.id]: res.ok
-          ? "Микс сохранён"
-          : data.error ?? "Не удалось сохранить",
-      }))
-      setPendingId(null)
-    })
-  }
 
   return (
     <div className="grid gap-4 lg:grid-cols-3">
       {suggestions.map((suggestion) => {
         const meta = VARIANT_META[suggestion.variantType]
         return (
-          <Card
-            key={suggestion.id}
-            className="flex flex-col transition hover:border-white/20"
-          >
+          <Card key={suggestion.id} className="flex flex-col transition hover:border-white/20">
             <CardHeader>
               <div className="mb-2 flex items-center justify-between gap-2">
                 <Badge className={meta.color}>
@@ -110,24 +74,17 @@ export function MixResults({ suggestions }: { suggestions: MixSuggestion[] }) {
               </div>
 
               <ProfileBars profile={suggestion.profile} />
+              <p className="text-sm leading-relaxed text-stone-400">{suggestion.explanation}</p>
 
-              <p className="text-sm leading-relaxed text-stone-400">
-                {suggestion.explanation}
-              </p>
-
-              {!suggestion.availability.available ||
-              suggestion.availability.warnings.length > 0 ? (
+              {suggestion.availability.warnings.length > 0 ? (
                 <div className="rounded-xl border border-amber-500/20 bg-amber-500/10 p-3 text-sm text-amber-200">
                   <div className="mb-1 flex items-center gap-2 font-medium">
                     <AlertTriangle className="h-4 w-4" />
                     Наличие
                   </div>
-                  <ul className="space-y-1 text-amber-100/90">
+                  <ul className="space-y-1">
                     {suggestion.availability.warnings.map((w) => (
                       <li key={w}>{w}</li>
-                    ))}
-                    {suggestion.availability.alternatives?.map((a) => (
-                      <li key={a}>{a}</li>
                     ))}
                   </ul>
                 </div>
@@ -136,27 +93,22 @@ export function MixResults({ suggestions }: { suggestions: MixSuggestion[] }) {
               <div className="mt-auto space-y-2 pt-2">
                 <Button
                   className="w-full"
-                  onClick={() => saveMix(suggestion)}
-                  disabled={pendingId === suggestion.id}
+                  onClick={() => {
+                    saveMix(suggestion)
+                    setMessages((prev) => ({ ...prev, [suggestion.id]: "Микс сохранён" }))
+                  }}
                 >
                   <Save className="h-4 w-4" />
                   Сохранить микс
                 </Button>
                 {messages[suggestion.id] ? (
-                  <p
-                    className={cn(
-                      "text-center text-xs",
-                      messages[suggestion.id].includes("сохранён")
-                        ? "text-emerald-400"
-                        : "text-red-400"
-                    )}
-                  >
+                  <p className="text-center text-xs text-emerald-400">
                     {messages[suggestion.id]}
                   </p>
                 ) : null}
                 <div className="flex items-center justify-center gap-1 text-xs text-stone-500">
                   <Star className="h-3 w-3" />
-                  Оценку можно поставить после сохранения
+                  Оценку можно поставить в «Мои миксы»
                 </div>
               </div>
             </CardContent>

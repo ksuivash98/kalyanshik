@@ -6,8 +6,9 @@ export function PwaRegister() {
   useEffect(() => {
     if (typeof window === "undefined" || !("serviceWorker" in navigator)) return
 
-    navigator.serviceWorker.register("/sw.js").catch(() => {
-      // ignore registration errors in dev
+    const base = process.env.NEXT_PUBLIC_BASE_PATH || ""
+    navigator.serviceWorker.register(`${base}/sw.js`).catch(() => {
+      // ignore in local/dev
     })
   }, [])
 

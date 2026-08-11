@@ -1,60 +1,48 @@
 # Hookah Mix
 
-Цифровой помощник кальянщика: коллекция табаков, каталог и подбор миксов по вкусовому профилю.
+Цифровой помощник кальянщика: коллекция табаков, каталог и подбор миксов.
 
-## Стек
+**Онлайн:** [https://ksuivash98.github.io/kalyanshik/](https://ksuivash98.github.io/kalyanshik/)
 
-- Next.js (App Router) + TypeScript
-- Tailwind CSS
-- Prisma + SQLite (локально) / PostgreSQL (через Docker)
-- Zod, Lucide Icons
+## Как это работает на GitHub Pages
 
-## Быстрый старт (веб-приложение)
+Приложение собрано как **статический сайт**:
+- каталог зашит в фронтенд
+- коллекция и миксы хранятся в `localStorage` браузера
+- recommendation engine работает прямо в браузере
+
+Серверная БД (Prisma) для Pages не нужна.
+
+## Локальный запуск
 
 ```bash
 npm install
-npm run db:reset
 npm run dev
 ```
 
-Откройте в браузере: [http://localhost:3000](http://localhost:3000)
+Откройте [http://localhost:3000](http://localhost:3000)
 
-Это полноценное веб-приложение (PWA):
-- работает в Chrome / Edge / Safari / Firefox
-- адаптивно под телефон и планшет
-- можно установить на домашний экран («Установить приложение» в браузере)
-
-### Production
+## Сборка под GitHub Pages
 
 ```bash
-npm run build
-npm run start
+NEXT_PUBLIC_BASE_PATH=/kalyanshik npm run build:pages
 ```
 
-Или через Docker:
+Статика появится в папке `out/`.
 
-```bash
-docker compose up --build -d
-```
+## Автодеплой
 
-## PostgreSQL (опционально)
+При пуше в `main` / `master` GitHub Action собирает сайт и публикует на Pages.
 
-1. Запустите `docker compose up -d`
-2. В `.env` укажите:
+В настройках репозитория:
 
-```env
-DATABASE_URL="postgresql://postgres:postgres@localhost:5432/hookah_mix?schema=public"
-```
+1. **Settings → Pages**
+2. Source: **GitHub Actions**
 
-3. В `prisma/schema.prisma` смените `provider` на `postgresql`
-4. Выполните `npm run db:reset`
+## Разделы
 
-## Основные разделы
-
-- `/` — dashboard
+- `/` — главная
 - `/collection` — моя коллекция
-- `/catalog` — общий каталог
-- `/create-mix` — wizard подбора микса
+- `/catalog` — каталог
+- `/create-mix` — подбор микса
 - `/mixes` — сохранённые миксы
-
-На первом этапе используется demo-пользователь без сложной авторизации.

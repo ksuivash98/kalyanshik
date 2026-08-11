@@ -1,7 +1,8 @@
 "use client"
 
-import { useState, useTransition } from "react"
+import { useState } from "react"
 import { ArrowLeft, ArrowRight, Sparkles } from "lucide-react"
+import { useAppStore } from "@/components/providers/app-store-provider"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -9,7 +10,8 @@ import { Slider } from "@/components/ui/slider"
 import { Switch } from "@/components/ui/switch"
 import { Badge } from "@/components/ui/badge"
 import { MixResults } from "@/components/mix-builder/mix-results"
-import { defaultTargetProfile } from "@/lib/recommendations"
+import { defaultTargetProfile, recommendMixes } from "@/lib/recommendations"
+import { mixRequestSchema } from "@/lib/validation"
 import {
   EXCLUSION_TAGS,
   ExclusionTag,
@@ -21,17 +23,11 @@ import {
 } from "@/types"
 import { cn } from "@/lib/utils"
 
-const STEPS = [
-  "Количество",
-  "Вес",
-  "Характеристики",
-  "Предпочтения",
-  "Источник",
-]
-
+const STEPS = ["Количество", "Вес", "Характеристики", "Предпочтения", "Источник"]
 const WEIGHT_PRESETS = [10, 12, 15, 20]
 
 export function MixBuilder() {
+  const { ready, getCandidates } = useAppStore()
   const [step, setStep] = useState(0)
   const [tobaccoCount, setTobaccoCount] = useState<2 | 3 | 4 | 5>(3)
   const [totalGrams, setTotalGrams] = useState(12)
@@ -43,7 +39,7 @@ export function MixBuilder() {
   const [requireStock, setRequireStock] = useState(true)
   const [suggestions, setSuggestions] = useState<MixSuggestion[]>([])
   const [error, setError] = useState<string | null>(null)
-  const [pending, startTransition] = useTransition()
+  const [pending, setPending] = useState(false)
 
   function togglePref(tag: PreferenceTag) {
     setPreferences((prev) =>
@@ -58,41 +54,48 @@ export function MixBuilder() {
   }
 
   function submit() {
-    startTransition(async () => {
-      setError(null)
-      const grams = customGrams ? Number(customGrams) : totalGrams
-      if (!grams || grams <= 0) {
-        setError("Укажите корректный вес микса")
-        return
-      }
+    setPending(true)
+    setError(null)
+    const grams = customGrams ? Number(customGrams) : totalGrams
+    const payload = {
+      tobaccoCount,
+      totalGrams: grams,
+      targetProfile,
+      preferences,
+      exclusions,
+      useCollectionOnly,
+      requireStock,
+    }
+    const parsed = mixRequestSchema.safeParse(payload)
+    if (!parsed.success) {
+      setError("Некорректные параметры подбора")
+      setPending(false)
+      return
+    }
 
-      const res = await fetch("/api/recommend", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          tobaccoCount,
-          totalGrams: grams,
-          targetProfile,
-          preferences,
-          exclusions,
-          useCollectionOnly,
-          requireStock,
-        }),
-      })
-
-      const data = await res.json()
-      if (!res.ok) {
-        setError(data.error ?? "Ошибка подбора")
-        return
-      }
-      if (!data.suggestions?.length) {
-        setError(data.error ?? "Нет подходящих вариантов")
-        setSuggestions([])
-        return
-      }
-      setSuggestions(data.suggestions)
-      setStep(5)
+    const candidates = getCandidates(useCollectionOnly)
+    const result = recommendMixes(candidates, {
+      ...parsed.data,
+      preferences: parsed.data.preferences as PreferenceTag[],
+      exclusions: parsed.data.exclusions as ExclusionTag[],
     })
+
+    if (result.length === 0) {
+      setError(
+        "Не удалось подобрать микс. Добавьте больше табаков в коллекцию или смягчите фильтры."
+      )
+      setSuggestions([])
+      setPending(false)
+      return
+    }
+
+    setSuggestions(result)
+    setStep(5)
+    setPending(false)
+  }
+
+  if (!ready) {
+    return <div className="py-20 text-center text-stone-500">Загрузка...</div>
   }
 
   return (
@@ -180,44 +183,34 @@ export function MixBuilder() {
                       </button>
                     ))}
                   </div>
-                  <div>
-                    <label className="mb-2 block text-sm text-stone-400">Свой вес</label>
-                    <Input
-                      type="number"
-                      min={1}
-                      placeholder="Например, 18"
-                      value={customGrams}
-                      onChange={(e) => setCustomGrams(e.target.value)}
-                    />
-                  </div>
+                  <Input
+                    type="number"
+                    min={1}
+                    placeholder="Свой вес, например 18"
+                    value={customGrams}
+                    onChange={(e) => setCustomGrams(e.target.value)}
+                  />
                 </div>
               )}
 
               {step === 2 && (
                 <div className="grid gap-5 md:grid-cols-2">
-                  {(Object.keys(FLAVOR_LABELS) as (keyof FlavorProfile)[])
-                    .filter((k) => k !== "intensity")
-                    .map((key) => (
-                      <Slider
-                        key={key}
-                        label={FLAVOR_LABELS[key]}
-                        min={key === "strength" || key === "sweetness" ? 1 : 0}
-                        max={5}
-                        value={targetProfile[key]}
-                        onChange={(value) =>
-                          setTargetProfile((p) => ({ ...p, [key]: value }))
-                        }
-                      />
-                    ))}
-                  <Slider
-                    label={FLAVOR_LABELS.intensity}
-                    min={1}
-                    max={5}
-                    value={targetProfile.intensity}
-                    onChange={(value) =>
-                      setTargetProfile((p) => ({ ...p, intensity: value }))
-                    }
-                  />
+                  {(Object.keys(FLAVOR_LABELS) as (keyof FlavorProfile)[]).map((key) => (
+                    <Slider
+                      key={key}
+                      label={FLAVOR_LABELS[key]}
+                      min={
+                        key === "strength" || key === "sweetness" || key === "intensity"
+                          ? 1
+                          : 0
+                      }
+                      max={5}
+                      value={targetProfile[key]}
+                      onChange={(value) =>
+                        setTargetProfile((p) => ({ ...p, [key]: value }))
+                      }
+                    />
+                  ))}
                 </div>
               )}
 
@@ -245,11 +238,7 @@ export function MixBuilder() {
                     <h3 className="mb-3 text-sm font-medium text-stone-300">Исключения</h3>
                     <div className="flex flex-wrap gap-2">
                       {EXCLUSION_TAGS.map((tag) => (
-                        <button
-                          key={tag}
-                          type="button"
-                          onClick={() => toggleExclusion(tag)}
-                        >
+                        <button key={tag} type="button" onClick={() => toggleExclusion(tag)}>
                           <Badge
                             className={cn(
                               "cursor-pointer transition",
@@ -278,9 +267,6 @@ export function MixBuilder() {
                     onCheckedChange={setRequireStock}
                     label="Учитывать наличие (граммы)"
                   />
-                  <p className="text-sm text-stone-500">
-                    Если коллекция выключена, алгоритм может брать вкусы из всего каталога.
-                  </p>
                 </div>
               )}
 
@@ -295,7 +281,6 @@ export function MixBuilder() {
                   <ArrowLeft className="h-4 w-4" />
                   Назад
                 </Button>
-
                 {step < 4 ? (
                   <Button onClick={() => setStep((s) => s + 1)}>
                     Далее

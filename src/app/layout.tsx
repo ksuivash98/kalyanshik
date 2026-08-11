@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Manrope, JetBrains_Mono } from "next/font/google"
 import { AppNav } from "@/components/layout/app-nav"
 import { PwaRegister } from "@/components/layout/pwa-register"
+import { AppStoreProvider } from "@/components/providers/app-store-provider"
 import "./globals.css"
 
 const display = Manrope({
@@ -14,6 +15,8 @@ const mono = JetBrains_Mono({
   subsets: ["latin"],
 })
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ""
+
 export const metadata: Metadata = {
   applicationName: "Hookah Mix",
   title: {
@@ -22,37 +25,20 @@ export const metadata: Metadata = {
   },
   description:
     "Веб-приложение для коллекции табаков и подбора кальянных миксов по вкусу, крепости и холоду",
-  keywords: ["кальян", "микс", "табак", "hookah", "миксмейкер"],
-  authors: [{ name: "Hookah Mix" }],
-  creator: "Hookah Mix",
-  manifest: "/manifest.webmanifest",
+  manifest: `${basePath}/manifest.webmanifest`,
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "Hookah Mix",
   },
-  formatDetection: {
-    telephone: false,
-  },
-  openGraph: {
-    type: "website",
-    locale: "ru_RU",
-    siteName: "Hookah Mix",
-    title: "Hookah Mix — помощник кальянщика",
-    description:
-      "Коллекция табаков, каталог вкусов и умный подбор миксов по вкусовому профилю",
-  },
   icons: {
-    icon: [{ url: "/icons/icon.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/icons/apple-touch-icon.png" }],
+    icon: [{ url: `${basePath}/icons/icon.svg`, type: "image/svg+xml" }],
+    apple: [{ url: `${basePath}/icons/apple-touch-icon.png` }],
   },
 }
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0c0a09" },
-    { media: "(prefers-color-scheme: light)", color: "#0c0a09" },
-  ],
+  themeColor: "#0c0a09",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
@@ -68,9 +54,11 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${display.variable} ${mono.variable} h-full`}>
       <body className="min-h-full font-sans antialiased">
-        <PwaRegister />
-        <AppNav />
-        <main className="mx-auto max-w-6xl px-4 pb-28 pt-8 md:pb-12">{children}</main>
+        <AppStoreProvider>
+          <PwaRegister />
+          <AppNav />
+          <main className="mx-auto max-w-6xl px-4 pb-28 pt-8 md:pb-12">{children}</main>
+        </AppStoreProvider>
       </body>
     </html>
   )

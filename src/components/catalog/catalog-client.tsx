@@ -1,76 +1,53 @@
 "use client"
 
-import { useMemo, useState, useTransition } from "react"
+import { useMemo, useState } from "react"
 import { Plus, Search } from "lucide-react"
+import { useAppStore } from "@/components/providers/app-store-provider"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { ProfileBars } from "@/components/shared/profile-bars"
-import { parseTags } from "@/lib/utils"
-import { FlavorProfile } from "@/types"
+import { CATALOG, getBrands } from "@/data/catalog"
 
-export type CatalogTobacco = {
-  id: string
-  name: string
-  tags: string
-  brand: { name: string }
-  profile: FlavorProfile | null
-  inCollection: boolean
-}
-
-export function CatalogClient({ tobaccos }: { tobaccos: CatalogTobacco[] }) {
+export function CatalogClient() {
+  const { ready, state, addTobacco } = useAppStore()
   const [query, setQuery] = useState("")
   const [brand, setBrand] = useState("all")
-  const [items, setItems] = useState(tobaccos)
-  const [pending, startTransition] = useTransition()
   const [message, setMessage] = useState<string | null>(null)
 
-  const brands = useMemo(
-    () => [...new Set(tobaccos.map((t) => t.brand.name))].sort(),
-    [tobaccos]
+  const inCollection = useMemo(
+    () => new Set(state.collection.map((c) => c.tobaccoId)),
+    [state.collection]
   )
 
+  const brands = getBrands()
+
   const filtered = useMemo(() => {
-    return items.filter((t) => {
+    return CATALOG.filter((t) => {
       const q = query.trim().toLowerCase()
       const matchQuery =
         !q ||
         t.name.toLowerCase().includes(q) ||
-        t.brand.name.toLowerCase().includes(q) ||
-        parseTags(t.tags).some((tag) => tag.toLowerCase().includes(q))
-      const matchBrand = brand === "all" || t.brand.name === brand
+        t.brand.toLowerCase().includes(q) ||
+        t.tags.some((tag) => tag.toLowerCase().includes(q))
+      const matchBrand = brand === "all" || t.brand === brand
       return matchQuery && matchBrand
     })
-  }, [items, query, brand])
+  }, [query, brand])
 
   const grouped = useMemo(() => {
-    const map = new Map<string, CatalogTobacco[]>()
+    const map = new Map<string, typeof CATALOG>()
     for (const t of filtered) {
-      const list = map.get(t.brand.name) ?? []
+      const list = map.get(t.brand) ?? []
       list.push(t)
-      map.set(t.brand.name, list)
+      map.set(t.brand, list)
     }
     return [...map.entries()]
   }, [filtered])
 
-  function addToCollection(tobaccoId: string) {
-    startTransition(async () => {
-      setMessage(null)
-      const res = await fetch("/api/collection", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ tobaccoId, grams: 50, rating: 4 }),
-      })
-      if (!res.ok) {
-        setMessage("Не удалось добавить в коллекцию")
-        return
-      }
-      setItems((prev) =>
-        prev.map((t) => (t.id === tobaccoId ? { ...t, inCollection: true } : t))
-      )
-      setMessage("Добавлено в коллекцию")
-    })
+  if (!ready) {
+    return <div className="py-20 text-center text-stone-500">Загрузка...</div>
   }
 
   return (
@@ -114,30 +91,31 @@ export function CatalogClient({ tobaccos }: { tobaccos: CatalogTobacco[] }) {
             <h2 className="text-xl font-semibold text-stone-100">{brandName}</h2>
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {list.map((tobacco) => {
-                const tags = parseTags(tobacco.tags)
+                const owned = inCollection.has(tobacco.id)
                 return (
                   <Card key={tobacco.id} className="transition hover:border-white/20">
                     <CardHeader>
                       <CardTitle>{tobacco.name}</CardTitle>
-                      <CardDescription>{tobacco.brand.name}</CardDescription>
+                      <CardDescription>{tobacco.brand}</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      {tobacco.profile ? (
-                        <ProfileBars profile={tobacco.profile} compact />
-                      ) : null}
+                      <ProfileBars profile={tobacco.profile} compact />
                       <div className="flex flex-wrap gap-1.5">
-                        {tags.map((tag) => (
+                        {tobacco.tags.map((tag) => (
                           <Badge key={tag}>{tag}</Badge>
                         ))}
                       </div>
                       <Button
                         className="w-full"
-                        variant={tobacco.inCollection ? "secondary" : "default"}
-                        disabled={tobacco.inCollection || pending}
-                        onClick={() => addToCollection(tobacco.id)}
+                        variant={owned ? "secondary" : "default"}
+                        disabled={owned}
+                        onClick={() => {
+                          addTobacco(tobacco.id, 50)
+                          setMessage("Добавлено в коллекцию")
+                        }}
                       >
                         <Plus className="h-4 w-4" />
-                        {tobacco.inCollection ? "Уже в коллекции" : "В коллекцию"}
+                        {owned ? "Уже в коллекции" : "В коллекцию"}
                       </Button>
                     </CardContent>
                   </Card>
