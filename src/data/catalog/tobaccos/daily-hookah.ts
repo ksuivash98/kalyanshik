@@ -6,7 +6,7 @@ const ITEMS = [
   {
     name: "Ананас",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://smokemaster.ru/shop/tabak-dlya-kalyana/daily-hookah-tobacco/"],
     strengthHint: 2,
   },

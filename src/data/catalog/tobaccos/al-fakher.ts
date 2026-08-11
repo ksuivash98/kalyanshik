@@ -83,7 +83,7 @@ const ITEMS = [
   {
     name: "Grapefruit (Грейпфрут)",
     line: "Classic",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://moredyma.su/tabak-dlya-kalyana/al-fakher/", "https://justfreid.ru/catalog/tabak/al-fakher/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/al_fakher/"],
     strengthHint: 3,
   },
@@ -202,7 +202,7 @@ const ITEMS = [
   {
     name: "Watermelon (Арбуз)",
     line: "Classic",
-    tags: ["watermelon","melon"],
+    tags: ["watermelon"],
     sources: ["https://moredyma.su/tabak-dlya-kalyana/al-fakher/", "https://justfreid.ru/catalog/tabak/al-fakher/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/al_fakher/"],
     strengthHint: 3,
   },

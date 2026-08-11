@@ -178,17 +178,6 @@ export const CATALOG = CATALOG_DB.tobaccos.map((t) => {
   }
 })
 
-export const STARTER_COLLECTION_IDS = [
-  "darkside-core-mango-lassi",
-  "darkside-core-cola",
-  "darkside-core-bananapapa",
-  "musthave-classic-banana-mama",
-  "musthave-classic-pineapple-rings",
-  "musthave-classic-nord-star",
-  "blackburn-classic-rising-star",
-  "blackburn-classic-cane-mint",
-].filter((id) => CATALOG_DB.tobaccos.some((t) => t.id === id))
-
 export function getBrands() {
   return [...CATALOG_DB.brands].sort((a, b) => a.name.localeCompare(b.name))
 }

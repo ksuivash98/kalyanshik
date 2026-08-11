@@ -321,7 +321,7 @@ const ITEMS = [
   {
     name: "Medium Grapefruit — Грейпфрут",
     line: "Medium",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/smes-dlya-kalyana/chabacco/"],
     strengthHint: 1,
   },
@@ -391,7 +391,7 @@ const ITEMS = [
   {
     name: "Medium Pineapple — Ананас",
     line: "Medium",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/smes-dlya-kalyana/chabacco/"],
     strengthHint: 1,
   },
@@ -447,7 +447,7 @@ const ITEMS = [
   {
     name: "Medium Watermelon Astrakhan — Астраханский Арбуз",
     line: "Medium",
-    tags: ["watermelon","melon"],
+    tags: ["watermelon"],
     sources: ["https://sevas-market.ru/product-category/smes-dlya-kalyana/chabacco/"],
     strengthHint: 1,
   },

@@ -13,7 +13,7 @@ const ITEMS = [
   {
     name: "Авторитетный Ананас",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://smokemaster.ru/shop/tabak-dlya-kalyana/severnyy/", "https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/severnyy/"],
     strengthHint: 3,
   },
@@ -90,7 +90,7 @@ const ITEMS = [
   {
     name: "Везучий Грейпфрут",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "grapefruit"],
     sources: ["https://smokemaster.ru/shop/tabak-dlya-kalyana/severnyy/", "https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/severnyy/"],
     strengthHint: 3,
   },
@@ -177,7 +177,7 @@ const ITEMS = [
   {
     name: "Грейпфрут Тоник",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "grapefruit"],
     sources: ["https://smokemaster.ru/shop/tabak-dlya-kalyana/severnyy/", "https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/severnyy/"],
     strengthHint: 3,
   },

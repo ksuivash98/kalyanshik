@@ -468,14 +468,14 @@ const ITEMS = [
   {
     name: "Pineapple",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://smokemaster.ru/shop/tabak-dlya-kalyana/duft-tobacco/", "https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/duft/"],
     strengthHint: 3,
   },
   {
     name: "Pink Grapefruit",
     line: "Classic",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://smokemaster.ru/shop/tabak-dlya-kalyana/duft-tobacco/", "https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/duft/"],
     strengthHint: 3,
   },

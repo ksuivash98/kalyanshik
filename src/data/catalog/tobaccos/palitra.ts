@@ -132,7 +132,7 @@ const ITEMS = [
   {
     name: "Ananas — Ананас",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/palitra/", "https://moredyma.su/tabak-dlya-kalyana/palitra/"],
     strengthHint: 3,
   },
@@ -251,7 +251,7 @@ const ITEMS = [
   {
     name: "Grapefruit Juice — Грейпфрутовый Сок",
     line: "Classic",
-    tags: ["cold","grape"],
+    tags: ["cold", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/palitra/", "https://moredyma.su/tabak-dlya-kalyana/palitra/"],
     strengthHint: 3,
   },
@@ -335,7 +335,7 @@ const ITEMS = [
   {
     name: "Pink Moon — Грейпфрут Клубника Малина",
     line: "Classic",
-    tags: ["berry"],
+    tags: ["berry", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/palitra/", "https://moredyma.su/tabak-dlya-kalyana/palitra/"],
     strengthHint: 3,
   },

@@ -34,7 +34,7 @@ const ITEMS = [
   {
     name: "Грейпфрут (Grapefruit)",
     line: "Classic",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -531,7 +531,7 @@ const ITEMS = [
   {
     name: "Grapefruit — Грейпфрут",
     line: "Classic",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -587,7 +587,7 @@ const ITEMS = [
   {
     name: "Ice Baby — Ягодный Сорбет с Грейпфрутом",
     line: "Classic",
-    tags: ["cold","berry"],
+    tags: ["cold", "berry", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -867,28 +867,28 @@ const ITEMS = [
   {
     name: "Pineapple — Ананас",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
   {
     name: "Pineapple (Сочный Ананас)",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
   {
     name: "Pineapple Rings — Ананасовые Колечки",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
   {
     name: "Pineapple Yogurt — Ананасовый Йогурт",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1210,14 +1210,14 @@ const ITEMS = [
   {
     name: "Watermelon — Арбуз",
     line: "Classic",
-    tags: ["watermelon","melon"],
+    tags: ["watermelon"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
   {
     name: "Watermelon (Сладкий арбуз)",
     line: "Classic",
-    tags: ["watermelon","melon"],
+    tags: ["watermelon"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1308,7 +1308,7 @@ const ITEMS = [
   {
     name: "HiT #16 Лайм, грейпфрут, апельсин (Citrus Rock)",
     line: "HiT",
-    tags: ["lime","orange","citrus"],
+    tags: ["lime", "orange", "citrus", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1336,7 +1336,7 @@ const ITEMS = [
   {
     name: "HiT #2 Груша, яблоко, ананас (Golden Funk)",
     line: "HiT",
-    tags: ["apple"],
+    tags: ["pear", "apple", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1406,7 +1406,7 @@ const ITEMS = [
   {
     name: "HiT #29 Киви, клубника, грейпфрут (Strawberry Nectar)",
     line: "HiT",
-    tags: ["berry"],
+    tags: ["berry", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1434,7 +1434,7 @@ const ITEMS = [
   {
     name: "HiT #32 Маффин, ананас, черника",
     line: "HiT",
-    tags: ["berry"],
+    tags: ["berry", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1455,7 +1455,7 @@ const ITEMS = [
   {
     name: "HiT #35 Киви, клубника, ананас",
     line: "HiT",
-    tags: ["berry"],
+    tags: ["berry", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1497,7 +1497,7 @@ const ITEMS = [
   {
     name: "HiT #40 Грейпфрут, помело, мёд",
     line: "HiT",
-    tags: ["fruity"],
+    tags: ["fruity", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1511,7 +1511,7 @@ const ITEMS = [
   {
     name: "HiT #6 Ананас, киви, эвкалипт (Pine Punk)",
     line: "HiT",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1525,7 +1525,7 @@ const ITEMS = [
   {
     name: "HiT #8 Чай, грейпфрут, лайм (Cha-cha-chai)",
     line: "HiT",
-    tags: ["lime","tea"],
+    tags: ["lime", "tea", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1567,7 +1567,7 @@ const ITEMS = [
   {
     name: "Hit Cha Cha Cha — Чай Грейпфрут Лайм",
     line: "HiT",
-    tags: ["lime","tea"],
+    tags: ["lime", "tea", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1588,7 +1588,7 @@ const ITEMS = [
   {
     name: "Hit Citrus Rock — Лайм Грейпфрут Апельсин",
     line: "HiT",
-    tags: ["lime","orange","citrus"],
+    tags: ["lime", "orange", "citrus", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1616,7 +1616,7 @@ const ITEMS = [
   {
     name: "Hit Golden Funk — Груша Яблоко Ананас",
     line: "HiT",
-    tags: ["apple"],
+    tags: ["pear", "apple", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1686,7 +1686,7 @@ const ITEMS = [
   {
     name: "Hit Pine Punk — Ананас Киви Эвкалипт",
     line: "HiT",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
@@ -1714,14 +1714,14 @@ const ITEMS = [
   {
     name: "ANANAS SHOCK",
     line: "Shock",
-    tags: ["cold"],
+    tags: ["cold", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },
   {
     name: "Ananas Shock — Кислый Ананас",
     line: "Shock",
-    tags: ["cold"],
+    tags: ["cold", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/burn/", "https://justfreid.ru/catalog/tabak/burn/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/black-burn/", "https://moredyma.su/tabak-dlya-kalyana/black-burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/black_burn_hit/"],
     strengthHint: 4,
   },

@@ -272,7 +272,7 @@ const ITEMS = [
   {
     name: "Grapefruit",
     line: "Classic",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://musthave.ru/category/tabak-dlya-kalyana/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/must-have-tobacco/", "https://justfreid.ru/catalog/tabak/musthave/", "https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/must-have/"],
     strengthHint: 3,
   },
@@ -475,7 +475,7 @@ const ITEMS = [
   {
     name: "Pineapple Rings",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://musthave.ru/category/tabak-dlya-kalyana/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/must-have-tobacco/", "https://justfreid.ru/catalog/tabak/musthave/", "https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/must-have/"],
     strengthHint: 3,
   },
@@ -671,7 +671,7 @@ const ITEMS = [
   {
     name: "Watermelon",
     line: "Classic",
-    tags: ["watermelon","melon"],
+    tags: ["watermelon"],
     sources: ["https://musthave.ru/category/tabak-dlya-kalyana/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/must-have-tobacco/", "https://justfreid.ru/catalog/tabak/musthave/", "https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/must-have/"],
     strengthHint: 3,
   },

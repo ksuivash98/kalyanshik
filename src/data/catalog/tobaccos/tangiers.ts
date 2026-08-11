@@ -62,7 +62,7 @@ const ITEMS = [
   {
     name: "TROPICAL REVENGE! - BURLEY - Ананас, груша и апельсин - R",
     line: "Burley",
-    tags: ["orange","tropical"],
+    tags: ["orange", "tropical", "pineapple", "pear"],
     sources: ["https://moredyma.su/tabak-dlya-kalyana/tangiers/", "https://moredyma.su/tabak-dlya-kalyana/tangiers-noir/", "https://justfreid.ru/catalog/tabak/tangiers/"],
     strengthHint: 3,
   },

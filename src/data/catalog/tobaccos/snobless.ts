@@ -90,7 +90,7 @@ const ITEMS = [
   {
     name: "Prime Line Pineapple Ананас",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/snobless/", "https://moredyma.su/tabak-dlya-kalyana/snobless/"],
     strengthHint: 3,
   },

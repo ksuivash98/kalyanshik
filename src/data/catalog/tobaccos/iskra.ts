@@ -144,7 +144,7 @@ const ITEMS = [
   {
     name: "Pineapple",
     line: "Classic",
-    tags: ["tropical", "fruity"],
+    tags: ["tropical", "fruity", "pineapple"],
     sources: [
       "https://gustogo.ru/tabak/iskra-100",
       "https://dotsmoke.ru/collection/iskra",

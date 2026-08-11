@@ -6,14 +6,14 @@ const ITEMS = [
   {
     name: "Ананас",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/serbetli/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/serbetli/"],
     strengthHint: 3,
   },
   {
     name: "Ананас со льдом",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/serbetli/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/serbetli/"],
     strengthHint: 3,
   },
@@ -27,7 +27,7 @@ const ITEMS = [
   {
     name: "Апельсин Ананас",
     line: "Classic",
-    tags: ["orange"],
+    tags: ["orange", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/serbetli/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/serbetli/"],
     strengthHint: 3,
   },
@@ -181,14 +181,14 @@ const ITEMS = [
   {
     name: "Грейпфрут",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/serbetli/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/serbetli/"],
     strengthHint: 3,
   },
   {
     name: "Грейпфрут со льдом",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/serbetli/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/serbetli/"],
     strengthHint: 3,
   },
@@ -384,7 +384,7 @@ const ITEMS = [
   {
     name: "Манго Ананас",
     line: "Classic",
-    tags: ["mango"],
+    tags: ["mango", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/serbetli/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/serbetli/"],
     strengthHint: 3,
   },

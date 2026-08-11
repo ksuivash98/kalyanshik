@@ -6,7 +6,7 @@ const ITEMS = [
   {
     name: "Ананас",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/starline/"],
     strengthHint: 2,
   },

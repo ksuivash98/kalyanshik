@@ -139,7 +139,7 @@ const ITEMS = [
   {
     name: "Grapefruit",
     line: "Classic",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/banger/"],
     strengthHint: 4,
   },
@@ -237,7 +237,7 @@ const ITEMS = [
   {
     name: "Pineapple Kiwi",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/banger/"],
     strengthHint: 4,
   },

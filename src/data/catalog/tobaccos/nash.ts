@@ -13,7 +13,7 @@ const ITEMS = [
   {
     name: "Ананас",
     line: "Cigar",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/nash/"],
     strengthHint: 5,
   },
@@ -132,7 +132,7 @@ const ITEMS = [
   {
     name: "Ананас",
     line: "Hard",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/nash/"],
     strengthHint: 4,
   },
@@ -167,7 +167,7 @@ const ITEMS = [
   {
     name: "Грейпфрут",
     line: "Hard",
-    tags: ["fruity"],
+    tags: ["fruity", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/nash/"],
     strengthHint: 4,
   },

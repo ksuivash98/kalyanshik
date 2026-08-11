@@ -244,7 +244,8 @@ const ITEMS = [
   {
     name: "Ice Fruit Gum",
     line: "Classic",
-    tags: ["cold"],
+    tags: ["cold", "fruity"],
+    aliases: ["Ледяная фруктовая жвачка"],
     sources: ["https://smokemaster.ru/shop/tabak-dlya-kalyana/spectrum-tobacco/", "https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/spectrum/"],
     strengthHint: 2,
   },
@@ -314,7 +315,7 @@ const ITEMS = [
   {
     name: "Pineapple Boom",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://smokemaster.ru/shop/tabak-dlya-kalyana/spectrum-tobacco/", "https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/spectrum/"],
     strengthHint: 2,
   },
@@ -419,6 +420,28 @@ const ITEMS = [
       "https://www.mykalyan.ru/shop/spectrum113/tabak-spectrum-medium-line/spectrum-medium-line-200-gr/",
     ],
     strengthHint: 3,
+  },
+  {
+    name: "Honey Peach",
+    line: "Medium",
+    tags: ["peach", "honey"],
+    aliases: ["Медовый Персик", "Медовый персик"],
+    sources: [
+      "https://www.bigsmokestore.ru/catalog/tabak-spectrum-medium-25-gr/tabak_spectrum_medium_honey_peach_25_gr/",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/spectrum/spectrum_medium_line/spectrum_medium_line_25_gr/19175/",
+    ],
+    strengthHint: 3,
+  },
+  {
+    name: "Ice Fruit Gum",
+    line: "Hard",
+    tags: ["cold", "fruity"],
+    aliases: ["Ледяная фруктовая жвачка", "Ледяная Фруктовая Жвачка"],
+    sources: [
+      "https://sevas-market.ru/product/spectrum-hard-line-ice-fruit-gum-ledyanaya-fruktovaya-zhvachka-100gr/",
+      "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/spectrum/spectrum_hard_line/spectrum_hard_line_100_gr/3322/",
+    ],
+    strengthHint: 4,
   },
   {
     name: "Acid Shake",

@@ -1,6 +1,5 @@
 import {
   CATALOG_DB,
-  STARTER_COLLECTION_IDS,
   getTobaccoById,
   toRecommendationProfile,
 } from "@/data/catalog"
@@ -47,17 +46,21 @@ function uid(prefix: string) {
 }
 
 export function createDefaultState(): AppState {
-  return {
-    collection: STARTER_COLLECTION_IDS.map((tobaccoId) => ({
-      id: uid("col"),
-      tobaccoId,
-      grams: tobaccoId.includes("nord-star") || tobaccoId.includes("cane-mint") ? 20 : 25,
-      rating: 4,
-      note: "Добавлено из стартовой коллекции",
-      updatedAt: new Date().toISOString(),
-    })),
-    mixes: [],
+  return { collection: [], mixes: [] }
+}
+
+/** Only items that still exist in the current catalog. */
+export function getValidCollection(state: AppState): StoredCollectionItem[] {
+  return state.collection.filter((item) => Boolean(getTobaccoById(item.tobaccoId)))
+}
+
+function sanitizeState(state: AppState): AppState {
+  const collection = getValidCollection(state)
+  const mixes = Array.isArray(state.mixes) ? state.mixes : []
+  if (collection.length === state.collection.length && mixes === state.mixes) {
+    return state
   }
+  return { collection, mixes }
 }
 
 export function loadState(): AppState {
@@ -69,7 +72,15 @@ export function loadState(): AppState {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(initial))
       return initial
     }
-    return JSON.parse(raw) as AppState
+    const parsed = JSON.parse(raw) as AppState
+    const sanitized = sanitizeState({
+      collection: Array.isArray(parsed.collection) ? parsed.collection : [],
+      mixes: Array.isArray(parsed.mixes) ? parsed.mixes : [],
+    })
+    if (sanitized.collection.length !== (parsed.collection?.length ?? 0)) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(sanitized))
+    }
+    return sanitized
   } catch {
     return createDefaultState()
   }

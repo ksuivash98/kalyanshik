@@ -12,6 +12,7 @@ const QUERY_ALIASES: Record<string, string[]> = {
   strawberry: ["клубника", "strawberry"],
   grape: ["виноград", "grape"],
   apple: ["яблоко", "apple"],
+  pineapple: ["ананас", "pineapple"],
   peach: ["персик", "peach"],
   orange: ["апельсин", "orange"],
   cola: ["кола", "cola"],

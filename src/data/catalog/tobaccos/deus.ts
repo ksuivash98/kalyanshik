@@ -167,7 +167,7 @@ const ITEMS = [
   {
     name: "Pineapple Mango",
     line: "Classic",
-    tags: ["mango","apple"],
+    tags: ["mango", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/deus/"],
     strengthHint: 4,
   },
@@ -202,7 +202,7 @@ const ITEMS = [
   {
     name: "Rose Grapefruit",
     line: "Classic",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/deus/"],
     strengthHint: 4,
   },
@@ -223,7 +223,7 @@ const ITEMS = [
   {
     name: "Sour Pineapple",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/deus/"],
     strengthHint: 4,
   },
@@ -258,7 +258,7 @@ const ITEMS = [
   {
     name: "Watermelon Halls",
     line: "Classic",
-    tags: ["watermelon","melon"],
+    tags: ["watermelon"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/deus/"],
     strengthHint: 4,
   },

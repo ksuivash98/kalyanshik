@@ -321,7 +321,7 @@ const ITEMS = [
   {
     name: "Kalee Grapefruit",
     line: "Core",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/darkside/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/darkside-tobacco/core/", "https://justfreid.ru/catalog/tabak/darkside/"],
     strengthHint: 4,
   },
@@ -384,7 +384,7 @@ const ITEMS = [
   {
     name: "Pineapple Pulse",
     line: "Core",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/darkside/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/darkside-tobacco/core/", "https://justfreid.ru/catalog/tabak/darkside/"],
     strengthHint: 4,
   },

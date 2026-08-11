@@ -6,7 +6,7 @@ const ITEMS = [
   {
     name: "Ананас Тёмные ягоды",
     line: "Classic",
-    tags: ["berry"],
+    tags: ["berry", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/morpheus/", "https://moredyma.su/tabak-dlya-kalyana/morpheus/"],
     strengthHint: 3,
   },
@@ -97,7 +97,7 @@ const ITEMS = [
   {
     name: "Ягоды Грейпфрут",
     line: "Classic",
-    tags: ["berry"],
+    tags: ["berry", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/morpheus/", "https://moredyma.su/tabak-dlya-kalyana/morpheus/"],
     strengthHint: 3,
   },
@@ -108,7 +108,7 @@ export const MORPHEUS_TOBACCOS: TobaccoSeed[] = ITEMS.map((item) =>
     brandId: "morpheus",
     name: item.name,
     line: item.line,
-    tags: [...item.tags],
+    tags: ["grapefruit"],
     sources: [...item.sources],
     strengthHint: item.strengthHint,
     status: ("status" in item ? (item as { status?: TobaccoStatus }).status : "ACTIVE") as TobaccoStatus | undefined,

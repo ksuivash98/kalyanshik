@@ -601,7 +601,7 @@ const ITEMS = [
   {
     name: "Black Grapefruit — Грейпфрут",
     line: "Black",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/sebero/", "https://moredyma.su/tabak-dlya-kalyana/sebero/", "https://justfreid.ru/catalog/tabak/sebero/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/sebero_black/"],
     strengthHint: 3,
   },
@@ -629,7 +629,7 @@ const ITEMS = [
   {
     name: "Black Juicy Mix — Ананас Маракуйя",
     line: "Black",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/sebero/", "https://moredyma.su/tabak-dlya-kalyana/sebero/", "https://justfreid.ru/catalog/tabak/sebero/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/sebero_black/"],
     strengthHint: 3,
   },
@@ -727,7 +727,7 @@ const ITEMS = [
   {
     name: "Black Pineapple — Ананас",
     line: "Black",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/sebero/", "https://moredyma.su/tabak-dlya-kalyana/sebero/", "https://justfreid.ru/catalog/tabak/sebero/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/sebero_black/"],
     strengthHint: 3,
   },
@@ -986,7 +986,7 @@ const ITEMS = [
   {
     name: "Grapefruit",
     line: "Black",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/sebero/"],
     strengthHint: 4,
   },
@@ -1112,7 +1112,7 @@ const ITEMS = [
   {
     name: "Pineapple",
     line: "Black",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/sebero/"],
     strengthHint: 4,
   },
@@ -1210,7 +1210,7 @@ const ITEMS = [
   {
     name: "Watermelon",
     line: "Black",
-    tags: ["watermelon","melon"],
+    tags: ["watermelon"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/sebero/"],
     strengthHint: 4,
   },
@@ -1231,21 +1231,21 @@ const ITEMS = [
   {
     name: "Ананас (Pineapple)",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/sebero/", "https://moredyma.su/tabak-dlya-kalyana/sebero/", "https://justfreid.ru/catalog/tabak/sebero/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/sebero_black/"],
     strengthHint: 3,
   },
   {
     name: "АНАНАС 100",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/sebero/", "https://moredyma.su/tabak-dlya-kalyana/sebero/", "https://justfreid.ru/catalog/tabak/sebero/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/sebero_black/"],
     strengthHint: 3,
   },
   {
     name: "Ананас-маракуйя (Juicy mix)",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/sebero/", "https://moredyma.su/tabak-dlya-kalyana/sebero/", "https://justfreid.ru/catalog/tabak/sebero/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/sebero_black/"],
     strengthHint: 3,
   },
@@ -1357,7 +1357,7 @@ const ITEMS = [
   {
     name: "Грейпфрут (Grapefruit)",
     line: "Classic",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/sebero/", "https://moredyma.su/tabak-dlya-kalyana/sebero/", "https://justfreid.ru/catalog/tabak/sebero/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/sebero_black/"],
     strengthHint: 3,
   },
@@ -2050,7 +2050,7 @@ const ITEMS = [
   {
     name: "Classic Pineapple — Ананас",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/sebero/", "https://moredyma.su/tabak-dlya-kalyana/sebero/", "https://justfreid.ru/catalog/tabak/sebero/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/sebero_black/"],
     strengthHint: 3,
   },
@@ -2232,7 +2232,7 @@ const ITEMS = [
   {
     name: "Грейпфрут",
     line: "Limited",
-    tags: ["fruity"],
+    tags: ["fruity", "grapefruit"],
     sources: ["https://smokemaster.ru/shop/tabak-dlya-kalyana/"],
     strengthHint: 3,
   },

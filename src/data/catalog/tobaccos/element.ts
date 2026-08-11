@@ -76,7 +76,7 @@ const ITEMS = [
   {
     name: "Grapefruit Pomelo",
     line: "Вода",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/element/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/element-tobacco/"],
     strengthHint: 3,
   },
@@ -146,7 +146,7 @@ const ITEMS = [
   {
     name: "Pineapple",
     line: "Вода",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/element/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/element-tobacco/"],
     strengthHint: 3,
   },
@@ -188,7 +188,7 @@ const ITEMS = [
   {
     name: "Watermelon Holls",
     line: "Вода",
-    tags: ["watermelon","melon"],
+    tags: ["watermelon"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/element/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/element-tobacco/"],
     strengthHint: 3,
   },
@@ -377,7 +377,7 @@ const ITEMS = [
   {
     name: "Pineapple Holls",
     line: "Воздух",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/element/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/element-tobacco/", "https://element-tobacco.ru/tobacco"],
     strengthHint: 2,
   },
@@ -510,7 +510,7 @@ const ITEMS = [
   {
     name: "Grapefruit Pomelo",
     line: "Земля",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/element/", "https://element-tobacco.ru/tobacco"],
     strengthHint: 4,
   },
@@ -573,7 +573,7 @@ const ITEMS = [
   {
     name: "Pineapple",
     line: "Земля",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/element/", "https://element-tobacco.ru/tobacco"],
     strengthHint: 4,
   },

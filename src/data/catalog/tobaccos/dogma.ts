@@ -97,7 +97,7 @@ const ITEMS = [
   {
     name: "100% Ананасовая Сальса",
     line: "100%",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/dogma/", "https://moredyma.su/tabak-dlya-kalyana/dogma/", "https://justfreid.ru/catalog/tabak/dogma/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/dogma/"],
     strengthHint: 4,
   },
@@ -531,7 +531,7 @@ const ITEMS = [
   {
     name: "47% Ананасовая сальса",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/dogma/", "https://moredyma.su/tabak-dlya-kalyana/dogma/", "https://justfreid.ru/catalog/tabak/dogma/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/dogma/"],
     strengthHint: 4,
   },
@@ -643,7 +643,7 @@ const ITEMS = [
   {
     name: "Ананасовая сальса",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/dogma/", "https://moredyma.su/tabak-dlya-kalyana/dogma/", "https://justfreid.ru/catalog/tabak/dogma/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/dogma/"],
     strengthHint: 4,
   },

@@ -146,7 +146,7 @@ const ITEMS = [
   {
     name: "Grapefruit",
     line: "Classic",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/bonche/"],
     strengthHint: 5,
   },
@@ -272,7 +272,7 @@ const ITEMS = [
   {
     name: "Pineapple",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/bonche/"],
     strengthHint: 5,
   },

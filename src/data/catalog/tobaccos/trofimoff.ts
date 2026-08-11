@@ -104,7 +104,7 @@ const ITEMS = [
   {
     name: "Grapefruit",
     line: "Burley",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/trofimoffs/"],
     strengthHint: 4,
   },
@@ -223,7 +223,7 @@ const ITEMS = [
   {
     name: "Pineapple",
     line: "Burley",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/trofimoffs/"],
     strengthHint: 4,
   },
@@ -300,7 +300,7 @@ const ITEMS = [
   {
     name: "Watermelon",
     line: "Burley",
-    tags: ["watermelon","melon"],
+    tags: ["watermelon"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/trofimoffs/"],
     strengthHint: 4,
   },

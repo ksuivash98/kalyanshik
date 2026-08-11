@@ -496,7 +496,7 @@ const ITEMS = [
   {
     name: "Ice Watermelon",
     line: "Classic",
-    tags: ["cold","watermelon","melon"],
+    tags: ["cold", "watermelon"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/satyr/"],
     strengthHint: 4,
   },
@@ -531,7 +531,7 @@ const ITEMS = [
   {
     name: "Jah Grapefruit",
     line: "Classic",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/satyr/"],
     strengthHint: 4,
   },
@@ -930,7 +930,7 @@ const ITEMS = [
   {
     name: "Watermelon",
     line: "Classic",
-    tags: ["watermelon","melon"],
+    tags: ["watermelon"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/satyr/"],
     strengthHint: 4,
   },

@@ -84,7 +84,8 @@ export function CollectionClient() {
       <div>
         <h1 className="text-3xl font-semibold text-stone-50">Моя коллекция</h1>
         <p className="mt-2 text-stone-400">
-          Граммы, оценка и заметки — ваши. Официальный каталог при этом не меняется.
+          В коллекции: {items.length}. Граммы, оценка и заметки — ваши. Официальный каталог при
+          этом не меняется.
         </p>
       </div>
 

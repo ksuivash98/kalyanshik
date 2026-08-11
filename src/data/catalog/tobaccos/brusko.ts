@@ -76,7 +76,7 @@ const ITEMS = [
   {
     name: "Дыня с Ананасом",
     line: "Medium",
-    tags: ["melon"],
+    tags: ["melon", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/brusko/"],
     strengthHint: 2,
   },

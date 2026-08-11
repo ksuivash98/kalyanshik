@@ -7,9 +7,11 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { getBrandById, getTobaccoById } from "@/data/catalog"
+import { getValidCollection } from "@/lib/store"
 
 export function HomeDashboard() {
   const { ready, state } = useAppStore()
+  const collectionCount = getValidCollection(state).length
   const recentMixes = state.mixes.slice(0, 3)
 
   if (!ready) {
@@ -53,7 +55,7 @@ export function HomeDashboard() {
         <Card>
           <CardHeader>
             <CardDescription>В коллекции</CardDescription>
-            <CardTitle className="text-3xl">{state.collection.length}</CardTitle>
+            <CardTitle className="text-3xl">{collectionCount}</CardTitle>
           </CardHeader>
           <CardContent>
             <Link href="/collection" className="text-sm text-amber-400 hover:underline">

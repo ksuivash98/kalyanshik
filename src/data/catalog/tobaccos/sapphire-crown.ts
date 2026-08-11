@@ -139,7 +139,7 @@ const ITEMS = [
   {
     name: "Grapefruit",
     line: "Classic",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/sapphire-crown/"],
     strengthHint: 3,
   },
@@ -244,7 +244,7 @@ const ITEMS = [
   {
     name: "Pineapple Funta",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/sapphire-crown/"],
     strengthHint: 3,
   },

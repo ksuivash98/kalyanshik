@@ -328,14 +328,14 @@ const ITEMS = [
   {
     name: "Pink shot - Грейпфрут, клубника, малина - R",
     line: "Classic",
-    tags: ["berry"],
+    tags: ["berry", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/bliss/", "https://moredyma.su/tabak-dlya-kalyana/bliss/", "https://justfreid.ru/catalog/tabak/Bliss/"],
     strengthHint: 3,
   },
   {
     name: "Pink Shot (Грейпфрут Клубника Малина)",
     line: "Classic",
-    tags: ["berry"],
+    tags: ["berry", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/bliss/", "https://moredyma.su/tabak-dlya-kalyana/bliss/", "https://justfreid.ru/catalog/tabak/Bliss/"],
     strengthHint: 3,
   },

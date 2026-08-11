@@ -6,7 +6,7 @@ const ITEMS = [
   {
     name: "Ананасовый Сок",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/sarma/"],
     strengthHint: 3,
   },
@@ -62,7 +62,7 @@ const ITEMS = [
   {
     name: "Грейпфрутовый Сок",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/sarma/"],
     strengthHint: 3,
   },

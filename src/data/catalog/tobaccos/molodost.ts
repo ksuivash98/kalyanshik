@@ -125,7 +125,7 @@ const ITEMS = [
   {
     name: "СТАРТАП С ДРУЗЬЯМИ (Венские вафли, коктейльная вишня, грейпфрут и лимон) 25",
     line: "Classic",
-    tags: ["lemon","dessert"],
+    tags: ["lemon", "dessert", "grapefruit"],
     sources: ["https://justfreid.ru/catalog/tabak/molodost/"],
     strengthHint: 3,
   },

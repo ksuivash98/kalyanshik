@@ -13,14 +13,14 @@ const ITEMS = [
   {
     name: "Ананас со Льдом",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/smes-dlya-kalyana/jam/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/jam/", "https://jammtobacco.com/jam"],
     strengthHint: 1,
   },
   {
     name: "Ананасовые Кольца",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/smes-dlya-kalyana/jam/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/jam/", "https://jammtobacco.com/jam"],
     strengthHint: 1,
   },
@@ -139,7 +139,7 @@ const ITEMS = [
   {
     name: "Грейпфрут с Малиновым Соком",
     line: "Classic",
-    tags: ["berry"],
+    tags: ["berry", "grapefruit"],
     sources: ["https://sevas-market.ru/product-category/smes-dlya-kalyana/jam/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/jam/", "https://jammtobacco.com/jam"],
     strengthHint: 1,
   },
@@ -188,7 +188,7 @@ const ITEMS = [
   {
     name: "Конфеты с Ананасом",
     line: "Classic",
-    tags: ["fruity"],
+    tags: ["fruity", "pineapple"],
     sources: ["https://sevas-market.ru/product-category/smes-dlya-kalyana/jam/", "https://hookahhouse.ru/catalog/tabak_dlya_kalyana/jam/", "https://jammtobacco.com/jam"],
     strengthHint: 1,
   },

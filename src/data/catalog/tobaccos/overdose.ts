@@ -132,7 +132,7 @@ const ITEMS = [
   {
     name: "Gin Watermelon",
     line: "Classic",
-    tags: ["watermelon","melon"],
+    tags: ["watermelon"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/overdose/"],
     strengthHint: 4,
   },
@@ -272,14 +272,14 @@ const ITEMS = [
   {
     name: "Pineapple Chunks",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/overdose/"],
     strengthHint: 4,
   },
   {
     name: "Pink Grapefruit",
     line: "Classic",
-    tags: ["grape"],
+    tags: ["grapefruit"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/overdose/"],
     strengthHint: 4,
   },
@@ -370,7 +370,7 @@ const ITEMS = [
   {
     name: "Watermelon",
     line: "Classic",
-    tags: ["watermelon","melon"],
+    tags: ["watermelon"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/overdose/"],
     strengthHint: 4,
   },

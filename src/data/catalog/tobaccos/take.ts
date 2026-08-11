@@ -132,7 +132,7 @@ const ITEMS = [
   {
     name: "Pineapple — Ананас",
     line: "Classic",
-    tags: ["apple"],
+    tags: ["pineapple"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/take/"],
     strengthHint: 3,
   },
@@ -167,7 +167,7 @@ const ITEMS = [
   {
     name: "Watermelon — Арбуз",
     line: "Classic",
-    tags: ["watermelon","melon"],
+    tags: ["watermelon"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/take/"],
     strengthHint: 3,
   },
