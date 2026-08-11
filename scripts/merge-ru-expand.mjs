@@ -26,7 +26,7 @@ function guessTags(name) {
   if (/berry|ягод|черник|малин|клубник|ежевик|смородин/.test(n)) add("berry")
   if (/mango|манго/.test(n)) add("mango")
   if (/peach|персик/.test(n)) add("peach")
-  if (/apple|яблок/.test(n)) add("apple")
+  if (/apple|яблок|granny|granni|гренни|грэнни/.test(n)) add("apple")
   if (/watermelon|арбуз/.test(n)) add("watermelon")
   if (/melon|дын/.test(n)) add("melon")
   if (/cola|кола/.test(n)) add("cola")

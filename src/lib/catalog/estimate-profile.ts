@@ -71,7 +71,7 @@ const TAG_WEIGHTS: Record<
   feijoa: { fruity: 3, sourness: 2 },
   plum: { fruity: 3, sweetness: 2 },
   pomegranate: { fruity: 3, sourness: 2 },
-  apple: { fruity: 3, sweetness: 3 },
+  apple: { fruity: 4, sweetness: 2, sourness: 2 },
   cherry: { fruity: 3, sweetness: 2 },
   tarragon: { herbal: 4 },
   marshmallow: { dessert: 4, sweetness: 4 },

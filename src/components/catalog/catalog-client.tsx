@@ -15,10 +15,18 @@ import {
   toRecommendationProfile,
 } from "@/data/catalog"
 import { FLAVOR_TAG_BY_ID } from "@/data/catalog/flavor-tags"
+import { normalizeTobaccoName } from "@/lib/catalog/normalizer"
 import { tobaccoMatchesQuery } from "@/lib/catalog/search"
 import { TobaccoSeed, TobaccoStatus } from "@/types/catalog"
 
 const PAGE_SIZE = 50
+
+type CatalogGroup = {
+  key: string
+  brandId: string
+  name: string
+  variants: TobaccoSeed[]
+}
 
 const FLAVOR_FILTERS = [
   { id: "FRUIT", label: "Фруктовый" },
@@ -106,12 +114,39 @@ export function CatalogClient() {
     inCollection,
   ])
 
+  /** One card per brand + flavor name; line variants stay as selectable SKUs. */
+  const grouped = useMemo(() => {
+    const map = new Map<string, CatalogGroup>()
+    for (const t of filtered) {
+      const key = `${t.brandId}::${normalizeTobaccoName(t.name)}`
+      const existing = map.get(key)
+      if (existing) {
+        existing.variants.push(t)
+      } else {
+        map.set(key, {
+          key,
+          brandId: t.brandId,
+          name: t.name,
+          variants: [t],
+        })
+      }
+    }
+    for (const g of map.values()) {
+      g.variants.sort((a, b) => (a.line || "").localeCompare(b.line || "", "ru"))
+    }
+    return [...map.values()].sort((a, b) => {
+      const ba = getBrandById(a.brandId)?.name ?? a.brandId
+      const bb = getBrandById(b.brandId)?.name ?? b.brandId
+      return ba.localeCompare(bb, "ru") || a.name.localeCompare(b.name, "ru")
+    })
+  }, [filtered])
+
   useEffect(() => {
     setPage(1)
   }, [query, brandIds, linesSelected, status, flavorFilters, onlyWithStockInCollection])
 
-  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE))
-  const pageItems = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
+  const totalPages = Math.max(1, Math.ceil(grouped.length / PAGE_SIZE))
+  const pageItems = grouped.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
 
   if (!ready) {
     return <div className="py-20 text-center text-stone-500">Загрузка...</div>
@@ -237,7 +272,11 @@ export function CatalogClient() {
 
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm text-stone-500">
-          Найдено: {filtered.length} · страница {page}/{totalPages} · по {PAGE_SIZE}
+          Найдено: {grouped.length} вкусов
+          {filtered.length !== grouped.length
+            ? ` (${filtered.length} SKU по линейкам)`
+            : null}{" "}
+          · страница {page}/{totalPages} · по {PAGE_SIZE}
         </p>
         <div className="flex gap-2">
           <Button
@@ -258,26 +297,36 @@ export function CatalogClient() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {pageItems.map((tobacco) => {
-          const brand = getBrandById(tobacco.brandId)!
-          const profile = toRecommendationProfile(tobacco)
-          const owned = inCollection.has(tobacco.id)
-          const tagLabels = tobacco.tags
+        {pageItems.map((group) => {
+          const brand = getBrandById(group.brandId)!
+          const primary =
+            group.variants.find((v) => linesSelected.includes(v.line || "")) ??
+            group.variants[0]
+          const profile = toRecommendationProfile(primary)
+          const ownedAny = group.variants.some((v) => inCollection.has(v.id))
+          const tagLabels = [...new Set(group.variants.flatMap((v) => v.tags))]
             .map((t) => FLAVOR_TAG_BY_ID[t]?.labelRu ?? t)
-            .slice(0, 3)
+            .slice(0, 4)
+          const lineLabels = group.variants
+            .map((v) => v.line)
+            .filter((l): l is string => Boolean(l))
 
           return (
-            <Card key={tobacco.id} className="transition hover:border-white/20">
+            <Card key={group.key} className="transition hover:border-white/20">
               <CardHeader>
                 <div className="flex items-start justify-between gap-2">
                   <div>
                     <CardDescription>{brand.name}</CardDescription>
-                    <CardTitle>{tobacco.name}</CardTitle>
+                    <CardTitle>{group.name}</CardTitle>
                   </div>
-                  <Badge>{tobacco.status}</Badge>
+                  <Badge>{primary.status}</Badge>
                 </div>
-                {tobacco.line ? (
-                  <p className="text-xs text-stone-500">Линейка: {tobacco.line}</p>
+                {lineLabels.length > 0 ? (
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {lineLabels.map((line) => (
+                      <Badge key={line}>{line}</Badge>
+                    ))}
+                  </div>
                 ) : null}
               </CardHeader>
               <CardContent className="space-y-4">
@@ -311,27 +360,29 @@ export function CatalogClient() {
                   </div>
                 </div>
 
-                <a
-                  href={tobacco.sourceUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block text-xs text-amber-400/80 hover:underline"
-                >
-                  Источник
-                </a>
+                {primary.sourceUrl ? (
+                  <a
+                    href={primary.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block text-xs text-amber-400/80 hover:underline"
+                  >
+                    Источник
+                  </a>
+                ) : null}
 
                 <Button
                   className="w-full"
-                  variant={owned ? "secondary" : "default"}
+                  variant={ownedAny ? "secondary" : "default"}
                   onClick={() => {
-                    setDraftTobacco(tobacco)
+                    setDraftTobacco(primary)
                     setDraftGrams(50)
                     setDraftRating(4)
                     setDraftNote("")
                   }}
                 >
                   <Plus className="h-4 w-4" />
-                  {owned ? "Обновить в коллекции" : "Добавить в коллекцию"}
+                  {ownedAny ? "Обновить в коллекции" : "Добавить в коллекцию"}
                 </Button>
               </CardContent>
             </Card>
@@ -347,6 +398,36 @@ export function CatalogClient() {
               {getBrandById(draftTobacco.brandId)?.name} · {draftTobacco.name}
             </p>
             <div className="mt-4 space-y-3">
+              {(() => {
+                const siblings = CATALOG_DB.tobaccos.filter(
+                  (t) =>
+                    t.brandId === draftTobacco.brandId &&
+                    normalizeTobaccoName(t.name) === normalizeTobaccoName(draftTobacco.name)
+                )
+                if (siblings.length <= 1) return null
+                return (
+                  <label className="block text-sm text-stone-300">
+                    Линейка
+                    <select
+                      className="mt-1 h-11 w-full rounded-xl border border-white/10 bg-black/30 px-3 text-sm"
+                      value={draftTobacco.id}
+                      onChange={(e) => {
+                        const next = siblings.find((s) => s.id === e.target.value)
+                        if (next) setDraftTobacco(next)
+                      }}
+                    >
+                      {siblings.map((s) => (
+                        <option key={s.id} value={s.id}>
+                          {s.line || "Без линейки"}
+                          {s.estimatedProfile.strength != null
+                            ? ` · крепость ${s.estimatedProfile.strength}/5`
+                            : ""}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                )
+              })()}
               <label className="block text-sm text-stone-300">
                 Количество (г)
                 <Input

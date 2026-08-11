@@ -314,7 +314,7 @@ const ITEMS = [
   {
     name: "Ice Granny",
     line: "Core",
-    tags: ["cold"],
+    tags: ["apple", "cold", "sour"],
     sources: ["https://sevas-market.ru/product-category/tabak-dlya-kalyana/brand/darkside/", "https://smokemaster.ru/shop/tabak-dlya-kalyana/darkside-tobacco/core/", "https://justfreid.ru/catalog/tabak/darkside/"],
     strengthHint: 4,
   },
@@ -594,7 +594,7 @@ const ITEMS = [
   {
     name: "Ice Granny",
     line: "Rare",
-    tags: ["cold"],
+    tags: ["apple", "cold", "sour"],
     sources: ["https://smokemaster.ru/shop/tabak-dlya-kalyana/darkside-tobacco/rare/"],
     strengthHint: 5,
   },

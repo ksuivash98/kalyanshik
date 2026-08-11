@@ -1,0 +1,74 @@
+﻿node.exe : npm warn Unknown env config "devdir". This will stop working in the next major version of npm. See `npm help
+ npmrc` for supported config options.
+строка:1 знак:1
++ & "E:\Program Files\New Folder/node.exe" "E:\Program Files\New Folder ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm warn Unknow...config options.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Same brand+name across lines: 39
+darkside::grape core => Base | Core | Rare
+element::ekzo => ╨Т╨╛╨┤╨░ | ╨Т╨╛╨╖╨┤╤Г╤Е | ╨Ч╨╡╨╝╨╗╤П
+element::grape mint => ╨Т╨╛╨┤╨░ | ╨Т╨╛╨╖╨┤╤Г╤Е | ╨Ч╨╡╨╝╨╗╤П
+element::maui => ╨Т╨╛╨┤╨░ | ╨Т╨╛╨╖╨┤╤Г╤Е | ╨Ч╨╡╨╝╨╗╤П
+blackburn::apple shock => Classic | Shock
+blackburn::barberry shock => Classic | Shock
+blackburn::cherry shock => Classic | Shock
+blackburn::currant shock => Classic | Shock
+blackburn::lemon shock => Classic | Shock
+darkside::barvy orange => Base | Core
+darkside::virgin peach => Base | Core
+darkside::ice granny => Core | Rare
+element::chak chak => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::cherry holls => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::cola => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::cookie monster => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::feijoa lemonade => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::fir => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::fruit pulp => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::grape drink => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::grapefruit pomelo => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::green skittlez => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::gummy berry => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::kiwi => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::mellow blueberry => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::melony => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::pear => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::pineapple => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::raspberry => ╨Т╨╛╨┤╨░ | ╨Ч╨╡╨╝╨╗╤П
+element::tropicana => ╨Т╨╛╨┤╨░ | ╨Т╨╛╨╖╨┤╤Г╤Е
+mattpear::banana ice dream => Classic | Old School
+mattpear::bottle rise => Classic | Crazy
+mattpear::chocco morocco => Classic | Old School
+mattpear::ginger meeting => Classic | Crazy
+mattpear::grape cong => Classic | Old School
+nash::╨░╨╜╨░╨╜╨░╤Б => Cigar | Hard
+sebero::cookie monster => Black | Limited Mix
+sebero::lemon waffle => Black | Limited Mix
+sebero::western => Black | Limited
+
+True duplicates brand+line+name: 0
+
+Ice Granny: [
+  {
+    id: 'darkside-core-ice-granny',
+    line: 'Core',
+    tags: [ 'apple', 'cold', 'sour' ]
+  },
+  {
+    id: 'darkside-rare-ice-granny',
+    line: 'Rare',
+    tags: [ 'apple', 'cold', 'sour' ]
+  },
+  {
+    id: 'mattpear-classic-ice-grannysmit',
+    line: 'Classic',
+    tags: [ 'cold', 'apple' ]
+  }
+]
+
+DARKSIDE repeats: 4
+darkside::grape core => Base | Core | Rare
+darkside::barvy orange => Base | Core
+darkside::virgin peach => Base | Core
+darkside::ice granny => Core | Rare
