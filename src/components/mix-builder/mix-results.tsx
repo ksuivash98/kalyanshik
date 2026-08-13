@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { AlertTriangle, Save, Star } from "lucide-react"
+import { RotateCcw, Save, Star, ChefHat, Check, AlertTriangle } from "lucide-react"
 import { useAppStore } from "@/components/providers/app-store-provider"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -15,30 +15,37 @@ const VARIANT_META: Record<
   { title: string; color: string; emoji: string }
 > = {
   safe: {
-    title: "Безопасный",
+    title: "Сбалансированный",
     color: "border-emerald-500/30 bg-emerald-500/10 text-emerald-300",
-    emoji: "🟢",
+    emoji: "🎯",
   },
   interesting: {
-    title: "Интересный",
+    title: "Яркий",
     color: "border-amber-500/30 bg-amber-500/10 text-amber-300",
-    emoji: "🟡",
+    emoji: "🔥",
   },
   experimental: {
     title: "Эксперимент",
     color: "border-rose-500/30 bg-rose-500/10 text-rose-300",
-    emoji: "🔴",
+    emoji: "🧪",
+  },
+  leftovers: {
+    title: "Остатки",
+    color: "border-sky-500/30 bg-sky-500/10 text-sky-300",
+    emoji: "🧹",
   },
 }
 
 export function MixResults({ suggestions }: { suggestions: MixSuggestion[] }) {
-  const { saveMix } = useAppStore()
+  const { saveMix, saveAndPrepare } = useAppStore()
   const [messages, setMessages] = useState<Record<string, string>>({})
+  const [preparedIds, setPreparedIds] = useState<Record<string, string>>({})
 
   return (
-    <div className="grid gap-4 lg:grid-cols-3">
+    <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
       {suggestions.map((suggestion) => {
-        const meta = VARIANT_META[suggestion.variantType]
+        const meta = VARIANT_META[suggestion.variantType] ?? VARIANT_META.safe
+        const preparedMixId = preparedIds[suggestion.id]
         return (
           <Card key={suggestion.id} className="flex flex-col transition hover:border-white/20">
             <CardHeader>
@@ -47,11 +54,18 @@ export function MixResults({ suggestions }: { suggestions: MixSuggestion[] }) {
                   {meta.emoji} {meta.title}
                 </Badge>
                 <span className="text-xs text-stone-500">
-                  match {Math.round(suggestion.score * 100)}%
+                  score {Math.round(suggestion.score * 100)}%
                 </span>
               </div>
               <CardTitle>{suggestion.name}</CardTitle>
-              <CardDescription>{suggestion.totalGrams} г всего</CardDescription>
+              <CardDescription>
+                {suggestion.totalGrams} г · {suggestion.components.length} табак
+                {suggestion.components.length === 1
+                  ? ""
+                  : suggestion.components.length < 5
+                    ? "а"
+                    : "ов"}
+              </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-1 flex-col gap-4">
               <div className="space-y-2 text-sm">
@@ -66,6 +80,9 @@ export function MixResults({ suggestions }: { suggestions: MixSuggestion[] }) {
                       </div>
                       <div className="text-xs text-stone-500">
                         {roleLabel(c.role)} · {c.percent}%
+                        {c.gramsAvailable != null
+                          ? ` · остаток ${c.gramsAvailable} г`
+                          : ""}
                       </div>
                     </div>
                     <div className="text-right text-stone-300">{c.grams} г</div>
@@ -93,22 +110,54 @@ export function MixResults({ suggestions }: { suggestions: MixSuggestion[] }) {
               <div className="mt-auto space-y-2 pt-2">
                 <Button
                   className="w-full"
+                  disabled={!suggestion.availability.available || Boolean(preparedMixId)}
+                  onClick={() => {
+                    const result = saveAndPrepare(suggestion)
+                    if (!result.ok) {
+                      setMessages((prev) => ({
+                        ...prev,
+                        [suggestion.id]: result.error ?? "Ошибка списания",
+                      }))
+                      return
+                    }
+                    if (result.mixId) {
+                      setPreparedIds((prev) => ({
+                        ...prev,
+                        [suggestion.id]: result.mixId!,
+                      }))
+                    }
+                    setMessages((prev) => ({
+                      ...prev,
+                      [suggestion.id]: "Приготовлено — граммы списаны. Отмена в «Мои миксы».",
+                    }))
+                  }}
+                >
+                  <ChefHat className="h-4 w-4" />
+                  {preparedMixId ? "Уже приготовлен" : "Приготовил этот микс"}
+                </Button>
+                <Button
+                  className="w-full"
+                  variant="secondary"
                   onClick={() => {
                     saveMix(suggestion)
-                    setMessages((prev) => ({ ...prev, [suggestion.id]: "Микс сохранён" }))
+                    setMessages((prev) => ({
+                      ...prev,
+                      [suggestion.id]: "Микс сохранён без списания граммов",
+                    }))
                   }}
                 >
                   <Save className="h-4 w-4" />
-                  Сохранить микс
+                  Сохранить без списания
                 </Button>
                 {messages[suggestion.id] ? (
-                  <p className="text-center text-xs text-emerald-400">
+                  <p className="flex items-start gap-1 text-center text-xs text-emerald-400">
+                    <Check className="mt-0.5 h-3 w-3 shrink-0" />
                     {messages[suggestion.id]}
                   </p>
                 ) : null}
                 <div className="flex items-center justify-center gap-1 text-xs text-stone-500">
                   <Star className="h-3 w-3" />
-                  Оценку можно поставить в «Мои миксы»
+                  Просмотр рецепта граммы не меняет
                 </div>
               </div>
             </CardContent>

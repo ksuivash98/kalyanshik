@@ -33,7 +33,9 @@ export type ExclusionTag =
   | "без сладости"
   | "без холода"
 
-export type MixVariantType = "safe" | "interesting" | "experimental"
+export type MixVariantType = "safe" | "interesting" | "experimental" | "leftovers"
+
+export type MixGenerationMode = "balanced" | "dominant" | "experimental" | "leftovers"
 
 export type ScoringWeights = Partial<Record<FlavorKey, number>>
 
@@ -82,6 +84,8 @@ export type MixRequest = {
   exclusions: ExclusionTag[]
   useCollectionOnly: boolean
   requireStock: boolean
+  mode?: MixGenerationMode
+  limit?: number
 }
 
 export const FLAVOR_KEYS: FlavorKey[] = [

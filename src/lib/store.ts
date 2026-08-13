@@ -34,6 +34,10 @@ export type StoredMix = {
   ingredients: StoredMixIngredient[]
   rating: { score: number; comment: string | null } | null
   createdAt: string
+  /** Set when user confirmed «Приготовил этот микс». */
+  preparedAt: string | null
+  /** Grams deducted from collection for this preparation (for undo). */
+  consumption: Array<{ tobaccoId: string; gramsUsed: number }> | null
 }
 
 export type AppState = {
@@ -56,9 +60,16 @@ export function getValidCollection(state: AppState): StoredCollectionItem[] {
 
 function sanitizeState(state: AppState): AppState {
   const collection = getValidCollection(state)
-  const mixes = Array.isArray(state.mixes) ? state.mixes : []
-  if (collection.length === state.collection.length && mixes === state.mixes) {
-    return state
+  const mixes = (Array.isArray(state.mixes) ? state.mixes : []).map((m) => ({
+    ...m,
+    preparedAt: m.preparedAt ?? null,
+    consumption: m.consumption ?? null,
+  }))
+  if (
+    collection.length === state.collection.length &&
+    mixes.length === state.mixes.length
+  ) {
+    return { collection, mixes }
   }
   return { collection, mixes }
 }
@@ -167,8 +178,119 @@ export function saveMixFromSuggestion(
     })),
     rating: null,
     createdAt: new Date().toISOString(),
+    preparedAt: null,
+    consumption: null,
   }
   return { ...state, mixes: [mix, ...state.mixes] }
+}
+
+/**
+ * Confirm preparation: deduct grams from collection.
+ * Does nothing (returns error via null mix) if inventory insufficient.
+ */
+export function prepareMix(
+  state: AppState,
+  mixId: string
+): { state: AppState; ok: boolean; error: string | null } {
+  const mix = state.mixes.find((m) => m.id === mixId)
+  if (!mix) return { state, ok: false, error: "Микс не найден" }
+  if (mix.preparedAt && mix.consumption) {
+    return { state, ok: false, error: "Микс уже отмечен как приготовленный" }
+  }
+
+  for (const ing of mix.ingredients) {
+    const item = state.collection.find((c) => c.tobaccoId === ing.tobaccoId)
+    if (!item) {
+      return {
+        state,
+        ok: false,
+        error: `Табак отсутствует в коллекции`,
+      }
+    }
+    if (item.grams + 1e-9 < ing.grams) {
+      const tobacco = getTobaccoById(ing.tobaccoId)
+      return {
+        state,
+        ok: false,
+        error: `${tobacco?.name ?? "Табак"}: нужно ${ing.grams} г, есть ${item.grams} г`,
+      }
+    }
+  }
+
+  const consumption = mix.ingredients.map((ing) => ({
+    tobaccoId: ing.tobaccoId,
+    gramsUsed: ing.grams,
+  }))
+
+  const collection = state.collection.map((item) => {
+    const used = consumption.find((c) => c.tobaccoId === item.tobaccoId)
+    if (!used) return item
+    return {
+      ...item,
+      grams: Math.max(0, Math.round((item.grams - used.gramsUsed) * 10) / 10),
+      updatedAt: new Date().toISOString(),
+    }
+  })
+
+  const mixes = state.mixes.map((m) =>
+    m.id === mixId
+      ? {
+          ...m,
+          preparedAt: new Date().toISOString(),
+          consumption,
+        }
+      : m
+  )
+
+  return { state: { ...state, collection, mixes }, ok: true, error: null }
+}
+
+/** Restore grams deducted by prepareMix. */
+export function undoMixPreparation(
+  state: AppState,
+  mixId: string
+): { state: AppState; ok: boolean; error: string | null } {
+  const mix = state.mixes.find((m) => m.id === mixId)
+  if (!mix) return { state, ok: false, error: "Микс не найден" }
+  if (!mix.preparedAt || !mix.consumption) {
+    return { state, ok: false, error: "Нечего отменять — микс не готовили" }
+  }
+
+  const collection = state.collection.map((item) => {
+    const used = mix.consumption!.find((c) => c.tobaccoId === item.tobaccoId)
+    if (!used) return item
+    return {
+      ...item,
+      grams: Math.round((item.grams + used.gramsUsed) * 10) / 10,
+      updatedAt: new Date().toISOString(),
+    }
+  })
+
+  const mixes = state.mixes.map((m) =>
+    m.id === mixId
+      ? {
+          ...m,
+          preparedAt: null,
+          consumption: null,
+        }
+      : m
+  )
+
+  return { state: { ...state, collection, mixes }, ok: true, error: null }
+}
+
+/**
+ * Save suggestion and immediately mark as prepared (deduct grams).
+ */
+export function saveAndPrepareMix(
+  state: AppState,
+  suggestion: MixSuggestion
+): { state: AppState; mixId: string | null; ok: boolean; error: string | null } {
+  const withSaved = saveMixFromSuggestion(state, suggestion)
+  const mixId = withSaved.mixes[0]?.id ?? null
+  if (!mixId) return { state, mixId: null, ok: false, error: "Не удалось сохранить" }
+  const prepared = prepareMix(withSaved, mixId)
+  return { ...prepared, mixId }
 }
 
 export function deleteMix(state: AppState, id: string): AppState {

@@ -1,4 +1,5 @@
 export { recommendMixes, findReplacement } from "./mixer"
+export { recommendMixesDetailed } from "./mixer"
 export { explainMix, roleLabel } from "./explanations"
 export {
   blendProfiles,

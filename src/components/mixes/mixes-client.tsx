@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react"
 import { format } from "date-fns"
 import { ru } from "date-fns/locale"
-import { RefreshCw, Star, Trash2 } from "lucide-react"
+import { RefreshCw, RotateCcw, Star, Trash2, ChefHat } from "lucide-react"
 import { useAppStore } from "@/components/providers/app-store-provider"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -15,7 +15,15 @@ import { findReplacement } from "@/lib/recommendations"
 import { TobaccoCandidate } from "@/types"
 
 export function MixesClient() {
-  const { ready, state, removeMix, setMixRating, getCandidates } = useAppStore()
+  const {
+    ready,
+    state,
+    removeMix,
+    setMixRating,
+    getCandidates,
+    prepareSavedMix,
+    undoPreparedMix,
+  } = useAppStore()
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [score, setScore] = useState(5)
   const [comment, setComment] = useState("")
@@ -146,6 +154,7 @@ export function MixesClient() {
                 <div className="mt-1 text-xs text-stone-500">
                   {format(new Date(mix.createdAt), "d MMMM yyyy", { locale: ru })} ·{" "}
                   {mix.totalGrams} г
+                  {mix.preparedAt ? " · приготовлен" : ""}
                 </div>
                 {mix.rating ? (
                   <div className="mt-2 flex items-center gap-1 text-xs text-amber-300">
@@ -167,10 +176,43 @@ export function MixesClient() {
                       {selected.tobaccoCount} табака · {selected.totalGrams} г
                     </CardDescription>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
+                    {selected.preparedAt ? (
+                      <Button
+                        variant="secondary"
+                        size="sm"
+                        onClick={() => {
+                          const result = undoPreparedMix(selected.id)
+                          setMessage(
+                            result.ok
+                              ? "Отменено — граммы возвращены в коллекцию"
+                              : result.error ?? "Ошибка отмены"
+                          )
+                        }}
+                      >
+                        <RotateCcw className="h-4 w-4" />
+                        Отменить использование
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="secondary"
+                        size="sm"
+                        onClick={() => {
+                          const result = prepareSavedMix(selected.id)
+                          setMessage(
+                            result.ok
+                              ? "Приготовлено — граммы списаны из коллекции"
+                              : result.error ?? "Ошибка списания"
+                          )
+                        }}
+                      >
+                        <ChefHat className="h-4 w-4" />
+                        Приготовил этот микс
+                      </Button>
+                    )}
                     <Button variant="secondary" size="sm" onClick={() => remake(selected.id)}>
                       <RefreshCw className="h-4 w-4" />
-                      Приготовить снова
+                      Проверить наличие
                     </Button>
                     <Button
                       variant="ghost"

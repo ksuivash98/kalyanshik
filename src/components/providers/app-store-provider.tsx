@@ -16,10 +16,13 @@ import {
   createDefaultState,
   deleteMix,
   loadState,
+  prepareMix,
   rateMix,
   removeCollectionItem,
+  saveAndPrepareMix,
   saveMixFromSuggestion,
   saveState,
+  undoMixPreparation,
   updateCollectionItem,
 } from "@/lib/store"
 
@@ -37,6 +40,11 @@ type StoreContextValue = {
   ) => void
   removeTobacco: (id: string) => void
   saveMix: (suggestion: MixSuggestion) => void
+  prepareSavedMix: (mixId: string) => { ok: boolean; error: string | null }
+  undoPreparedMix: (mixId: string) => { ok: boolean; error: string | null }
+  saveAndPrepare: (
+    suggestion: MixSuggestion
+  ) => { ok: boolean; error: string | null; mixId: string | null }
   removeMix: (id: string) => void
   setMixRating: (id: string, score: number, comment: string | null) => void
   getCandidates: (useCollectionOnly: boolean) => ReturnType<typeof buildCandidates>
@@ -47,6 +55,8 @@ const StoreContext = createContext<StoreContextValue | null>(null)
 export function AppStoreProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState<AppState>(createDefaultState)
   const [ready, setReady] = useState(false)
+  const stateRef = useMemo(() => ({ current: state }), [])
+  stateRef.current = state
 
   useEffect(() => {
     setState(loadState())
@@ -87,6 +97,24 @@ export function AppStoreProvider({ children }: { children: React.ReactNode }) {
     setState((prev) => saveMixFromSuggestion(prev, suggestion))
   }, [])
 
+  const prepareSavedMix = useCallback((mixId: string) => {
+    const next = prepareMix(stateRef.current, mixId)
+    if (next.ok) setState(next.state)
+    return { ok: next.ok, error: next.error }
+  }, [stateRef])
+
+  const undoPreparedMix = useCallback((mixId: string) => {
+    const next = undoMixPreparation(stateRef.current, mixId)
+    if (next.ok) setState(next.state)
+    return { ok: next.ok, error: next.error }
+  }, [stateRef])
+
+  const saveAndPrepare = useCallback((suggestion: MixSuggestion) => {
+    const next = saveAndPrepareMix(stateRef.current, suggestion)
+    if (next.ok) setState(next.state)
+    return { ok: next.ok, error: next.error, mixId: next.mixId }
+  }, [stateRef])
+
   const removeMix = useCallback((id: string) => {
     setState((prev) => deleteMix(prev, id))
   }, [])
@@ -111,6 +139,9 @@ export function AppStoreProvider({ children }: { children: React.ReactNode }) {
       updateTobacco,
       removeTobacco,
       saveMix,
+      prepareSavedMix,
+      undoPreparedMix,
+      saveAndPrepare,
       removeMix,
       setMixRating,
       getCandidates,
@@ -122,6 +153,9 @@ export function AppStoreProvider({ children }: { children: React.ReactNode }) {
       updateTobacco,
       removeTobacco,
       saveMix,
+      prepareSavedMix,
+      undoPreparedMix,
+      saveAndPrepare,
       removeMix,
       setMixRating,
       getCandidates,

@@ -29,6 +29,11 @@ export const mixRequestSchema = z.object({
   exclusions: z.array(z.enum(EXCLUSION_TAGS as [string, ...string[]])),
   useCollectionOnly: z.boolean(),
   requireStock: z.boolean().default(true),
+  mode: z
+    .enum(["balanced", "dominant", "experimental", "leftovers"])
+    .optional()
+    .default("balanced"),
+  limit: z.number().int().min(1).max(20).optional(),
 })
 
 export const userTobaccoCreateSchema = z.object({
@@ -68,7 +73,9 @@ export const saveMixSchema = z
       intensity: z.number(),
     }),
     explanation: z.string().optional().nullable(),
-    variantType: z.enum(["safe", "interesting", "experimental"]).optional(),
+    variantType: z
+      .enum(["safe", "interesting", "experimental", "leftovers"])
+      .optional(),
     ingredients: z.array(mixIngredientSchema).min(2).max(5),
   })
   .superRefine((data, ctx) => {
