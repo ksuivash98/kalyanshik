@@ -1,7 +1,11 @@
 import { MixSuggestion, TobaccoCandidate } from "@/types"
-import { estimateMixCold } from "./cold-calculator"
 import { ValidationResult } from "./types"
+import { normalizeGramsAvailable } from "./limits"
 
+/**
+ * HARD validation only: inventory, percents, bowl sum, ingredient count.
+ * Cold / preferences are scoring concerns — not hard rejects here.
+ */
 export function validateMixAgainstInventory(
   mix: {
     bowlSize: number
@@ -14,7 +18,6 @@ export function validateMixAgainstInventory(
   collection: TobaccoCandidate[],
   options?: {
     tobaccoCount?: number
-    targetCold?: number
   }
 ): ValidationResult {
   const reasons: string[] = []
@@ -39,12 +42,13 @@ export function validateMixAgainstInventory(
   for (const component of mix.components) {
     const item = byId.get(component.tobaccoId)
     if (!item) {
-      reasons.push(`Табак ${component.tobaccoId} отсутствует в коллекции`)
+      reasons.push(`TOBACCO_NOT_FOUND_IN_COLLECTION: ${component.tobaccoId}`)
       continue
     }
-    if (item.gramsAvailable !== null && component.grams > item.gramsAvailable + 0.05) {
+    const available = normalizeGramsAvailable(item.gramsAvailable as number | string | null)
+    if (available !== null && component.grams > available + 0.05) {
       reasons.push(
-        `${item.name}: нужно ${component.grams} г, в наличии ${item.gramsAvailable} г`
+        `INSUFFICIENT_GRAMS: ${item.name}: нужно ${component.grams} г, в наличии ${available} г`
       )
     }
     if (component.grams < 0.2) {
@@ -52,33 +56,6 @@ export function validateMixAgainstInventory(
     }
     if (component.percent <= 0) {
       reasons.push(`${item.name}: невалидный процент`)
-    }
-  }
-
-  if (options?.targetCold != null) {
-    const profileItems = mix.components.map((c) => {
-      const t = byId.get(c.tobaccoId)
-      return {
-        profile: t?.profile ?? {
-          strength: 0,
-          cold: 0,
-          sweetness: 0,
-          sourness: 0,
-          fruity: 0,
-          dessert: 0,
-          spicy: 0,
-          herbal: 0,
-          intensity: 0,
-        },
-      }
-    })
-    const cold = estimateMixCold(
-      profileItems,
-      mix.components.map((c) => c.percent)
-    )
-    const tol = options.targetCold <= 2 ? 1.3 : 1.7
-    if (Math.abs(cold - options.targetCold) > tol) {
-      reasons.push(`Холод ${cold} не попадает в цель ${options.targetCold}`)
     }
   }
 
@@ -91,7 +68,6 @@ export function assertValidMix(
   options: {
     tobaccoCount: number
     bowlSize: number
-    targetCold: number
   }
 ): ValidationResult {
   return validateMixAgainstInventory(
@@ -106,7 +82,6 @@ export function assertValidMix(
     collection,
     {
       tobaccoCount: options.tobaccoCount,
-      targetCold: options.targetCold,
     }
   )
 }

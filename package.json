@@ -10,6 +10,7 @@
     "lint": "eslint",
     "catalog:validate": "tsx scripts/validate-catalog.ts",
     "catalog:stats": "tsx scripts/catalog-stats.ts",
+    "test": "tsx scripts/test-mix-generator.ts",
     "test:mix": "tsx scripts/test-mix-generator.ts",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",

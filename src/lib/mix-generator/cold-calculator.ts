@@ -23,29 +23,30 @@ export function estimateMixCold(
   return Math.round(cold * 10) / 10
 }
 
-export function coldScore(
-  actualCold: number,
-  targetCold: number
-): number {
+export function coldScore(actualCold: number, targetCold: number): number {
   const distance = Math.abs(actualCold - targetCold)
   return Math.max(0, 1 - distance / 5)
 }
 
 /**
- * Reject mixes that overshoot cold badly, or add cold accents when target is 0.
+ * HARD cold rules only:
+ * - target 0 / exclusion path: no concentrated cold accents
+ * Soft cold matching is handled by scoring, not rejection.
  */
+export function isColdHardReject(
+  tobaccos: RankedCandidate[],
+  percents: number[],
+  targetCold: number
+): boolean {
+  if (targetCold > 0) return false
+  return tobaccos.some((t, i) => isColdAccentTobacco(t) && percents[i] > 0)
+}
+
+/** @deprecated use isColdHardReject + coldScore — kept for soft guidance only */
 export function isColdAcceptable(
   tobaccos: RankedCandidate[],
   percents: number[],
   targetCold: number
 ): boolean {
-  const actual = estimateMixCold(tobaccos, percents)
-  if (targetCold <= 0) {
-    const hasAccent = tobaccos.some((t, i) => isColdAccentTobacco(t) && percents[i] > 0)
-    if (hasAccent) return false
-    return actual <= 1.2
-  }
-  // Allow ±1.5 tolerance, tighter for low cold
-  const tolerance = targetCold <= 2 ? 1.2 : 1.6
-  return Math.abs(actual - targetCold) <= tolerance
+  return !isColdHardReject(tobaccos, percents, targetCold)
 }

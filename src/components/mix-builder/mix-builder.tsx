@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge"
 import { MixResults } from "@/components/mix-builder/mix-results"
 import { defaultTargetProfile } from "@/lib/recommendations"
 import { recommendMixesDetailed } from "@/lib/recommendations/mixer"
+import { getCollectionAvailability } from "@/lib/mix-generator"
 import { mixRequestSchema } from "@/lib/validation"
 import {
   EXCLUSION_TAGS,
@@ -70,6 +71,16 @@ export function MixBuilder() {
   const [suggestions, setSuggestions] = useState<MixSuggestion[]>([])
   const [error, setError] = useState<string | null>(null)
   const [pending, setPending] = useState(false)
+  const [warning, setWarning] = useState<string | null>(null)
+
+  const availability = (() => {
+    if (!ready) return { collectionCount: 0, inStockCount: 0, availableForMix: 0 }
+    return getCollectionAvailability(
+      getCandidates(useCollectionOnly),
+      exclusions,
+      targetProfile.cold
+    )
+  })()
 
   function togglePref(tag: PreferenceTag) {
     setPreferences((prev) =>
@@ -86,6 +97,7 @@ export function MixBuilder() {
   function submit() {
     setPending(true)
     setError(null)
+    setWarning(null)
     const grams = customGrams ? Number(customGrams) : totalGrams
     const payload = {
       tobaccoCount,
@@ -105,6 +117,14 @@ export function MixBuilder() {
       return
     }
 
+    if (availability.availableForMix < tobaccoCount && requireStock && useCollectionOnly) {
+      setError(
+        `Для микса из ${tobaccoCount} табаков сейчас доступны только ${availability.availableForMix}. Добавьте табаки в коллекцию или выберите ${Math.max(2, availability.availableForMix)}.`
+      )
+      setPending(false)
+      return
+    }
+
     const candidates = getCandidates(useCollectionOnly)
     const recentMixes = state.mixes.slice(0, 8).map((m) => ({
       tobaccoIds: m.ingredients.map((i) => i.tobaccoId),
@@ -118,6 +138,10 @@ export function MixBuilder() {
       mode: (parsed.data.mode as MixGenerationMode) ?? mode,
       recentMixes,
     })
+
+    if (result.debug?.warnings?.length) {
+      setWarning(result.debug.warnings[0])
+    }
 
     if (result.mixes.length === 0) {
       setError(
@@ -277,8 +301,23 @@ export function MixBuilder() {
 
               {step === 4 && (
                 <div className="space-y-6">
+                  <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-stone-300">
+                    <div>В коллекции: {availability.collectionCount} табаков</div>
+                    <div>С остатком &gt; 0: {availability.inStockCount}</div>
+                    <div>
+                      Подходят для генерации: {availability.availableForMix}
+                      {availability.availableForMix < tobaccoCount ? (
+                        <span className="text-amber-300">
+                          {" "}
+                          · для микса из {tobaccoCount} сейчас мало
+                        </span>
+                      ) : null}
+                    </div>
+                  </div>
                   <div>
-                    <h3 className="mb-3 text-sm font-medium text-stone-300">Люблю</h3>
+                    <h3 className="mb-3 text-sm font-medium text-stone-300">
+                      Люблю (мягкие предпочтения — не обязательные фильтры)
+                    </h3>
                     <div className="flex flex-wrap gap-2">
                       {PREFERENCE_TAGS.map((tag) => (
                         <button key={tag} type="button" onClick={() => togglePref(tag)}>
@@ -329,6 +368,7 @@ export function MixBuilder() {
               )}
 
               {error ? <p className="text-sm text-red-400">{error}</p> : null}
+              {warning ? <p className="text-sm text-amber-300">{warning}</p> : null}
 
               <div className="flex flex-wrap justify-between gap-3 pt-2">
                 <Button

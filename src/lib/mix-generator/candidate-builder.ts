@@ -2,7 +2,7 @@ import { FlavorDirection, MixStrategyId, PercentPlan, RankedCandidate } from "./
 import { DIRECTION_PRIORITY } from "./flavor-compatibility"
 import { getStrategyPlans } from "./mix-strategies"
 import { calculateGrams, percentsFromGrams } from "./gram-calculator"
-import { isColdAcceptable } from "./cold-calculator"
+import { isColdHardReject } from "./cold-calculator"
 import { blendCandidateProfile } from "./diversity-filter"
 import { scoreMixCandidate } from "./mix-scorer"
 import { BuiltMixCandidate } from "./types"
@@ -62,14 +62,14 @@ function tryBuild(
   }
   if (last?.isColdAccent && targetCold <= 0) return null
 
-  if (!isColdAcceptable(ordered, percents, targetCold)) return null
+  if (isColdHardReject(ordered, percents, targetCold)) return null
 
   const grams = calculateGrams(ordered, percents, bowlSize)
   if (!grams) return null
 
   // Recompute percents from final grams for consistency
   const finalPercents = percentsFromGrams(grams, bowlSize)
-  if (!isColdAcceptable(ordered, finalPercents, targetCold)) return null
+  if (isColdHardReject(ordered, finalPercents, targetCold)) return null
 
   const profile = blendCandidateProfile(ordered, finalPercents)
   const scores = scoreMixCandidate({
@@ -209,7 +209,7 @@ export function buildCandidates(input: {
           const lg = leftoverFirstGrams(ordered, bowlSize)
           if (lg) {
             const percents = percentsFromGrams(lg, bowlSize)
-            if (isColdAcceptable(ordered, percents, targetCold)) {
+            if (!isColdHardReject(ordered, percents, targetCold)) {
               const profile = blendCandidateProfile(ordered, percents)
               const scores = scoreMixCandidate({
                 tobaccos: ordered,

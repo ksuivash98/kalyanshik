@@ -5,6 +5,7 @@
 import {
   calculateGrams,
   calculateMixSimilarity,
+  debugMixGeneration,
   estimateMixCold,
   generateMixes,
   validateMixAgainstInventory,
@@ -435,7 +436,7 @@ const baseTarget = profile({ cold: 1, fruity: 4, sweetness: 3 })
         })),
       },
       collection,
-      { tobaccoCount: 3, targetCold: 1 }
+      { tobaccoCount: 3 }
     )
     return v.ok
   })
@@ -466,6 +467,195 @@ const baseTarget = profile({ cold: 1, fruity: 4, sweetness: 3 })
   else fail(name, `sim=${sim.toFixed(2)} too low`)
 }
 
+// --- BUGFIX: should generate when tobacco exists in collection ---
+{
+  const name = "should_generate_mix_when_tobacco_exists_in_collection"
+  const result = generateMixes({
+    candidates: [
+      tobacco("mango-id", "Mango Lassi", 30, { fruity: 4, sweetness: 4, cold: 0 }),
+      tobacco("passion-id", "Passion Fruit", 20, { fruity: 4, sourness: 3, cold: 0 }),
+      tobacco("undercoal-id", "Undercoal", 30, { fruity: 2, intensity: 2, cold: 0 }),
+    ],
+    tobaccoCount: 3,
+    bowlSize: 20,
+    targetProfile: profile({ cold: 1, fruity: 4, sweetness: 3 }),
+    preferences: [
+      "фруктовый",
+      "ягодный",
+      "цитрусовый",
+      "сладкий",
+      "кислый",
+      "десертный",
+      "напиток",
+      "свежий",
+      "пряный",
+      "травянистый",
+    ],
+    exclusions: [],
+    requireStock: true,
+    mode: "balanced",
+    limit: 5,
+  })
+  if (result.mixes.length >= 1) pass(name, `mixes=${result.mixes.length}`)
+  else fail(name, result.error ?? "no mixes")
+}
+
+// --- BUGFIX: small leftovers can still join bowl ---
+{
+  const name = "should_not_reject_tobacco_because_it_has_less_grams_than_bowl_size"
+  const result = generateMixes({
+    candidates: [
+      tobacco("mango-id", "Mango", 5, { fruity: 4, cold: 0 }),
+      tobacco("pine-id", "Pineapple", 7, { fruity: 4, cold: 0 }),
+      tobacco("pass-id", "Passion", 8, { fruity: 4, cold: 0 }),
+    ],
+    tobaccoCount: 3,
+    bowlSize: 20,
+    targetProfile: profile({ cold: 2, fruity: 4 }),
+    preferences: ["фруктовый"],
+    exclusions: [],
+    requireStock: true,
+    mode: "leftovers",
+    limit: 3,
+  })
+  const ok =
+    result.mixes.length >= 1 &&
+    result.mixes.every((m) => {
+      const sum = m.components.reduce((s, c) => s + c.grams, 0)
+      return Math.abs(sum - 20) <= 0.2 && m.components.every((c) => {
+        const stock = { "mango-id": 5, "pine-id": 7, "pass-id": 8 }[c.tobaccoId] ?? 0
+        return c.grams <= stock + 0.05
+      })
+    })
+  if (ok) pass(name, `mixes=${result.mixes.length}`)
+  else fail(name, result.error ?? JSON.stringify(result.mixes[0]?.components))
+}
+
+// --- hard exclusions ---
+{
+  const name = "should_respect_hard_exclusions"
+  const result = generateMixes({
+    candidates: [
+      tobacco("mango-id", "Mango", 30, { fruity: 4 }),
+      tobacco("pass-id", "Passion", 30, { fruity: 4 }),
+      tobacco("mint-id", "Cane Mint", 30, { cold: 4, herbal: 2 }, ["mint", "cold"]),
+      tobacco("under-id", "Undercoal", 30, { fruity: 2 }),
+    ],
+    tobaccoCount: 3,
+    bowlSize: 20,
+    targetProfile: profile({ cold: 1, fruity: 4 }),
+    preferences: ["фруктовый"],
+    exclusions: ["без мяты"],
+    requireStock: true,
+    mode: "balanced",
+    limit: 5,
+  })
+  const hasMint = result.mixes.some((m) =>
+    m.components.some((c) => /mint/i.test(c.name))
+  )
+  if (result.mixes.length >= 1 && !hasMint) pass(name, `mixes=${result.mixes.length}`)
+  else fail(name, hasMint ? "mint leaked" : result.error ?? "empty")
+}
+
+// --- likes are soft ---
+{
+  const name = "should_treat_likes_as_soft_preferences"
+  const result = generateMixes({
+    candidates: collection,
+    tobaccoCount: 3,
+    bowlSize: 20,
+    targetProfile: profile({ cold: 2, fruity: 3 }),
+    preferences: [
+      "фруктовый",
+      "ягодный",
+      "цитрусовый",
+      "сладкий",
+      "кислый",
+      "десертный",
+      "напиток",
+      "свежий",
+    ],
+    exclusions: [],
+    requireStock: true,
+    mode: "balanced",
+    limit: 5,
+  })
+  if (result.mixes.length >= 1) pass(name, `mixes=${result.mixes.length}`)
+  else fail(name, result.error ?? "0 candidates path")
+}
+
+// --- debug report for screenshot-like scenario ---
+{
+  const name = "debug_screenshot_scenario"
+  const result = generateMixes({
+    candidates: collection,
+    tobaccoCount: 3,
+    bowlSize: 20,
+    targetProfile: profile({ cold: 2, fruity: 3, sweetness: 3 }),
+    preferences: [
+      "фруктовый",
+      "ягодный",
+      "цитрусовый",
+      "сладкий",
+      "кислый",
+      "десертный",
+      "напиток",
+      "свежий",
+      "пряный",
+      "травянистый",
+    ],
+    exclusions: [],
+    requireStock: true,
+    mode: "balanced",
+    limit: 8,
+  })
+  const d = result.debug ?? debugMixGeneration({
+    candidates: collection,
+    tobaccoCount: 3,
+    bowlSize: 20,
+    targetProfile: profile({ cold: 2, fruity: 3, sweetness: 3 }),
+    preferences: [
+      "фруктовый",
+      "ягодный",
+      "цитрусовый",
+      "сладкий",
+      "кислый",
+      "десертный",
+      "напиток",
+      "свежий",
+      "пряный",
+      "травянистый",
+    ],
+    exclusions: [],
+    requireStock: true,
+    mode: "balanced",
+    limit: 8,
+  })
+  if (d && d.finalMixes > 0 && d.inventoryCandidates >= 3) {
+    pass(
+      name,
+      `Collection:${d.collectionCount} Inventory:${d.inventoryCandidates} Pref:${d.preferenceCandidates} Combos:${d.combinationsAfterGramValidation} Final:${d.finalMixes}`
+    )
+    console.log(
+      [
+        "",
+        "=== Screenshot scenario debug ===",
+        `Collection: ${d.collectionCount}`,
+        `Inventory candidates: ${d.inventoryCandidates}`,
+        `Preference candidates: ${d.preferenceCandidates}`,
+        `After exclusions: ${d.collectionCount - d.excludedCandidates}`,
+        `Cold blocked: ${d.coldBlocked}`,
+        `Generated combinations: ${d.combinationsGenerated}`,
+        `Valid combinations: ${d.combinationsAfterGramValidation}`,
+        `Final mixes: ${d.finalMixes}`,
+        "",
+      ].join("\n")
+    )
+  } else {
+    fail(name, result.error ?? JSON.stringify(d))
+  }
+}
+
 // Print report
 const passed = results.filter((r) => r.ok).length
 const total = results.length
@@ -476,14 +666,14 @@ for (const r of results) {
 }
 
 const groups = {
-  inventory: results.filter((r) => /Test1|Test2|Inventory validation/i.test(r.name)),
-  grams: results.filter((r) => /Gram calculation|Test2/i.test(r.name)),
+  inventory: results.filter((r) => /Test1|Test2|Inventory validation|exists_in_collection|less_grams/i.test(r.name)),
+  grams: results.filter((r) => /Gram calculation|Test2|less_grams/i.test(r.name)),
   diversity: results.filter((r) => /Test5|Similarity/i.test(r.name)),
   cold: results.filter((r) => /Test6|Test7/i.test(r.name)),
 }
 
 function groupStatus(items: TestResult[]) {
-  return items.every((i) => i.ok) ? "PASS" : "FAIL"
+  return items.length === 0 ? "PASS" : items.every((i) => i.ok) ? "PASS" : "FAIL"
 }
 
 console.log("")

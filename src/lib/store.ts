@@ -312,6 +312,13 @@ export function rateMix(
 }
 
 export function buildCandidates(state: AppState, useCollectionOnly: boolean) {
+  const stock = new Map(
+    state.collection.map((c) => {
+      const grams =
+        typeof c.grams === "number" ? c.grams : Number(String(c.grams).replace(",", "."))
+      return [c.tobaccoId, Number.isFinite(grams) && grams >= 0 ? grams : 0] as const
+    })
+  )
   if (useCollectionOnly) {
     return state.collection
       .map((item) => {
@@ -319,6 +326,7 @@ export function buildCandidates(state: AppState, useCollectionOnly: boolean) {
         if (!tobacco) return null
         const brand = CATALOG_DB.brands.find((b) => b.id === tobacco.brandId)
         const profile = toRecommendationProfile(tobacco)
+        const grams = stock.get(item.tobaccoId) ?? 0
         return {
           id: tobacco.id,
           name: tobacco.name,
@@ -335,13 +343,12 @@ export function buildCandidates(state: AppState, useCollectionOnly: boolean) {
             herbal: profile.herbal,
             intensity: profile.intensity,
           },
-          gramsAvailable: item.grams,
+          gramsAvailable: grams,
         }
       })
       .filter((t): t is NonNullable<typeof t> => Boolean(t))
   }
 
-  const stock = new Map(state.collection.map((c) => [c.tobaccoId, c.grams]))
   return CATALOG_DB.tobaccos
     .filter((t) => t.active && t.status !== "DISCONTINUED")
     .map((tobacco) => {
